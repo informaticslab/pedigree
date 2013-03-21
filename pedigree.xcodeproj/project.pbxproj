@@ -17,11 +17,19 @@
 		A657DDB116F747F300F3CA8E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A657DDB016F747F300F3CA8E /* Default@2x.png */; };
 		A657DDB316F747F300F3CA8E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A657DDB216F747F300F3CA8E /* Default-568h@2x.png */; };
 		A657DDB616F747F300F3CA8E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A657DDB416F747F300F3CA8E /* MainStoryboard.storyboard */; };
-		A657DDB916F747F300F3CA8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A657DDB816F747F300F3CA8E /* ViewController.m */; };
+		A67D37A216FA4792005C9987 /* 79-medical-bag.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A116FA4792005C9987 /* 79-medical-bag.png */; };
+		A67D37A416FA47E9005C9987 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A316FA47E9005C9987 /* 112-group.png */; };
+		A67D37A616FA4899005C9987 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A516FA4899005C9987 /* 19-gear.png */; };
+		A67D37A816FA4B26005C9987 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A716FA4B26005C9987 /* 83-calendar.png */; };
+		A67D37AA16FA4B79005C9987 /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A916FA4B79005C9987 /* 108-badge.png */; };
+		A67D37AD16FB30F5005C9987 /* FamilyMembersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37AC16FB30F5005C9987 /* FamilyMembersVC.m */; };
+		A67D37B016FB31F0005C9987 /* FamilyMember.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37AF16FB31F0005C9987 /* FamilyMember.m */; };
+		A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37B216FB3CCA005C9987 /* AppManager.m */; };
+		A67D37B716FB3DBF005C9987 /* FamilyTree.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37B616FB3DBF005C9987 /* FamilyTree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A657DD9916F747F200F3CA8E /* pedigree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pedigree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A657DD9916F747F200F3CA8E /* Family History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657DD9C16F747F200F3CA8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A657DD9E16F747F200F3CA8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A657DDA016F747F200F3CA8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -35,8 +43,20 @@
 		A657DDB016F747F300F3CA8E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A657DDB216F747F300F3CA8E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A657DDB516F747F300F3CA8E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		A657DDB716F747F300F3CA8E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A657DDB816F747F300F3CA8E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A67D37A116FA4792005C9987 /* 79-medical-bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "79-medical-bag.png"; sourceTree = "<group>"; };
+		A67D37A316FA47E9005C9987 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
+		A67D37A516FA4899005C9987 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
+		A67D37A716FA4B26005C9987 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
+		A67D37A916FA4B79005C9987 /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "108-badge.png"; sourceTree = "<group>"; };
+		A67D37AB16FB30F5005C9987 /* FamilyMembersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamilyMembersVC.h; path = Classes/FamilyMembersVC.h; sourceTree = "<group>"; };
+		A67D37AC16FB30F5005C9987 /* FamilyMembersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FamilyMembersVC.m; path = Classes/FamilyMembersVC.m; sourceTree = "<group>"; };
+		A67D37AE16FB31F0005C9987 /* FamilyMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamilyMember.h; path = Classes/FamilyMember.h; sourceTree = "<group>"; };
+		A67D37AF16FB31F0005C9987 /* FamilyMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FamilyMember.m; path = Classes/FamilyMember.m; sourceTree = "<group>"; };
+		A67D37B116FB3CCA005C9987 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppManager.h; path = Classes/AppManager.h; sourceTree = "<group>"; };
+		A67D37B216FB3CCA005C9987 /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppManager.m; path = Classes/AppManager.m; sourceTree = "<group>"; };
+		A67D37B416FB3D78005C9987 /* Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Debug.h; path = Classes/Debug.h; sourceTree = "<group>"; };
+		A67D37B516FB3DBF005C9987 /* FamilyTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamilyTree.h; path = Classes/FamilyTree.h; sourceTree = "<group>"; };
+		A67D37B616FB3DBF005C9987 /* FamilyTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FamilyTree.m; path = Classes/FamilyTree.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +73,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A646BBE416F8DC1E00B197CB /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				A67D37A916FA4B79005C9987 /* 108-badge.png */,
+				A67D37A716FA4B26005C9987 /* 83-calendar.png */,
+				A67D37A516FA4899005C9987 /* 19-gear.png */,
+				A67D37A316FA47E9005C9987 /* 112-group.png */,
+				A67D37A116FA4792005C9987 /* 79-medical-bag.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
 		A657DD9016F747F200F3CA8E = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +97,7 @@
 		A657DD9A16F747F200F3CA8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A657DD9916F747F200F3CA8E /* pedigree.app */,
+				A657DD9916F747F200F3CA8E /* Family History.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,9 +118,16 @@
 				A657DDAB16F747F200F3CA8E /* AppDelegate.h */,
 				A657DDAC16F747F200F3CA8E /* AppDelegate.m */,
 				A657DDB416F747F300F3CA8E /* MainStoryboard.storyboard */,
-				A657DDB716F747F300F3CA8E /* ViewController.h */,
-				A657DDB816F747F300F3CA8E /* ViewController.m */,
+				A67D37AE16FB31F0005C9987 /* FamilyMember.h */,
+				A67D37AF16FB31F0005C9987 /* FamilyMember.m */,
 				A657DDA316F747F200F3CA8E /* Supporting Files */,
+				A67D37AB16FB30F5005C9987 /* FamilyMembersVC.h */,
+				A67D37AC16FB30F5005C9987 /* FamilyMembersVC.m */,
+				A67D37B116FB3CCA005C9987 /* AppManager.h */,
+				A67D37B216FB3CCA005C9987 /* AppManager.m */,
+				A67D37B416FB3D78005C9987 /* Debug.h */,
+				A67D37B516FB3DBF005C9987 /* FamilyTree.h */,
+				A67D37B616FB3DBF005C9987 /* FamilyTree.m */,
 			);
 			path = pedigree;
 			sourceTree = "<group>";
@@ -96,6 +135,7 @@
 		A657DDA316F747F200F3CA8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A646BBE416F8DC1E00B197CB /* icons */,
 				A657DDA416F747F200F3CA8E /* pedigree-Info.plist */,
 				A657DDA516F747F200F3CA8E /* InfoPlist.strings */,
 				A657DDA816F747F200F3CA8E /* main.m */,
@@ -124,7 +164,7 @@
 			);
 			name = pedigree;
 			productName = pedigree;
-			productReference = A657DD9916F747F200F3CA8E /* pedigree.app */;
+			productReference = A657DD9916F747F200F3CA8E /* Family History.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,7 +174,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = jtq6;
+				ORGANIZATIONNAME = "CDC Informatics R&D Lab";
 			};
 			buildConfigurationList = A657DD9416F747F200F3CA8E /* Build configuration list for PBXProject "pedigree" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -163,6 +203,11 @@
 				A657DDB116F747F300F3CA8E /* Default@2x.png in Resources */,
 				A657DDB316F747F300F3CA8E /* Default-568h@2x.png in Resources */,
 				A657DDB616F747F300F3CA8E /* MainStoryboard.storyboard in Resources */,
+				A67D37A216FA4792005C9987 /* 79-medical-bag.png in Resources */,
+				A67D37A416FA47E9005C9987 /* 112-group.png in Resources */,
+				A67D37A616FA4899005C9987 /* 19-gear.png in Resources */,
+				A67D37A816FA4B26005C9987 /* 83-calendar.png in Resources */,
+				A67D37AA16FA4B79005C9987 /* 108-badge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +220,10 @@
 			files = (
 				A657DDA916F747F200F3CA8E /* main.m in Sources */,
 				A657DDAD16F747F200F3CA8E /* AppDelegate.m in Sources */,
-				A657DDB916F747F300F3CA8E /* ViewController.m in Sources */,
+				A67D37AD16FB30F5005C9987 /* FamilyMembersVC.m in Sources */,
+				A67D37B016FB31F0005C9987 /* FamilyMember.m in Sources */,
+				A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */,
+				A67D37B716FB3DBF005C9987 /* FamilyTree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +311,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pedigree/pedigree-Prefix.pch";
 				INFOPLIST_FILE = "pedigree/pedigree-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Family History";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -274,7 +322,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pedigree/pedigree-Prefix.pch";
 				INFOPLIST_FILE = "pedigree/pedigree-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Family History";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -298,6 +346,7 @@
 				A657DDBE16F747F300F3CA8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
