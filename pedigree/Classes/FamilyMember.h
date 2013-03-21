@@ -14,4 +14,7 @@
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *relationship;
 
+-(id)initWithRelationshipNames:(NSString *)newRelationship lastName:(NSString *)newLastName firstName:(NSString *)newFirstName;
+
+
 @end

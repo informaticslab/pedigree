@@ -7,9 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FamilyMember.h"
 
 @interface FamilyTree : NSObject
 
+@property (nonatomic, strong) NSMutableArray *famTree;
+
 -(void)loadTestData;
+-(NSInteger)numberOfRelatives;
+-(FamilyMember *)relativeFromIndex:(NSInteger) index;
+
 
 @end

@@ -7,6 +7,9 @@
 //
 
 #import "FamilyMembersVC.h"
+#import "AppManager.h"
+#import "FamilyMember.h"
+#import "FamilyTree.h"
 
 @interface FamilyMembersVC ()
 
@@ -14,12 +17,14 @@
 
 @implementation FamilyMembersVC
 
+
+AppManager *appMgr;
+FamilyTree *famTree;
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
@@ -32,6 +37,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // load application manager
+    appMgr = [AppManager singletonAppManager];
+    famTree = appMgr.famTree;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,24 +54,27 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [famTree numberOfRelatives];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"FamilyMemberCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    NSInteger index = [indexPath row];
+    FamilyMember *currRelative = [famTree relativeFromIndex:index];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", currRelative.firstName, currRelative.lastName];
+    cell.detailTextLabel.text = currRelative.relationship;
     
     return cell;
 }

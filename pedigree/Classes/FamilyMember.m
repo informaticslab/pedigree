@@ -10,4 +10,15 @@
 
 @implementation FamilyMember
 
+-(id)initWithRelationshipNames:(NSString *)newRelationship lastName:(NSString *)newLastName firstName:(NSString *)newFirstName
+{
+    if ((self = [super init])) {
+        self.lastName = newLastName;
+        self.firstName = newFirstName;
+        self.relationship = newRelationship;
+    }
+    return self;
+    
+}
+
 @end
