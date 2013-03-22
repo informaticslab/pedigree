@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FamilyMember.h"
+#import "Relative.h"
 
 @interface FamilyTree : NSObject
 
@@ -15,7 +15,7 @@
 
 -(void)loadTestData;
 -(NSInteger)numberOfRelatives;
--(FamilyMember *)relativeFromIndex:(NSInteger) index;
+-(Relative *)relativeFromIndex:(NSInteger) index;
 
 
 @end

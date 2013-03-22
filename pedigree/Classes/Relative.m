@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 CDC Informatics R&D Lab. All rights reserved.
 //
 
-#import "FamilyMember.h"
+#import "Relative.h"
 
-@implementation FamilyMember
+@implementation Relative
 
 -(id)initWithRelationshipNames:(NSString *)newRelationship lastName:(NSString *)newLastName firstName:(NSString *)newFirstName
 {

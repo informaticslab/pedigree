@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 CDC Informatics R&D Lab. All rights reserved.
 //
 
-#import "FamilyMembersVC.h"
+#import "RelativesTableVC.h"
 #import "AppManager.h"
-#import "FamilyMember.h"
+#import "Relative.h"
 #import "FamilyTree.h"
 
-@interface FamilyMembersVC ()
+@interface RelativesTableVC ()
 
 @end
 
-@implementation FamilyMembersVC
+@implementation RelativesTableVC
 
 
 AppManager *appMgr;
@@ -71,7 +71,7 @@ FamilyTree *famTree;
     
     // Configure the cell...
     NSInteger index = [indexPath row];
-    FamilyMember *currRelative = [famTree relativeFromIndex:index];
+    Relative *currRelative = [famTree relativeFromIndex:index];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", currRelative.firstName, currRelative.lastName];
     cell.detailTextLabel.text = currRelative.relationship;

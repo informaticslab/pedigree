@@ -31,7 +31,7 @@ AppManager *appMgr;
 -(void)addRelative:(NSString *)newRelationship lastName:(NSString *)newLastName firstName:(NSString *)newFirstName
 {
 
-    FamilyMember *newPerson = [[FamilyMember alloc] initWithRelationshipNames:newRelationship lastName:newLastName firstName:newFirstName];
+    Relative *newPerson = [[Relative alloc] initWithRelationshipNames:newRelationship lastName:newLastName firstName:newFirstName];
     [self.famTree addObject:newPerson];
 
     
@@ -42,9 +42,9 @@ AppManager *appMgr;
     return [self.famTree count];
 }
 
--(FamilyMember *)relativeFromIndex:(NSInteger) index
+-(Relative *)relativeFromIndex:(NSInteger) index
 {
-    FamilyMember *relativeAtIndex = [self.famTree objectAtIndex:index];
+    Relative *relativeAtIndex = [self.famTree objectAtIndex:index];
     return relativeAtIndex;
 }
 

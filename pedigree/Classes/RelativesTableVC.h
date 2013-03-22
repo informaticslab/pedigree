@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FamilyMember.h"
+#import "Relative.h"
 
-@interface FamilyMembersVC : UITableViewController
+@interface RelativesTableVC : UITableViewController
 
-@property (nonatomic, strong) NSMutableArray *familyMembers;
+@property (nonatomic, strong) NSMutableArray *relatives;
 
 @end
