@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A60652EC16FC9E0E002E5616 /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = A60652EB16FC9E0E002E5616 /* 111-user.png */; };
 		A657DD9D16F747F200F3CA8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9C16F747F200F3CA8E /* UIKit.framework */; };
 		A657DD9F16F747F200F3CA8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9E16F747F200F3CA8E /* Foundation.framework */; };
 		A657DDA116F747F200F3CA8E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DDA016F747F200F3CA8E /* CoreGraphics.framework */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A60652EB16FC9E0E002E5616 /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
 		A657DD9916F747F200F3CA8E /* Family History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657DD9C16F747F200F3CA8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A657DD9E16F747F200F3CA8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,6 +78,7 @@
 		A646BBE416F8DC1E00B197CB /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				A60652EB16FC9E0E002E5616 /* 111-user.png */,
 				A67D37A916FA4B79005C9987 /* 108-badge.png */,
 				A67D37A716FA4B26005C9987 /* 83-calendar.png */,
 				A67D37A516FA4899005C9987 /* 19-gear.png */,
@@ -208,6 +211,7 @@
 				A67D37A616FA4899005C9987 /* 19-gear.png in Resources */,
 				A67D37A816FA4B26005C9987 /* 83-calendar.png in Resources */,
 				A67D37AA16FA4B79005C9987 /* 108-badge.png in Resources */,
+				A60652EC16FC9E0E002E5616 /* 111-user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
