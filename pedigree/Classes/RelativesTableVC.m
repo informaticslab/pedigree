@@ -74,7 +74,7 @@ FamilyTree *famTree;
     Relative *currRelative = [famTree relativeFromIndex:index];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", currRelative.firstName, currRelative.lastName];
-    cell.detailTextLabel.text = currRelative.relationship;
+    cell.detailTextLabel.text = currRelative.relationDescription;
     
     return cell;
 }

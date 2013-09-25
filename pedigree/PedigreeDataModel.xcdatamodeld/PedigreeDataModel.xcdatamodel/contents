@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ContractedDisease" representedClassName="ContractedDisease" syncable="YES">
+        <attribute name="ageAtDiagnosis" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="contractedDisease" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Myself" representedClassName="Myself" parentEntity="Person" syncable="YES">
+        <relationship name="relatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Relative" inverseName="myself" inverseEntity="Relative" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="dateOfBirth" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isAdopted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isIdenticalTwin" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isLiving" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isTwin" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contractedDisease" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContractedDisease" inverseName="person" inverseEntity="ContractedDisease" syncable="YES"/>
+    </entity>
+    <entity name="Relative" representedClassName="Relative" parentEntity="Person" syncable="YES">
+        <attribute name="relationDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relationId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="myself" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Myself" inverseName="relatives" inverseEntity="Myself" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ContractedDisease" positionX="-47" positionY="18" width="128" height="90"/>
+        <element name="Myself" positionX="-162" positionY="-373" width="128" height="58"/>
+        <element name="Person" positionX="-234" positionY="-207" width="128" height="180"/>
+        <element name="Relative" positionX="16" positionY="-153" width="128" height="88"/>
+    </elements>
+</model>

@@ -31,8 +31,8 @@ AppManager *appMgr;
 -(void)addRelative:(NSString *)newRelationship lastName:(NSString *)newLastName firstName:(NSString *)newFirstName
 {
 
-    Relative *newPerson = [[Relative alloc] initWithRelationshipNames:newRelationship lastName:newLastName firstName:newFirstName];
-    [self.famTree addObject:newPerson];
+//    Relative *newPerson = [[Relative alloc] initWithRelationshipNames:newRelationship lastName:newLastName firstName:newFirstName];
+//    [self.famTree addObject:newPerson];
 
     
 }
