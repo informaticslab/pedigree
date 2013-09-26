@@ -7,7 +7,7 @@
 //
 
 #import "AppManager.h"
-
+#import "AppDelegate.h"
 static AppManager *sharedAppManager = nil;
 
 @implementation AppManager
@@ -17,7 +17,7 @@ static AppManager *sharedAppManager = nil;
 + (id)singletonAppManager {
 	@synchronized(self) {
 		if(sharedAppManager == nil)
-			[[self alloc] init];
+			sharedAppManager = [[self alloc] init];
 	}
 	return sharedAppManager;
 }
@@ -44,11 +44,37 @@ static AppManager *sharedAppManager = nil;
         self.tableFont = [UIFont boldSystemFontOfSize: 16];
         self.famTree = [[FamilyTree alloc] init];
         [self.famTree loadTestData];
+        
+        // get Core Data references
+        AppDelegate *appDel = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        self.managedObjectContext = appDel.managedObjectContext;
+        self.managedObjectModel = appDel.managedObjectModel;
+        self.persistentStoreCoordinator = appDel.persistentStoreCoordinator;
 	}
 	return self;
 }
 
+-(NSArray*)getAllPeople
+{
+    // initializing NSFetchRequest
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    //Setting Entity to be Queried
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError* error;
+    
+    // Query on managedObjectContext With Generated fetchRequest
+    NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (error) {
+        DebugLog(@"Attempt to fetch Core Data Person entities failed.");
 
+    }
+    // Returning Fetched Records
+    return fetchedRecords;
+}
 
 -(BOOL)isDebugInfoEnabled
 {

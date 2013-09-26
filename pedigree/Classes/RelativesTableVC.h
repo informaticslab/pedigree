@@ -11,6 +11,5 @@
 
 @interface RelativesTableVC : UITableViewController
 
-@property (nonatomic, strong) NSMutableArray *relatives;
-
+@property (nonatomic, strong) NSArray *people;
 @end

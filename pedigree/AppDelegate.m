@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "Relative.h"
+#import "MainTabBarVC.h"
+#import "AppManager.h"
 
 @implementation AppDelegate
 
@@ -18,7 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //MainTabBarVC *tabBarController = (MainTabBarVC *)self.window.rootViewController;
+    //tabBarController.managedObjectContext = self.managedObjectContext;
+    
+    // initialize AppManager by calling singleton method
+    [AppManager singletonAppManager];
     return YES;
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -89,7 +96,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"pedigreeDataModel" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"PedigreeDataModel" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -143,23 +150,6 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
-
--(void)loadTestData
-{
-    Relative *newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:self.managedObjectContext];
-    newRelative.lastName = @"Smithereen";
-    newRelative.firstName = @"John";
-    
-    NSError *error = nil;
-    [_managedObjectContext save:&error];
-    
-    if (error)
-    {
-        NSLog(@"Problem loading test data: %@", error);
-    }
-    
-    
 }
 
 

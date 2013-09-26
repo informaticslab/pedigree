@@ -7,16 +7,12 @@
 //
 
 #import "FamilyTree.h"
-#import "AppManager.h"
 
 @implementation FamilyTree
 
-AppManager *appMgr;
 
 -(id)init
 {
-    // load application manager
-    appMgr = [AppManager singletonAppManager];
     
     self = [super init];
     

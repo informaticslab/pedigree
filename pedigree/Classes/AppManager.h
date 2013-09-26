@@ -19,7 +19,14 @@
 @property (nonatomic, retain) FamilyTree *famTree;
 @property BOOL agreedWithEula;
 
+// Core Data properties
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;
+-(NSArray*)getAllPeople;
 
 @end

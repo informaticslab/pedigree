@@ -10,6 +10,7 @@
 #import "AppManager.h"
 #import "Relative.h"
 #import "FamilyTree.h"
+#import "Person.h"
 
 @interface RelativesTableVC ()
 
@@ -39,8 +40,12 @@ FamilyTree *famTree;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // load application manager
-    appMgr = [AppManager singletonAppManager];
-    famTree = appMgr.famTree;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Person" inManagedObjectContext:APP_MGR.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    self.people = [APP_MGR getAllPeople];
+    self.title = @"Family";
 
 }
 
@@ -61,7 +66,7 @@ FamilyTree *famTree;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [famTree numberOfRelatives];
+    return [_people count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -71,10 +76,10 @@ FamilyTree *famTree;
     
     // Configure the cell...
     NSInteger index = [indexPath row];
-    Relative *currRelative = [famTree relativeFromIndex:index];
+    Person *currRelative = (Person *)[_people objectAtIndex:index];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", currRelative.firstName, currRelative.lastName];
-    cell.detailTextLabel.text = currRelative.relationDescription;
+    //cell.detailTextLabel.text = currRelative.relationDescription;
     
     return cell;
 }
