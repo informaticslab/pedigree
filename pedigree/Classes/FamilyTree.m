@@ -38,11 +38,13 @@
     return [self.famTree count];
 }
 
+
 -(Relative *)relativeFromIndex:(NSInteger) index
 {
     Relative *relativeAtIndex = [self.famTree objectAtIndex:index];
     return relativeAtIndex;
 }
+
 
 -(void)loadTestData
 {

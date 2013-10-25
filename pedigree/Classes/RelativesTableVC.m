@@ -11,6 +11,7 @@
 #import "Relative.h"
 #import "FamilyTree.h"
 #import "Person.h"
+#import "RelativeDetailsVC.h"
 
 @interface RelativesTableVC ()
 
@@ -21,13 +22,8 @@
 
 AppManager *appMgr;
 FamilyTree *famTree;
+Relative *currRelative;
 
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -42,9 +38,9 @@ FamilyTree *famTree;
     // load application manager
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Person" inManagedObjectContext:APP_MGR.managedObjectContext];
+                                   entityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
     [fetchRequest setEntity:entity];
-    self.people = [APP_MGR getAllPeople];
+    self.relatives = [APP_MGR getAllPeople];
     self.title = @"Family";
 
 }
@@ -66,7 +62,7 @@ FamilyTree *famTree;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_people count];
+    return [_relatives count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,10 +72,10 @@ FamilyTree *famTree;
     
     // Configure the cell...
     NSInteger index = [indexPath row];
-    Person *currRelative = (Person *)[_people objectAtIndex:index];
+    currRelative = (Relative *)[_relatives objectAtIndex:index];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", currRelative.firstName, currRelative.lastName];
-    //cell.detailTextLabel.text = currRelative.relationDescription;
+    cell.textLabel.text = currRelative.relationDescription;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", currRelative.firstName, currRelative.lastName];
     
     return cell;
 }
@@ -128,12 +124,19 @@ FamilyTree *famTree;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    // [self.navigationController pushViewController:detailViewController animated:YES];
+     [self performSegueWithIdentifier:@"showRelativeDetailsSegue" sender:nil];
+
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"showRelativeDetailsSegue"])
+    {
+        RelativeDetailsVC *relativeDetailsVC = segue.destinationViewController;
+        relativeDetailsVC.relative = currRelative;
+        
+    }
 }
 
 @end

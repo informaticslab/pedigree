@@ -21,6 +21,9 @@
 		A657DDB316F747F300F3CA8E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A657DDB216F747F300F3CA8E /* Default-568h@2x.png */; };
 		A657DDB616F747F300F3CA8E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A657DDB416F747F300F3CA8E /* MainStoryboard.storyboard */; };
 		A66FACC217F307EC002D260E /* MainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FACC117F307EC002D260E /* MainTabBarVC.m */; };
+		A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FACC417F4A5A3002D260E /* RelativeDetailsVC.m */; };
+		A66FACC717F4B653002D260E /* Generic_Person_0614_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = A66FACC617F4B653002D260E /* Generic_Person_0614_128x128.png */; };
+		A6778BB31815ADF200962394 /* RelativeDetailsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6778BB21815ADF200962394 /* RelativeDetailsTableVC.m */; };
 		A67D37A216FA4792005C9987 /* 79-medical-bag.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A116FA4792005C9987 /* 79-medical-bag.png */; };
 		A67D37A416FA47E9005C9987 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A316FA47E9005C9987 /* 112-group.png */; };
 		A67D37A616FA4899005C9987 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A516FA4899005C9987 /* 19-gear.png */; };
@@ -55,6 +58,11 @@
 		A657DDB516F747F300F3CA8E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A66FACC017F307EC002D260E /* MainTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarVC.h; sourceTree = "<group>"; };
 		A66FACC117F307EC002D260E /* MainTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarVC.m; sourceTree = "<group>"; };
+		A66FACC317F4A5A3002D260E /* RelativeDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RelativeDetailsVC.h; path = Classes/RelativeDetailsVC.h; sourceTree = "<group>"; };
+		A66FACC417F4A5A3002D260E /* RelativeDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RelativeDetailsVC.m; path = Classes/RelativeDetailsVC.m; sourceTree = "<group>"; };
+		A66FACC617F4B653002D260E /* Generic_Person_0614_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Generic_Person_0614_128x128.png; path = pedigree/Generic_Person_0614_128x128.png; sourceTree = "<group>"; };
+		A6778BB11815ADF200962394 /* RelativeDetailsTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelativeDetailsTableVC.h; sourceTree = "<group>"; };
+		A6778BB21815ADF200962394 /* RelativeDetailsTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelativeDetailsTableVC.m; sourceTree = "<group>"; };
 		A67D37A116FA4792005C9987 /* 79-medical-bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "79-medical-bag.png"; sourceTree = "<group>"; };
 		A67D37A316FA47E9005C9987 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		A67D37A516FA4899005C9987 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 		A657DD9016F747F200F3CA8E = {
 			isa = PBXGroup;
 			children = (
+				A66FACC617F4B653002D260E /* Generic_Person_0614_128x128.png */,
 				A657DDA216F747F200F3CA8E /* pedigree */,
 				A657DD9B16F747F200F3CA8E /* Frameworks */,
 				A657DD9A16F747F200F3CA8E /* Products */,
@@ -138,26 +147,30 @@
 			children = (
 				A657DDAB16F747F200F3CA8E /* AppDelegate.h */,
 				A657DDAC16F747F200F3CA8E /* AppDelegate.m */,
-				A657DDB416F747F300F3CA8E /* MainStoryboard.storyboard */,
-				A657DDA316F747F200F3CA8E /* Supporting Files */,
-				A67D37AB16FB30F5005C9987 /* RelativesTableVC.h */,
-				A67D37AC16FB30F5005C9987 /* RelativesTableVC.m */,
 				A67D37B116FB3CCA005C9987 /* AppManager.h */,
 				A67D37B216FB3CCA005C9987 /* AppManager.m */,
+				A694BECE17F2177A006B2B43 /* ContractedDisease.h */,
+				A694BECF17F2177A006B2B43 /* ContractedDisease.m */,
 				A67D37B416FB3D78005C9987 /* Debug.h */,
 				A67D37B516FB3DBF005C9987 /* FamilyTree.h */,
 				A67D37B616FB3DBF005C9987 /* FamilyTree.m */,
-				A656EB6217F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld */,
-				A694BED117F2177A006B2B43 /* Relative.h */,
-				A694BED217F2177A006B2B43 /* Relative.m */,
-				A694BECE17F2177A006B2B43 /* ContractedDisease.h */,
-				A694BECF17F2177A006B2B43 /* ContractedDisease.m */,
-				A694BECB17F2177A006B2B43 /* Person.h */,
-				A694BECC17F2177A006B2B43 /* Person.m */,
-				A694BEC817F2177A006B2B43 /* Myself.h */,
-				A694BEC917F2177A006B2B43 /* Myself.m */,
+				A657DDB416F747F300F3CA8E /* MainStoryboard.storyboard */,
 				A66FACC017F307EC002D260E /* MainTabBarVC.h */,
 				A66FACC117F307EC002D260E /* MainTabBarVC.m */,
+				A694BEC817F2177A006B2B43 /* Myself.h */,
+				A694BEC917F2177A006B2B43 /* Myself.m */,
+				A656EB6217F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld */,
+				A694BECB17F2177A006B2B43 /* Person.h */,
+				A694BECC17F2177A006B2B43 /* Person.m */,
+				A694BED117F2177A006B2B43 /* Relative.h */,
+				A694BED217F2177A006B2B43 /* Relative.m */,
+				A6778BB11815ADF200962394 /* RelativeDetailsTableVC.h */,
+				A6778BB21815ADF200962394 /* RelativeDetailsTableVC.m */,
+				A66FACC317F4A5A3002D260E /* RelativeDetailsVC.h */,
+				A66FACC417F4A5A3002D260E /* RelativeDetailsVC.m */,
+				A67D37AB16FB30F5005C9987 /* RelativesTableVC.h */,
+				A67D37AC16FB30F5005C9987 /* RelativesTableVC.m */,
+				A657DDA316F747F200F3CA8E /* Supporting Files */,
 			);
 			path = pedigree;
 			sourceTree = "<group>";
@@ -236,6 +249,7 @@
 				A67D37A216FA4792005C9987 /* 79-medical-bag.png in Resources */,
 				A67D37A416FA47E9005C9987 /* 112-group.png in Resources */,
 				A67D37A616FA4899005C9987 /* 19-gear.png in Resources */,
+				A66FACC717F4B653002D260E /* Generic_Person_0614_128x128.png in Resources */,
 				A67D37A816FA4B26005C9987 /* 83-calendar.png in Resources */,
 				A67D37AA16FA4B79005C9987 /* 108-badge.png in Resources */,
 				A60652EC16FC9E0E002E5616 /* 111-user.png in Resources */,
@@ -253,7 +267,9 @@
 				A657DDAD16F747F200F3CA8E /* AppDelegate.m in Sources */,
 				A67D37AD16FB30F5005C9987 /* RelativesTableVC.m in Sources */,
 				A694BECA17F2177A006B2B43 /* Myself.m in Sources */,
+				A6778BB31815ADF200962394 /* RelativeDetailsTableVC.m in Sources */,
 				A656EB6417F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld in Sources */,
+				A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */,
 				A694BED017F2177A006B2B43 /* ContractedDisease.m in Sources */,
 				A694BECD17F2177A006B2B43 /* Person.m in Sources */,
 				A694BED317F2177A006B2B43 /* Relative.m in Sources */,

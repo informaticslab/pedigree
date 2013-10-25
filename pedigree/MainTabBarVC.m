@@ -42,6 +42,7 @@
     Relative *newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
     newRelative.lastName = @"Smithereen";
     newRelative.firstName = @"John";
+    newRelative.relationDescription = @"Father";
     
     NSError *error = nil;
     [APP_MGR.managedObjectContext save:&error];

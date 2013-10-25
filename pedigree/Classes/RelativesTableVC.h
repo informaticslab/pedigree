@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Relative.h"
 
-@interface RelativesTableVC : UITableViewController
+@interface RelativesTableVC : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSArray *people;
+@property (nonatomic, strong) NSArray *relatives;
 @end
