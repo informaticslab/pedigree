@@ -23,7 +23,7 @@
 		A66FACC217F307EC002D260E /* MainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FACC117F307EC002D260E /* MainTabBarVC.m */; };
 		A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FACC417F4A5A3002D260E /* RelativeDetailsVC.m */; };
 		A66FACC717F4B653002D260E /* Generic_Person_0614_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = A66FACC617F4B653002D260E /* Generic_Person_0614_128x128.png */; };
-		A6778BB31815ADF200962394 /* RelativeDetailsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6778BB21815ADF200962394 /* RelativeDetailsTableVC.m */; };
+		A6778BB31815ADF200962394 /* PersonalInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6778BB21815ADF200962394 /* PersonalInfoTVC.m */; };
 		A67D37A216FA4792005C9987 /* 79-medical-bag.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A116FA4792005C9987 /* 79-medical-bag.png */; };
 		A67D37A416FA47E9005C9987 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A316FA47E9005C9987 /* 112-group.png */; };
 		A67D37A616FA4899005C9987 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A516FA4899005C9987 /* 19-gear.png */; };
@@ -36,6 +36,9 @@
 		A694BECD17F2177A006B2B43 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A694BECC17F2177A006B2B43 /* Person.m */; };
 		A694BED017F2177A006B2B43 /* ContractedDisease.m in Sources */ = {isa = PBXBuildFile; fileRef = A694BECF17F2177A006B2B43 /* ContractedDisease.m */; };
 		A694BED317F2177A006B2B43 /* Relative.m in Sources */ = {isa = PBXBuildFile; fileRef = A694BED217F2177A006B2B43 /* Relative.m */; };
+		A6A66169181FF45D00E94505 /* SelectRelationshipVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A66168181FF45D00E94505 /* SelectRelationshipVC.m */; };
+		A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */; };
+		A6F53759181F7925006D56EF /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F53758181F7925006D56EF /* HealthInfoTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +64,8 @@
 		A66FACC317F4A5A3002D260E /* RelativeDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RelativeDetailsVC.h; path = Classes/RelativeDetailsVC.h; sourceTree = "<group>"; };
 		A66FACC417F4A5A3002D260E /* RelativeDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RelativeDetailsVC.m; path = Classes/RelativeDetailsVC.m; sourceTree = "<group>"; };
 		A66FACC617F4B653002D260E /* Generic_Person_0614_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Generic_Person_0614_128x128.png; path = pedigree/Generic_Person_0614_128x128.png; sourceTree = "<group>"; };
-		A6778BB11815ADF200962394 /* RelativeDetailsTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelativeDetailsTableVC.h; sourceTree = "<group>"; };
-		A6778BB21815ADF200962394 /* RelativeDetailsTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelativeDetailsTableVC.m; sourceTree = "<group>"; };
+		A6778BB11815ADF200962394 /* PersonalInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTVC.h; sourceTree = "<group>"; };
+		A6778BB21815ADF200962394 /* PersonalInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTVC.m; sourceTree = "<group>"; };
 		A67D37A116FA4792005C9987 /* 79-medical-bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "79-medical-bag.png"; sourceTree = "<group>"; };
 		A67D37A316FA47E9005C9987 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		A67D37A516FA4899005C9987 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
@@ -83,6 +86,12 @@
 		A694BECF17F2177A006B2B43 /* ContractedDisease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractedDisease.m; sourceTree = "<group>"; };
 		A694BED117F2177A006B2B43 /* Relative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relative.h; sourceTree = "<group>"; };
 		A694BED217F2177A006B2B43 /* Relative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relative.m; sourceTree = "<group>"; };
+		A6A66167181FF45D00E94505 /* SelectRelationshipVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRelationshipVC.h; sourceTree = "<group>"; };
+		A6A66168181FF45D00E94505 /* SelectRelationshipVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRelationshipVC.m; sourceTree = "<group>"; };
+		A6A6616A181FFD5400E94505 /* SelectBirthdateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectBirthdateVC.h; path = Classes/SelectBirthdateVC.h; sourceTree = "<group>"; };
+		A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectBirthdateVC.m; path = Classes/SelectBirthdateVC.m; sourceTree = "<group>"; };
+		A6F53757181F7925006D56EF /* HealthInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoTVC.h; sourceTree = "<group>"; };
+		A6F53758181F7925006D56EF /* HealthInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +163,8 @@
 				A67D37B416FB3D78005C9987 /* Debug.h */,
 				A67D37B516FB3DBF005C9987 /* FamilyTree.h */,
 				A67D37B616FB3DBF005C9987 /* FamilyTree.m */,
+				A6F53757181F7925006D56EF /* HealthInfoTVC.h */,
+				A6F53758181F7925006D56EF /* HealthInfoTVC.m */,
 				A657DDB416F747F300F3CA8E /* MainStoryboard.storyboard */,
 				A66FACC017F307EC002D260E /* MainTabBarVC.h */,
 				A66FACC117F307EC002D260E /* MainTabBarVC.m */,
@@ -162,14 +173,18 @@
 				A656EB6217F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld */,
 				A694BECB17F2177A006B2B43 /* Person.h */,
 				A694BECC17F2177A006B2B43 /* Person.m */,
+				A6778BB11815ADF200962394 /* PersonalInfoTVC.h */,
+				A6778BB21815ADF200962394 /* PersonalInfoTVC.m */,
 				A694BED117F2177A006B2B43 /* Relative.h */,
 				A694BED217F2177A006B2B43 /* Relative.m */,
-				A6778BB11815ADF200962394 /* RelativeDetailsTableVC.h */,
-				A6778BB21815ADF200962394 /* RelativeDetailsTableVC.m */,
 				A66FACC317F4A5A3002D260E /* RelativeDetailsVC.h */,
 				A66FACC417F4A5A3002D260E /* RelativeDetailsVC.m */,
 				A67D37AB16FB30F5005C9987 /* RelativesTableVC.h */,
 				A67D37AC16FB30F5005C9987 /* RelativesTableVC.m */,
+				A6A6616A181FFD5400E94505 /* SelectBirthdateVC.h */,
+				A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */,
+				A6A66167181FF45D00E94505 /* SelectRelationshipVC.h */,
+				A6A66168181FF45D00E94505 /* SelectRelationshipVC.m */,
 				A657DDA316F747F200F3CA8E /* Supporting Files */,
 			);
 			path = pedigree;
@@ -263,11 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A66169181FF45D00E94505 /* SelectRelationshipVC.m in Sources */,
+				A6F53759181F7925006D56EF /* HealthInfoTVC.m in Sources */,
 				A657DDA916F747F200F3CA8E /* main.m in Sources */,
 				A657DDAD16F747F200F3CA8E /* AppDelegate.m in Sources */,
 				A67D37AD16FB30F5005C9987 /* RelativesTableVC.m in Sources */,
 				A694BECA17F2177A006B2B43 /* Myself.m in Sources */,
-				A6778BB31815ADF200962394 /* RelativeDetailsTableVC.m in Sources */,
+				A6778BB31815ADF200962394 /* PersonalInfoTVC.m in Sources */,
 				A656EB6417F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld in Sources */,
 				A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */,
 				A694BED017F2177A006B2B43 /* ContractedDisease.m in Sources */,
@@ -275,6 +292,7 @@
 				A694BED317F2177A006B2B43 /* Relative.m in Sources */,
 				A66FACC217F307EC002D260E /* MainTabBarVC.m in Sources */,
 				A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */,
+				A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */,
 				A67D37B716FB3DBF005C9987 /* FamilyTree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

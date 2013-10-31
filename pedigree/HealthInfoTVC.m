@@ -1,18 +1,18 @@
 //
-//  RelativeDetailsTableVC.m
+//  HealthInfoVC.m
 //  pedigree
 //
-//  Created by jtq6 on 10/21/13.
+//  Created by jtq6 on 10/29/13.
 //  Copyright (c) 2013 CDC Informatics R&D Lab. All rights reserved.
 //
 
-#import "RelativeDetailsTableVC.h"
+#import "HealthInfoTVC.h"
 
-@interface RelativeDetailsTableVC ()
+@interface HealthInfoTVC ()
 
 @end
 
-@implementation RelativeDetailsTableVC
+@implementation HealthInfoTVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,6 +40,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"HealthCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    cell.textLabel.text = @"Hypertension";
+    cell.detailTextLabel.text = @"Diagnosed at age 62";
+    return cell;
+}
 
 /*
 // Override to support conditional editing of the table view.

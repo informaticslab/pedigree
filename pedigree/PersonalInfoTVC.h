@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Relative.h"
 
-@interface RelativeDetailsTableVC : UITableViewController
+
+@interface PersonalInfoTVC : UITableViewController
+
+
+@property(nonatomic, weak) Relative *relative;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblRelationship;
 @property (weak, nonatomic) IBOutlet UILabel *lblBirthdate;
