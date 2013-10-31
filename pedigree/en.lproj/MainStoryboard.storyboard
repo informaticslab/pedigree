@@ -635,7 +635,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRu-gU-cXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="X3N-DD-8gO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="337" y="-2622"/>
+            <point key="canvasLocation" x="513" y="-2642"/>
         </scene>
         <!--Select BirthdateVC-->
         <scene sceneID="vWE-Wg-heY">
