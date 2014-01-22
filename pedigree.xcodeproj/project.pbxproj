@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A60652EC16FC9E0E002E5616 /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = A60652EB16FC9E0E002E5616 /* 111-user.png */; };
 		A656EB6117F0AFFD00B51323 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656EB6017F0AFFD00B51323 /* CoreData.framework */; };
-		A656EB6417F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A656EB6217F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld */; };
 		A657DD9D16F747F200F3CA8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9C16F747F200F3CA8E /* UIKit.framework */; };
 		A657DD9F16F747F200F3CA8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9E16F747F200F3CA8E /* Foundation.framework */; };
 		A657DDA116F747F200F3CA8E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DDA016F747F200F3CA8E /* CoreGraphics.framework */; };
@@ -39,12 +38,13 @@
 		A6A66169181FF45D00E94505 /* SelectRelationshipVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A66168181FF45D00E94505 /* SelectRelationshipVC.m */; };
 		A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */; };
 		A6F53759181F7925006D56EF /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F53758181F7925006D56EF /* HealthInfoTVC.m */; };
+		AB91F7B618906E7D00A271DA /* PedigreeDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */; };
+		AB91F7B818906F8300A271DA /* Disease-Catalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB91F7B718906F8300A271DA /* Disease-Catalog.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A60652EB16FC9E0E002E5616 /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
 		A656EB6017F0AFFD00B51323 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		A656EB6317F0BECD00B51323 /* PedigreeDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PedigreeDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A657DD9916F747F200F3CA8E /* Family History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657DD9C16F747F200F3CA8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A657DD9E16F747F200F3CA8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +92,8 @@
 		A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectBirthdateVC.m; path = Classes/SelectBirthdateVC.m; sourceTree = "<group>"; };
 		A6F53757181F7925006D56EF /* HealthInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoTVC.h; sourceTree = "<group>"; };
 		A6F53758181F7925006D56EF /* HealthInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoTVC.m; sourceTree = "<group>"; };
+		AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PedigreeDataModel.xcdatamodel; sourceTree = "<group>"; };
+		AB91F7B718906F8300A271DA /* Disease-Catalog.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Disease-Catalog.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		A657DDA216F747F200F3CA8E /* pedigree */ = {
 			isa = PBXGroup;
 			children = (
+				AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */,
 				A657DDAB16F747F200F3CA8E /* AppDelegate.h */,
 				A657DDAC16F747F200F3CA8E /* AppDelegate.m */,
 				A67D37B116FB3CCA005C9987 /* AppManager.h */,
@@ -170,7 +173,6 @@
 				A66FACC117F307EC002D260E /* MainTabBarVC.m */,
 				A694BEC817F2177A006B2B43 /* Myself.h */,
 				A694BEC917F2177A006B2B43 /* Myself.m */,
-				A656EB6217F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld */,
 				A694BECB17F2177A006B2B43 /* Person.h */,
 				A694BECC17F2177A006B2B43 /* Person.m */,
 				A6778BB11815ADF200962394 /* PersonalInfoTVC.h */,
@@ -193,6 +195,7 @@
 		A657DDA316F747F200F3CA8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB91F7B718906F8300A271DA /* Disease-Catalog.plist */,
 				A646BBE416F8DC1E00B197CB /* icons */,
 				A657DDA416F747F200F3CA8E /* pedigree-Info.plist */,
 				A657DDA516F747F200F3CA8E /* InfoPlist.strings */,
@@ -268,6 +271,7 @@
 				A67D37A816FA4B26005C9987 /* 83-calendar.png in Resources */,
 				A67D37AA16FA4B79005C9987 /* 108-badge.png in Resources */,
 				A60652EC16FC9E0E002E5616 /* 111-user.png in Resources */,
+				AB91F7B818906F8300A271DA /* Disease-Catalog.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,8 +288,8 @@
 				A657DDAD16F747F200F3CA8E /* AppDelegate.m in Sources */,
 				A67D37AD16FB30F5005C9987 /* RelativesTableVC.m in Sources */,
 				A694BECA17F2177A006B2B43 /* Myself.m in Sources */,
+				AB91F7B618906E7D00A271DA /* PedigreeDataModel.xcdatamodeld in Sources */,
 				A6778BB31815ADF200962394 /* PersonalInfoTVC.m in Sources */,
-				A656EB6417F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld in Sources */,
 				A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */,
 				A694BED017F2177A006B2B43 /* ContractedDisease.m in Sources */,
 				A694BECD17F2177A006B2B43 /* Person.m in Sources */,
@@ -421,13 +425,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A656EB6217F0BECD00B51323 /* pedigreeDataModel.xcdatamodeld */ = {
+		AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A656EB6317F0BECD00B51323 /* PedigreeDataModel.xcdatamodel */,
+				AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */,
 			);
-			currentVersion = A656EB6317F0BECD00B51323 /* PedigreeDataModel.xcdatamodel */;
-			name = pedigreeDataModel.xcdatamodeld;
+			currentVersion = AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */;
 			path = PedigreeDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
