@@ -1,24 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ContractedDisease" representedClassName="ContractedDisease" syncable="YES">
         <attribute name="ageAtDiagnosis" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="contractedDisease" inverseEntity="Person" syncable="YES"/>
     </entity>
+    <entity name="Ethnicity" syncable="YES">
+        <attribute name="ashkenaziJewish" optional="YES" attributeType="Integer 32" defaultValueString="8" syncable="YES"/>
+        <attribute name="centralAmerican" optional="YES" attributeType="Integer 32" defaultValueString="1" syncable="YES"/>
+        <attribute name="cuban" optional="YES" attributeType="Integer 32" defaultValueString="2" syncable="YES"/>
+        <attribute name="dominican" optional="YES" attributeType="Integer 32" defaultValueString="3" syncable="YES"/>
+        <attribute name="hispanicOrLatino" optional="YES" attributeType="Integer 32" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="mexican" optional="YES" attributeType="Integer 32" defaultValueString="4" syncable="YES"/>
+        <attribute name="notHispanicOrLatino" optional="YES" attributeType="Integer 32" defaultValueString="9" syncable="YES"/>
+        <attribute name="otherHispanic" optional="YES" attributeType="Integer 32" defaultValueString="5" syncable="YES"/>
+        <attribute name="peurtoRican" optional="YES" attributeType="Integer 32" defaultValueString="6" syncable="YES"/>
+        <attribute name="southAmerican" optional="YES" attributeType="Integer 32" defaultValueString="7" syncable="YES"/>
+    </entity>
     <entity name="Myself" representedClassName="Myself" parentEntity="Person" syncable="YES">
         <relationship name="relatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Relative" inverseName="myself" inverseEntity="Relative" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="areParentsRelatedOtherThanMarraige" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="ethnicity" optional="YES" attributeType="Integer 32" defaultValueString="-1" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="isAdopted" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isIdenticalTwin" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isLiving" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isTwin" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="race" optional="YES" attributeType="Integer 32" defaultValueString="-1" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="contractedDisease" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContractedDisease" inverseName="person" inverseEntity="ContractedDisease" syncable="YES"/>
+    </entity>
+    <entity name="Race" syncable="YES">
+        <attribute name="americanIndianOrAlaskanNative" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="asian" optional="YES" attributeType="Integer 32" defaultValueString="1" syncable="YES"/>
+        <attribute name="asianIndian" optional="YES" attributeType="Integer 32" defaultValueString="2" syncable="YES"/>
+        <attribute name="blackOrAfricanAmerican" optional="YES" attributeType="Integer 32" defaultValueString="10" syncable="YES"/>
+        <attribute name="chamorro" optional="YES" attributeType="Integer 32" defaultValueString="12" syncable="YES"/>
+        <attribute name="chinese" optional="YES" attributeType="Integer 32" defaultValueString="3" syncable="YES"/>
+        <attribute name="filipino" optional="YES" attributeType="Integer 32" defaultValueString="4" syncable="YES"/>
+        <attribute name="guamanian" optional="YES" attributeType="Integer 32" defaultValueString="13" syncable="YES"/>
+        <attribute name="japanese" optional="YES" attributeType="Integer 32" defaultValueString="5" syncable="YES"/>
+        <attribute name="korean" optional="YES" attributeType="Integer 32" defaultValueString="6" syncable="YES"/>
+        <attribute name="nativeHawaiian" optional="YES" attributeType="Integer 32" defaultValueString="14" syncable="YES"/>
+        <attribute name="nativeHawaiianOrOtherPacificIslander" optional="YES" attributeType="Integer 32" defaultValueString="11" syncable="YES"/>
+        <attribute name="otherAsian" optional="YES" attributeType="Integer 32" defaultValueString="8" syncable="YES"/>
+        <attribute name="samoan" optional="YES" attributeType="Integer 32" defaultValueString="15" syncable="YES"/>
+        <attribute name="unKnownAsian" optional="YES" attributeType="Integer 32" defaultValueString="9" syncable="YES"/>
+        <attribute name="unknownNativeHawaiianOrOtherPacificIslander" optional="YES" attributeType="Integer 32" defaultValueString="16" syncable="YES"/>
+        <attribute name="vietnamese" optional="YES" attributeType="Integer 32" defaultValueString="7" syncable="YES"/>
+        <attribute name="white" optional="YES" attributeType="Integer 32" defaultValueString="17" syncable="YES"/>
     </entity>
     <entity name="Relative" representedClassName="Relative" parentEntity="Person" syncable="YES">
         <attribute name="relationDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -26,9 +63,11 @@
         <relationship name="myself" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Myself" inverseName="relatives" inverseEntity="Myself" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ContractedDisease" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Myself" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Person" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Relative" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ContractedDisease" positionX="-18" positionY="158" width="128" height="103"/>
+        <element name="Ethnicity" positionX="376" positionY="45" width="128" height="193"/>
+        <element name="Myself" positionX="7" positionY="30" width="128" height="60"/>
+        <element name="Person" positionX="-261" positionY="-129" width="128" height="253"/>
+        <element name="Race" positionX="160" positionY="210" width="128" height="313"/>
+        <element name="Relative" positionX="178" positionY="-189" width="128" height="90"/>
     </elements>
 </model>

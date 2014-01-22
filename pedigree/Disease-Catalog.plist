@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diseases</key>
+	<dict>
+		<key>No known Conditions</key>
+		<array/>
+		<key>Cancer</key>
+		<array>
+			<string>Bone Cancer</string>
+			<string>Brain Cancer</string>
+			<string>Breast Cancer</string>
+			<string>Colon Cancer</string>
+			<string>Esophageal Cancer</string>
+			<string>Gastric Cancer</string>
+			<string>Kidney Cancer</string>
+			<string>Leukemia </string>
+			<string>Liver Cancer</string>
+			<string>Lung Cancer</string>
+			<string>Muscle Cancer</string>
+			<string>Other Cancer</string>
+			<string>Ovarian Cancer</string>
+			<string>Pancreatic Cancer</string>
+			<string>Prostate Cancer</string>
+			<string>Rectal Cancer</string>
+			<string>Skin Cancer</string>
+			<string>Thyroid Cancer</string>
+			<string>Unknown Cancer</string>
+			<string>Uterine Cancer</string>
+		</array>
+		<key>Clotting Disorder</key>
+		<array>
+			<string>Clotting Disorder</string>
+			<string>Deep Vein Thrombosis (DVT)</string>
+			<string>Pulmonary Embolism</string>
+			<string>Unknown Clotting Disorder</string>
+		</array>
+		<key>Dementia/ Alzheimer&apos;s</key>
+		<array/>
+		<key>Diabetes/ Pre-Diabetes/ Metabolic Syndrome</key>
+		<array>
+			<string>Diabetes</string>
+			<string>Gestational Diabetes</string>
+			<string>Impaired Fasting Glucose</string>
+			<string>Impaired Glucose Tolerance</string>
+			<string>Insulin Resistance</string>
+			<string>Maturity Onset Diabetes Mellitus in Young (MODY)</string>
+			<string>Pre-diabetes</string>
+			<string>Type-1 Diabetes</string>
+			<string>Type-2 Diabetes</string>
+			<string>Unknown Diabetes</string>
+		</array>
+		<key>Gastrointestinal Disorder</key>
+		<array>
+			<string>Colon Polyp</string>
+			<string>Crohn&apos;s Disease</string>
+			<string>Familial Adenomatous Polyposis (FAP)</string>
+			<string>Gastrointestinal Disorder</string>
+			<string>Irritable Bowel Syndrome</string>
+			<string>Lynch Syndrome/ Hereditary non-polyposis colon cancer</string>
+			<string>Ulcerative Colitis</string>
+			<string>Unknown Gastrointestinal Disorder</string>
+		</array>
+		<key>Heart Disease</key>
+		<array>
+			<string>Angina</string>
+			<string>Coronary Artery Disease</string>
+			<string>Heart Attack</string>
+			<string>Heart Disease</string>
+			<string>Unknown Heart Disease</string>
+		</array>
+		<key>High Cholesterol</key>
+		<array/>
+		<key>Hypertension</key>
+		<array/>
+		<key>Kidney Disease</key>
+		<array>
+			<string>Cystic Kidney Disease</string>
+			<string>Diabetic Kidney Disease</string>
+			<string>Kidney Disease present from Birth</string>
+			<string>Kidney Nephrosis</string>
+			<string>Nephritis</string>
+			<string>Nephrotic Syndrome</string>
+			<string>Other Kidney Disease</string>
+			<string>Unknown Kidney Disease</string>
+		</array>
+		<key>Lung Disease</key>
+		<array>
+			<string>Asthma</string>
+			<string>COPD</string>
+			<string>Chronic Bronchitis</string>
+			<string>Chronic Lower Respiratory Disease</string>
+			<string>Emphysema</string>
+			<string>Influenze/ Pneumonia</string>
+			<string>Unknown Lung Disease</string>
+		</array>
+		<key>Osteoporosis</key>
+		<array/>
+		<key>Psychological Disorder</key>
+		<array>
+			<string>Anxiety</string>
+			<string>Attention Deficit Disorder - Hyperactivity</string>
+			<string>Autism</string>
+			<string>Bipolar Disorder</string>
+			<string>Dimentia</string>
+			<string>Depression</string>
+			<string>Eating Disorder</string>
+			<string>Mental Disorder</string>
+			<string>Obsessive Compulsive Disorder</string>
+			<string>Panic Disorder</string>
+			<string>Personality Disorder</string>
+			<string>Post Tarumatic Stress Disorder</string>
+			<string>Schizophrenia</string>
+			<string>Social Phobia</string>
+			<string>Unknown Psychological Disorder</string>
+		</array>
+		<key>Septecemia</key>
+		<array/>
+		<key>Stroke/ Brain Attack</key>
+		<array/>
+		<key>Sudden Infant Death Syndrome</key>
+		<array/>
+		<key>Unknown Disease</key>
+		<array/>
+		<key>Other - Add new</key>
+		<array/>
+	</dict>
+</dict>
+</plist>
