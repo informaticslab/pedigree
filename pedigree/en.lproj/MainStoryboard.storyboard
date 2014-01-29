@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="shU-FT-IOO">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
@@ -86,6 +86,7 @@
             <objects>
                 <tabBarController id="shU-FT-IOO" customClass="MainTabBarVC" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="w8g-me-37e">
                         <autoresizingMask key="autoresizingMask"/>
@@ -103,6 +104,148 @@
             </objects>
             <point key="canvasLocation" x="-3187" y="-1433"/>
         </scene>
+        <!--IntroVC - Your Family Health Tree-->
+        <scene sceneID="eoU-yG-9M5">
+            <objects>
+                <viewController id="TPW-ON-pbe" customClass="IntroVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="88H-If-ZaN"/>
+                        <viewControllerLayoutGuide type="bottom" id="S09-d4-rLr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iSM-x7-n8M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyR-I9-K9c">
+                                <rect key="frame" x="149" y="240" width="16" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ1-8Z-RRm">
+                                <rect key="frame" x="35" y="180" width="91" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="you_placeholder">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="you_selected_placeholder"/>
+                                <connections>
+                                    <action selector="viewMyProfile:" destination="TPW-ON-pbe" eventType="touchUpInside" id="pF5-aE-ZMF"/>
+                                    <segue destination="jxy-se-i1i" kind="custom" identifier="showMyProfile" id="cHt-5P-1YQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2H-ft-9F7">
+                                <rect key="frame" x="197" y="180" width="91" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="family_placeholder">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="4so-zX-wki">
+                                <rect key="frame" x="10" y="103" width="43" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start with you or a family member" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evz-E0-rrk">
+                                <rect key="frame" x="61" y="116" width="259" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Your Family Health Tree" id="rVz-g8-Hxp"/>
+                    <connections>
+                        <outlet property="introLbl" destination="Evz-E0-rrk" id="lmP-Mm-YEq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7oZ-em-d3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1697" y="-2944"/>
+        </scene>
+        <!--Person DetailsVC - Your Information-->
+        <scene sceneID="0gI-4j-nKr">
+            <objects>
+                <viewController id="jxy-se-i1i" customClass="PersonDetailsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eDb-uM-epd"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ws-6S-9Q4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H1s-1W-v4P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="First Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Izj-TK-wzg">
+                                <rect key="frame" x="95" y="78" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jxy-se-i1i" id="8gL-85-DZV"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Last Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fut-OO-uY7">
+                                <rect key="frame" x="95" y="114" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jxy-se-i1i" id="JtQ-Df-Vi6"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Generic_Person_0614_128x128" translatesAutoresizingMaskIntoConstraints="NO" id="RDf-3i-p9Y">
+                                <rect key="frame" x="17" y="74" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="84j-Z1-FHn">
+                                <rect key="frame" x="17" y="161" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Personal"/>
+                                    <segment title="Health"/>
+                                    <segment title="Family BG"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segControlValueChange:" destination="jxy-se-i1i" eventType="valueChanged" id="zxN-zK-eA4"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xtD-Bw-e8p">
+                                <rect key="frame" x="20" y="200" width="280" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="ZP5-bz-kQO" kind="embed" identifier="embedPersonalInfoTV" id="T17-pS-byL"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Your Information" id="PCE-CE-oRT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="6sF-oh-tya">
+                            <connections>
+                                <action selector="editPersonalInfo:" destination="jxy-se-i1i" id="ycd-jm-CnV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="vS3-t8-bJy">
+                            <connections>
+                                <segue destination="ZRj-wA-aLJ" kind="push" identifier="showRelativesTV" id="NYz-wg-0Ph"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="personalInfoView" destination="xtD-Bw-e8p" id="Kyh-pF-jsH"/>
+                        <outlet property="txtFirstName" destination="Izj-TK-wzg" id="Ikj-eu-rjq"/>
+                        <outlet property="txtLastName" destination="fut-OO-uY7" id="2jj-OK-RIq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qf7-L9-uq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1274" y="-2944"/>
+        </scene>
         <!--Navigation Controller - Family Tree-->
         <scene sceneID="DAa-ge-ORz">
             <objects>
@@ -119,7 +262,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="ZRj-wA-aLJ" kind="relationship" relationship="rootViewController" id="UFg-iI-EG2"/>
+                        <segue destination="TPW-ON-pbe" kind="relationship" relationship="rootViewController" id="MM2-LM-Qck"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxm-xT-9zM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -144,7 +287,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FamilyMemberCell" textLabel="9vm-Jj-X34" detailTextLabel="IMy-q6-CCK" style="IBUITableViewCellStyleValue2" id="5L7-Lv-LDX">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5L7-Lv-LDX" id="D95-hv-e0s">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -368,8 +511,8 @@
                                 <rect key="frame" x="20" y="155" width="280" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Personal Info"/>
-                                    <segment title="Health Info"/>
+                                    <segment title="Personal"/>
+                                    <segment title="Health"/>
                                 </segments>
                                 <connections>
                                     <action selector="segControlValueChange:" destination="YcJ-n2-hZy" eventType="valueChanged" id="NNn-LR-PZk"/>
@@ -404,7 +547,7 @@
             <objects>
                 <tableViewController id="ZP5-bz-kQO" customClass="PersonalInfoTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PUN-x2-sCT">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="239"/>
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="240"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -750,6 +893,44 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-189" y="-2622"/>
         </scene>
+        <!--Health InfoTVC-->
+        <scene sceneID="Bek-bB-MvP">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hzG-zP-ZER" customClass="HealthInfoTVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fyo-M7-WB0"/>
+                        <viewControllerLayoutGuide type="bottom" id="cib-L9-UhV"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0I1-Bg-bQL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fy7-Py-o7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-587" y="-3496"/>
+        </scene>
+        <!--Family BackgroundTVC-->
+        <scene sceneID="Kmj-cM-bud">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jaw-7X-FNk" customClass="FamilyBackgroundTVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S1j-65-zgc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Srb-yt-gH2"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qc5-wW-384">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0SU-Ng-D0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-678" y="-2869"/>
+        </scene>
     </scenes>
     <resources>
         <image name="108-badge.png" width="21" height="26"/>
@@ -757,11 +938,19 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="19-gear.png" width="26" height="26"/>
         <image name="79-medical-bag.png" width="24" height="20"/>
         <image name="83-calendar.png" width="23" height="25"/>
+        <image name="Generic_Person_0614_128x128" width="128" height="128"/>
         <image name="Generic_Person_0614_128x128.png" width="128" height="128"/>
+        <image name="family_placeholder" width="91" height="140"/>
+        <image name="tree" width="43" height="55"/>
+        <image name="you_placeholder" width="91" height="140"/>
+        <image name="you_selected_placeholder" width="91" height="140"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="T17-pS-byL"/>
+    </inferredMetricsTieBreakers>
 </document>

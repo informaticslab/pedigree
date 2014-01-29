@@ -6,19 +6,21 @@
 //  Copyright (c) 2013 CDC Informatics R&D Lab. All rights reserved.
 //
 
-#import "Person.h"
-
-
 @implementation Person
 
+@dynamic areParentsRelatedOtherThanMarriage;
 @dynamic dateOfBirth;
+@dynamic ethnicity;
 @dynamic firstName;
 @dynamic gender;
+@dynamic height;
 @dynamic isAdopted;
 @dynamic isIdenticalTwin;
 @dynamic isLiving;
 @dynamic isTwin;
 @dynamic lastName;
+@dynamic race;
+@dynamic weight;
 @dynamic contractedDisease;
 
 @end

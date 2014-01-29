@@ -76,6 +76,33 @@ static AppManager *sharedAppManager = nil;
     return fetchedRecords;
 }
 
+-(Person *)getPerson{
+    
+    // initializing NSFetchRequest
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    //Setting Entity to be Queried
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError* error;
+    
+    // Query on managedObjectContext With Generated fetchRequest
+    NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (error) {
+        DebugLog(@"Attempt to fetch Core Data Person entities failed.");
+    }
+    
+    Person *fetchedPerson;
+    // Returning Fetched Person
+    if (fetchedRecords != NULL) {
+        fetchedPerson = [fetchedRecords objectAtIndex:1];
+    }
+    return fetchedPerson;
+   
+}
+
 -(BOOL)isDebugInfoEnabled
 {
     // Get user preference

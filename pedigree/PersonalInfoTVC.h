@@ -12,7 +12,6 @@
 
 @interface PersonalInfoTVC : UITableViewController
 
-
 @property(nonatomic, weak) Relative *relative;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblRelationship;

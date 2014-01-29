@@ -28,5 +28,6 @@
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;
 -(NSArray*)getAllPeople;
+-(Person *)getPerson;
 
 @end

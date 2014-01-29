@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A60652EC16FC9E0E002E5616 /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = A60652EB16FC9E0E002E5616 /* 111-user.png */; };
 		A656EB6117F0AFFD00B51323 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656EB6017F0AFFD00B51323 /* CoreData.framework */; };
 		A657DD9D16F747F200F3CA8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9C16F747F200F3CA8E /* UIKit.framework */; };
 		A657DD9F16F747F200F3CA8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9E16F747F200F3CA8E /* Foundation.framework */; };
@@ -15,19 +14,10 @@
 		A657DDA716F747F200F3CA8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A657DDA516F747F200F3CA8E /* InfoPlist.strings */; };
 		A657DDA916F747F200F3CA8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A657DDA816F747F200F3CA8E /* main.m */; };
 		A657DDAD16F747F200F3CA8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A657DDAC16F747F200F3CA8E /* AppDelegate.m */; };
-		A657DDAF16F747F200F3CA8E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A657DDAE16F747F200F3CA8E /* Default.png */; };
-		A657DDB116F747F300F3CA8E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A657DDB016F747F300F3CA8E /* Default@2x.png */; };
-		A657DDB316F747F300F3CA8E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A657DDB216F747F300F3CA8E /* Default-568h@2x.png */; };
 		A657DDB616F747F300F3CA8E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A657DDB416F747F300F3CA8E /* MainStoryboard.storyboard */; };
 		A66FACC217F307EC002D260E /* MainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FACC117F307EC002D260E /* MainTabBarVC.m */; };
 		A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FACC417F4A5A3002D260E /* RelativeDetailsVC.m */; };
-		A66FACC717F4B653002D260E /* Generic_Person_0614_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = A66FACC617F4B653002D260E /* Generic_Person_0614_128x128.png */; };
 		A6778BB31815ADF200962394 /* PersonalInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6778BB21815ADF200962394 /* PersonalInfoTVC.m */; };
-		A67D37A216FA4792005C9987 /* 79-medical-bag.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A116FA4792005C9987 /* 79-medical-bag.png */; };
-		A67D37A416FA47E9005C9987 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A316FA47E9005C9987 /* 112-group.png */; };
-		A67D37A616FA4899005C9987 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A516FA4899005C9987 /* 19-gear.png */; };
-		A67D37A816FA4B26005C9987 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A716FA4B26005C9987 /* 83-calendar.png */; };
-		A67D37AA16FA4B79005C9987 /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = A67D37A916FA4B79005C9987 /* 108-badge.png */; };
 		A67D37AD16FB30F5005C9987 /* RelativesTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37AC16FB30F5005C9987 /* RelativesTableVC.m */; };
 		A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37B216FB3CCA005C9987 /* AppManager.m */; };
 		A67D37B716FB3DBF005C9987 /* FamilyTree.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37B616FB3DBF005C9987 /* FamilyTree.m */; };
@@ -38,12 +28,17 @@
 		A6A66169181FF45D00E94505 /* SelectRelationshipVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A66168181FF45D00E94505 /* SelectRelationshipVC.m */; };
 		A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */; };
 		A6F53759181F7925006D56EF /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F53758181F7925006D56EF /* HealthInfoTVC.m */; };
+		AB0B8BB218981274000DD190 /* EditPersonalInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B8BB118981274000DD190 /* EditPersonalInfoVC.m */; };
 		AB91F7B618906E7D00A271DA /* PedigreeDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */; };
 		AB91F7B818906F8300A271DA /* Disease-Catalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB91F7B718906F8300A271DA /* Disease-Catalog.plist */; };
+		ABD3C67118917E8100D377F2 /* IntroVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD3C67018917E8100D377F2 /* IntroVC.m */; };
+		ABD3C67A1891C4ED00D377F2 /* PersonDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD3C6791891C4ED00D377F2 /* PersonDetailsVC.m */; };
+		ABD3C67C1892BB0E00D377F2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD3C67B1892BB0E00D377F2 /* Media.xcassets */; };
+		ABD3C67F1892C2F400D377F2 /* UILabel+Boldify.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD3C67E1892C2F400D377F2 /* UILabel+Boldify.m */; };
+		ABD3C6831892E5D300D377F2 /* FamilyBackgroundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD3C6821892E5D300D377F2 /* FamilyBackgroundTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A60652EB16FC9E0E002E5616 /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
 		A656EB6017F0AFFD00B51323 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A657DD9916F747F200F3CA8E /* Family History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657DD9C16F747F200F3CA8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -55,22 +50,13 @@
 		A657DDAA16F747F200F3CA8E /* pedigree-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pedigree-Prefix.pch"; sourceTree = "<group>"; };
 		A657DDAB16F747F200F3CA8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A657DDAC16F747F200F3CA8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A657DDAE16F747F200F3CA8E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		A657DDB016F747F300F3CA8E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		A657DDB216F747F300F3CA8E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A657DDB516F747F300F3CA8E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A66FACC017F307EC002D260E /* MainTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarVC.h; sourceTree = "<group>"; };
 		A66FACC117F307EC002D260E /* MainTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarVC.m; sourceTree = "<group>"; };
 		A66FACC317F4A5A3002D260E /* RelativeDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RelativeDetailsVC.h; path = Classes/RelativeDetailsVC.h; sourceTree = "<group>"; };
 		A66FACC417F4A5A3002D260E /* RelativeDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RelativeDetailsVC.m; path = Classes/RelativeDetailsVC.m; sourceTree = "<group>"; };
-		A66FACC617F4B653002D260E /* Generic_Person_0614_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Generic_Person_0614_128x128.png; path = pedigree/Generic_Person_0614_128x128.png; sourceTree = "<group>"; };
 		A6778BB11815ADF200962394 /* PersonalInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoTVC.h; sourceTree = "<group>"; };
 		A6778BB21815ADF200962394 /* PersonalInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoTVC.m; sourceTree = "<group>"; };
-		A67D37A116FA4792005C9987 /* 79-medical-bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "79-medical-bag.png"; sourceTree = "<group>"; };
-		A67D37A316FA47E9005C9987 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
-		A67D37A516FA4899005C9987 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
-		A67D37A716FA4B26005C9987 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
-		A67D37A916FA4B79005C9987 /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "108-badge.png"; sourceTree = "<group>"; };
 		A67D37AB16FB30F5005C9987 /* RelativesTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RelativesTableVC.h; path = Classes/RelativesTableVC.h; sourceTree = "<group>"; };
 		A67D37AC16FB30F5005C9987 /* RelativesTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RelativesTableVC.m; path = Classes/RelativesTableVC.m; sourceTree = "<group>"; };
 		A67D37B116FB3CCA005C9987 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppManager.h; path = Classes/AppManager.h; sourceTree = "<group>"; };
@@ -92,8 +78,19 @@
 		A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectBirthdateVC.m; path = Classes/SelectBirthdateVC.m; sourceTree = "<group>"; };
 		A6F53757181F7925006D56EF /* HealthInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoTVC.h; sourceTree = "<group>"; };
 		A6F53758181F7925006D56EF /* HealthInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoTVC.m; sourceTree = "<group>"; };
+		AB0B8BB018981274000DD190 /* EditPersonalInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPersonalInfoVC.h; sourceTree = "<group>"; };
+		AB0B8BB118981274000DD190 /* EditPersonalInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPersonalInfoVC.m; sourceTree = "<group>"; };
 		AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PedigreeDataModel.xcdatamodel; sourceTree = "<group>"; };
 		AB91F7B718906F8300A271DA /* Disease-Catalog.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Disease-Catalog.plist"; sourceTree = "<group>"; };
+		ABD3C66F18917E8100D377F2 /* IntroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroVC.h; sourceTree = "<group>"; };
+		ABD3C67018917E8100D377F2 /* IntroVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroVC.m; sourceTree = "<group>"; };
+		ABD3C6781891C4ED00D377F2 /* PersonDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonDetailsVC.h; path = Classes/PersonDetailsVC.h; sourceTree = "<group>"; };
+		ABD3C6791891C4ED00D377F2 /* PersonDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonDetailsVC.m; path = Classes/PersonDetailsVC.m; sourceTree = "<group>"; };
+		ABD3C67B1892BB0E00D377F2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		ABD3C67D1892C2F400D377F2 /* UILabel+Boldify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+Boldify.h"; path = "Classes/UILabel+Boldify.h"; sourceTree = "<group>"; };
+		ABD3C67E1892C2F400D377F2 /* UILabel+Boldify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Boldify.m"; path = "Classes/UILabel+Boldify.m"; sourceTree = "<group>"; };
+		ABD3C6811892E5D300D377F2 /* FamilyBackgroundTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyBackgroundTVC.h; sourceTree = "<group>"; };
+		ABD3C6821892E5D300D377F2 /* FamilyBackgroundTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyBackgroundTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,23 +108,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A646BBE416F8DC1E00B197CB /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				A60652EB16FC9E0E002E5616 /* 111-user.png */,
-				A67D37A916FA4B79005C9987 /* 108-badge.png */,
-				A67D37A716FA4B26005C9987 /* 83-calendar.png */,
-				A67D37A516FA4899005C9987 /* 19-gear.png */,
-				A67D37A316FA47E9005C9987 /* 112-group.png */,
-				A67D37A116FA4792005C9987 /* 79-medical-bag.png */,
-			);
-			name = icons;
-			sourceTree = "<group>";
-		};
 		A657DD9016F747F200F3CA8E = {
 			isa = PBXGroup;
 			children = (
-				A66FACC617F4B653002D260E /* Generic_Person_0614_128x128.png */,
+				ABD3C67B1892BB0E00D377F2 /* Media.xcassets */,
 				A657DDA216F747F200F3CA8E /* pedigree */,
 				A657DD9B16F747F200F3CA8E /* Frameworks */,
 				A657DD9A16F747F200F3CA8E /* Products */,
@@ -157,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */,
+				ABD3C66F18917E8100D377F2 /* IntroVC.h */,
+				ABD3C67018917E8100D377F2 /* IntroVC.m */,
 				A657DDAB16F747F200F3CA8E /* AppDelegate.h */,
 				A657DDAC16F747F200F3CA8E /* AppDelegate.m */,
 				A67D37B116FB3CCA005C9987 /* AppManager.h */,
@@ -187,6 +173,12 @@
 				A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */,
 				A6A66167181FF45D00E94505 /* SelectRelationshipVC.h */,
 				A6A66168181FF45D00E94505 /* SelectRelationshipVC.m */,
+				ABD3C6781891C4ED00D377F2 /* PersonDetailsVC.h */,
+				ABD3C6791891C4ED00D377F2 /* PersonDetailsVC.m */,
+				ABD3C6811892E5D300D377F2 /* FamilyBackgroundTVC.h */,
+				ABD3C6821892E5D300D377F2 /* FamilyBackgroundTVC.m */,
+				AB0B8BB018981274000DD190 /* EditPersonalInfoVC.h */,
+				AB0B8BB118981274000DD190 /* EditPersonalInfoVC.m */,
 				A657DDA316F747F200F3CA8E /* Supporting Files */,
 			);
 			path = pedigree;
@@ -195,17 +187,23 @@
 		A657DDA316F747F200F3CA8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ABD3C6801892C2FB00D377F2 /* Util */,
 				AB91F7B718906F8300A271DA /* Disease-Catalog.plist */,
-				A646BBE416F8DC1E00B197CB /* icons */,
 				A657DDA416F747F200F3CA8E /* pedigree-Info.plist */,
 				A657DDA516F747F200F3CA8E /* InfoPlist.strings */,
 				A657DDA816F747F200F3CA8E /* main.m */,
 				A657DDAA16F747F200F3CA8E /* pedigree-Prefix.pch */,
-				A657DDAE16F747F200F3CA8E /* Default.png */,
-				A657DDB016F747F300F3CA8E /* Default@2x.png */,
-				A657DDB216F747F300F3CA8E /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABD3C6801892C2FB00D377F2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3C67D1892C2F400D377F2 /* UILabel+Boldify.h */,
+				ABD3C67E1892C2F400D377F2 /* UILabel+Boldify.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +234,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "CDC Informatics R&D Lab";
+				TargetAttributes = {
+					A657DD9816F747F200F3CA8E = {
+						DevelopmentTeam = Z827RBGAJC;
+					};
+				};
 			};
 			buildConfigurationList = A657DD9416F747F200F3CA8E /* Build configuration list for PBXProject "pedigree" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -260,17 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A657DDA716F747F200F3CA8E /* InfoPlist.strings in Resources */,
-				A657DDAF16F747F200F3CA8E /* Default.png in Resources */,
-				A657DDB116F747F300F3CA8E /* Default@2x.png in Resources */,
-				A657DDB316F747F300F3CA8E /* Default-568h@2x.png in Resources */,
 				A657DDB616F747F300F3CA8E /* MainStoryboard.storyboard in Resources */,
-				A67D37A216FA4792005C9987 /* 79-medical-bag.png in Resources */,
-				A67D37A416FA47E9005C9987 /* 112-group.png in Resources */,
-				A67D37A616FA4899005C9987 /* 19-gear.png in Resources */,
-				A66FACC717F4B653002D260E /* Generic_Person_0614_128x128.png in Resources */,
-				A67D37A816FA4B26005C9987 /* 83-calendar.png in Resources */,
-				A67D37AA16FA4B79005C9987 /* 108-badge.png in Resources */,
-				A60652EC16FC9E0E002E5616 /* 111-user.png in Resources */,
+				ABD3C67C1892BB0E00D377F2 /* Media.xcassets in Resources */,
 				AB91F7B818906F8300A271DA /* Disease-Catalog.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +279,7 @@
 				A6A66169181FF45D00E94505 /* SelectRelationshipVC.m in Sources */,
 				A6F53759181F7925006D56EF /* HealthInfoTVC.m in Sources */,
 				A657DDA916F747F200F3CA8E /* main.m in Sources */,
+				ABD3C6831892E5D300D377F2 /* FamilyBackgroundTVC.m in Sources */,
 				A657DDAD16F747F200F3CA8E /* AppDelegate.m in Sources */,
 				A67D37AD16FB30F5005C9987 /* RelativesTableVC.m in Sources */,
 				A694BECA17F2177A006B2B43 /* Myself.m in Sources */,
@@ -292,10 +287,14 @@
 				A6778BB31815ADF200962394 /* PersonalInfoTVC.m in Sources */,
 				A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */,
 				A694BED017F2177A006B2B43 /* ContractedDisease.m in Sources */,
+				ABD3C67A1891C4ED00D377F2 /* PersonDetailsVC.m in Sources */,
 				A694BECD17F2177A006B2B43 /* Person.m in Sources */,
+				AB0B8BB218981274000DD190 /* EditPersonalInfoVC.m in Sources */,
 				A694BED317F2177A006B2B43 /* Relative.m in Sources */,
 				A66FACC217F307EC002D260E /* MainTabBarVC.m in Sources */,
 				A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */,
+				ABD3C67118917E8100D377F2 /* IntroVC.m in Sources */,
+				ABD3C67F1892C2F400D377F2 /* UILabel+Boldify.m in Sources */,
 				A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */,
 				A67D37B716FB3DBF005C9987 /* FamilyTree.m in Sources */,
 			);
@@ -382,10 +381,16 @@
 		A657DDBD16F747F300F3CA8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pedigree/pedigree-Prefix.pch";
 				INFOPLIST_FILE = "pedigree/pedigree-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Family History";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,10 +398,16 @@
 		A657DDBE16F747F300F3CA8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pedigree/pedigree-Prefix.pch";
 				INFOPLIST_FILE = "pedigree/pedigree-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Family History";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

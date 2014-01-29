@@ -31,8 +31,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _lblRelationship.text = _relative.relationDescription;
-
+  //  _lblRelationship.text = _relative.relationDescription;
+    _lblRelationship.text = @"Me";
+   
 }
 
 - (void)didReceiveMemoryWarning

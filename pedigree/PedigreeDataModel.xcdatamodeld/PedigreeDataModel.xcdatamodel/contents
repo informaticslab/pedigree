@@ -63,11 +63,11 @@
         <relationship name="myself" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Myself" inverseName="relatives" inverseEntity="Myself" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ContractedDisease" positionX="-18" positionY="158" width="128" height="103"/>
-        <element name="Ethnicity" positionX="376" positionY="45" width="128" height="193"/>
-        <element name="Myself" positionX="7" positionY="30" width="128" height="60"/>
-        <element name="Person" positionX="-261" positionY="-129" width="128" height="253"/>
-        <element name="Race" positionX="160" positionY="210" width="128" height="313"/>
-        <element name="Relative" positionX="178" positionY="-189" width="128" height="90"/>
+        <element name="ContractedDisease" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Ethnicity" positionX="-20" positionY="-1437" width="128" height="195"/>
+        <element name="Myself" positionX="-396" positionY="-207" width="128" height="60"/>
+        <element name="Person" positionX="-191" positionY="-327" width="128" height="253"/>
+        <element name="Race" positionX="-9" positionY="-486" width="128" height="315"/>
+        <element name="Relative" positionX="-324" positionY="-0" width="128" height="90"/>
     </elements>
 </model>
