@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ContractedDisease" representedClassName="ContractedDisease" syncable="YES">
         <attribute name="ageAtDiagnosis" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
@@ -63,11 +63,11 @@
         <relationship name="myself" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Myself" inverseName="relatives" inverseEntity="Myself" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ContractedDisease" positionX="0" positionY="0" width="128" height="105"/>
-        <element name="Ethnicity" positionX="-20" positionY="-1437" width="128" height="195"/>
-        <element name="Myself" positionX="-396" positionY="-207" width="128" height="60"/>
-        <element name="Person" positionX="-191" positionY="-327" width="128" height="253"/>
-        <element name="Race" positionX="-9" positionY="-486" width="128" height="315"/>
-        <element name="Relative" positionX="-324" positionY="-0" width="128" height="90"/>
+        <element name="ContractedDisease" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Ethnicity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Myself" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Person" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Race" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Relative" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

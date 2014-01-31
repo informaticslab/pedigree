@@ -56,6 +56,7 @@
 		6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiseaseSubCategoryVCViewController.m; sourceTree = "<group>"; };
 		6A2E3B4F189A2E1D0048E4DA /* HealthInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoVC.h; sourceTree = "<group>"; };
 		6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoVC.m; sourceTree = "<group>"; };
+		6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PedigreeDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		A656EB6017F0AFFD00B51323 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A657DD9916F747F200F3CA8E /* Family History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657DD9C16F747F200F3CA8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -473,6 +474,7 @@
 		AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */,
 				AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */,
 			);
 			currentVersion = AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */;
