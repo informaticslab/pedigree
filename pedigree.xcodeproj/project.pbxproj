@@ -62,7 +62,7 @@
 		6A664509189C4FD60017573F /* ParentsRelationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsRelationCell.h; sourceTree = "<group>"; };
 		6A66450A189C4FD60017573F /* ParentsRelationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentsRelationCell.m; sourceTree = "<group>"; };
 		A656EB6017F0AFFD00B51323 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		A657DD9916F747F200F3CA8E /* Family History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A657DD9916F747F200F3CA8E /* FamilyHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657DD9C16F747F200F3CA8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A657DD9E16F747F200F3CA8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A657DDA016F747F200F3CA8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,7 +140,7 @@
 		A657DD9A16F747F200F3CA8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A657DD9916F747F200F3CA8E /* Family History.app */,
+				A657DD9916F747F200F3CA8E /* FamilyHistory.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 			);
 			name = pedigree;
 			productName = pedigree;
-			productReference = A657DD9916F747F200F3CA8E /* Family History.app */;
+			productReference = A657DD9916F747F200F3CA8E /* FamilyHistory.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -426,7 +426,7 @@
 				GCC_PREFIX_HEADER = "pedigree/pedigree-Prefix.pch";
 				INFOPLIST_FILE = "pedigree/pedigree-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Family History";
+				PRODUCT_NAME = FamilyHistory;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -437,13 +437,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pedigree/pedigree-Prefix.pch";
 				INFOPLIST_FILE = "pedigree/pedigree-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Family History";
+				PRODUCT_NAME = FamilyHistory;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
