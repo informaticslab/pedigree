@@ -56,7 +56,7 @@
 		6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiseaseSubCategoryVCViewController.m; sourceTree = "<group>"; };
 		6A2E3B4F189A2E1D0048E4DA /* HealthInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoVC.h; sourceTree = "<group>"; };
 		6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoVC.m; sourceTree = "<group>"; };
-		6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PedigreeDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PedigreeDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		6A664506189C43ED0017573F /* FamilyBackgroundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyBackgroundVC.h; sourceTree = "<group>"; };
 		6A664507189C43ED0017573F /* FamilyBackgroundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyBackgroundVC.m; sourceTree = "<group>"; };
 		6A664509189C4FD60017573F /* ParentsRelationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsRelationCell.h; sourceTree = "<group>"; };
