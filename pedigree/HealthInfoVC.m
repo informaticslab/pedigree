@@ -8,14 +8,19 @@
 
 #import "HealthInfoVC.h"
 #import "DiseasesUtil.h"
+#import "SelectDiseaseVC.h"
 #import "DiseaseSubCategoryVCViewController.h"
 
 @interface HealthInfoVC ()
 
 @property (nonatomic, strong) IBOutlet UIPickerView *diseasePicker;
+@property (nonatomic, strong) IBOutlet UITableView *conditionsTblView;
+@property (nonatomic, strong) NSMutableArray *conditionsArr;
+
 @property (nonatomic, strong) NSArray *mainDiseasesArr;
 @property (nonatomic) NSInteger selectedDiseaseIndex;
 @property (nonatomic, strong) DiseaseSubCategoryVCViewController *diseaseSubCatVC;
+@property (nonatomic, strong) SelectDiseaseVC *diseaseVC;
 
 -(IBAction)addDisease:(id)sender;
 
@@ -45,6 +50,7 @@
     
    [_diseasePicker selectRow:4 inComponent:0 animated:YES];
     
+    _conditionsArr = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -185,7 +191,38 @@ numberOfRowsInComponent:(NSInteger)component
         _diseaseSubCatVC = segue.destinationViewController;
         _diseaseSubCatVC._mainDiseaseId = [NSNumber numberWithInteger:_selectedDiseaseIndex];
     }
+   
+    if([segue.identifier isEqualToString:@"showDiseaseVC"])
+    {
+        _diseaseVC = segue.destinationViewController;
+    }
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [_conditionsArr count] ;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"HealthCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    cell.textLabel.text = @"Hypertension";
+    cell.detailTextLabel.text = @"Diagnosed at age 62";
+    return cell;
+}
+
 
 
 @end

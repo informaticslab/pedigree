@@ -107,14 +107,12 @@ BOOL editMode = NO;
         healthInfoTVC = (HealthInfoTVC *)segue.destinationViewController;
         healthInfoTVC.relative = self.me;
     }
-    if([segue.identifier isEqualToString:@"showRelativesTV"])
+    if([segue.identifier isEqualToString:@"showTabBar"])
     {
-        DebugLog(@"show Relatives");
+        _mainTabBarVC = (MainTabBarVC *)segue.destinationViewController;
         relativesTVC = (RelativesTableVC *)segue.destinationViewController;
         //relativesTVC.relative = self.me;
     }
-
-
 }
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

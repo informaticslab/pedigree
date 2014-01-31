@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HealthInfoVC : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface HealthInfoVC : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource>
 
 @end

@@ -12,8 +12,12 @@
 #import "FamilyTree.h"
 #import "Person.h"
 #import "RelativeDetailsVC.h"
+#import "PersonDetailsVC.h"
 
 @interface RelativesTableVC ()
+
+@property (nonatomic, weak) Relative *me;
+@property (nonatomic, strong) PersonDetailsVC *personDetailsVC;
 
 @end
 
@@ -140,6 +144,15 @@ Relative *currRelative;
         relativeDetailsVC.relative = currRelative;
         
     }
+    if([segue.identifier isEqualToString:@"showPersonDetailsSegue"])
+    {
+        _personDetailsVC = (PersonDetailsVC *)segue.destinationViewController;
+        _personDetailsVC.me = _me;
+        
+    }
 }
+
+
+
 
 @end

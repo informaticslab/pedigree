@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainTabBarVC.h"
 
 @interface PersonDetailsVC : UIViewController<UITextFieldDelegate>
 
 @property(nonatomic, weak) Relative *me;
-
+@property(nonatomic, strong) MainTabBarVC *mainTabBarVC;
 @end
