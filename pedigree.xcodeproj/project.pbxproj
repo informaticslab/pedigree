@@ -57,7 +57,7 @@
 		6A2E3B4F189A2E1D0048E4DA /* HealthInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoVC.h; sourceTree = "<group>"; };
 		6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoVC.m; sourceTree = "<group>"; };
 		A656EB6017F0AFFD00B51323 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		A657DD9916F747F200F3CA8E /* Family History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A657DD9916F747F200F3CA8E /* FamilyHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657DD9C16F747F200F3CA8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A657DD9E16F747F200F3CA8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A657DDA016F747F200F3CA8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,7 +138,7 @@
 		A657DD9A16F747F200F3CA8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A657DD9916F747F200F3CA8E /* Family History.app */,
+				A657DD9916F747F200F3CA8E /* FamilyHistory.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 			);
 			name = pedigree;
 			productName = pedigree;
-			productReference = A657DD9916F747F200F3CA8E /* Family History.app */;
+			productReference = A657DD9916F747F200F3CA8E /* FamilyHistory.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
