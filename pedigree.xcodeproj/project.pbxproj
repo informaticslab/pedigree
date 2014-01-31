@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A2E3B4118998BE70048E4DA /* HealthInfoNewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B4018998BE70048E4DA /* HealthInfoNewVC.m */; };
+		6A2E3B441899AC000048E4DA /* SelectDiseaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B431899AC000048E4DA /* SelectDiseaseVC.m */; };
+		6A2E3B471899AD680048E4DA /* DiseasesUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B461899AD680048E4DA /* DiseasesUtil.m */; };
+		6A2E3B4B189A11D20048E4DA /* Diseases_Catalog_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A2E3B4A189A11D20048E4DA /* Diseases_Catalog_2.plist */; };
+		6A2E3B4E189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */; };
+		6A2E3B51189A2E1D0048E4DA /* HealthInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */; };
 		A656EB6117F0AFFD00B51323 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656EB6017F0AFFD00B51323 /* CoreData.framework */; };
 		A657DD9D16F747F200F3CA8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9C16F747F200F3CA8E /* UIKit.framework */; };
 		A657DD9F16F747F200F3CA8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9E16F747F200F3CA8E /* Foundation.framework */; };
@@ -39,6 +45,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A2E3B3F18998BE70048E4DA /* HealthInfoNewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoNewVC.h; sourceTree = "<group>"; };
+		6A2E3B4018998BE70048E4DA /* HealthInfoNewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoNewVC.m; sourceTree = "<group>"; };
+		6A2E3B421899AC000048E4DA /* SelectDiseaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDiseaseVC.h; sourceTree = "<group>"; };
+		6A2E3B431899AC000048E4DA /* SelectDiseaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDiseaseVC.m; sourceTree = "<group>"; };
+		6A2E3B451899AD680048E4DA /* DiseasesUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiseasesUtil.h; sourceTree = "<group>"; };
+		6A2E3B461899AD680048E4DA /* DiseasesUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiseasesUtil.m; sourceTree = "<group>"; };
+		6A2E3B4A189A11D20048E4DA /* Diseases_Catalog_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Diseases_Catalog_2.plist; sourceTree = "<group>"; };
+		6A2E3B4C189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiseaseSubCategoryVCViewController.h; sourceTree = "<group>"; };
+		6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiseaseSubCategoryVCViewController.m; sourceTree = "<group>"; };
+		6A2E3B4F189A2E1D0048E4DA /* HealthInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoVC.h; sourceTree = "<group>"; };
+		6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoVC.m; sourceTree = "<group>"; };
 		A656EB6017F0AFFD00B51323 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A657DD9916F747F200F3CA8E /* Family History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657DD9C16F747F200F3CA8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -179,6 +196,14 @@
 				ABD3C6821892E5D300D377F2 /* FamilyBackgroundTVC.m */,
 				AB0B8BB018981274000DD190 /* EditPersonalInfoVC.h */,
 				AB0B8BB118981274000DD190 /* EditPersonalInfoVC.m */,
+				6A2E3B3F18998BE70048E4DA /* HealthInfoNewVC.h */,
+				6A2E3B4018998BE70048E4DA /* HealthInfoNewVC.m */,
+				6A2E3B421899AC000048E4DA /* SelectDiseaseVC.h */,
+				6A2E3B431899AC000048E4DA /* SelectDiseaseVC.m */,
+				6A2E3B4C189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.h */,
+				6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */,
+				6A2E3B4F189A2E1D0048E4DA /* HealthInfoVC.h */,
+				6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */,
 				A657DDA316F747F200F3CA8E /* Supporting Files */,
 			);
 			path = pedigree;
@@ -202,6 +227,9 @@
 			children = (
 				ABD3C67D1892C2F400D377F2 /* UILabel+Boldify.h */,
 				ABD3C67E1892C2F400D377F2 /* UILabel+Boldify.m */,
+				6A2E3B451899AD680048E4DA /* DiseasesUtil.h */,
+				6A2E3B461899AD680048E4DA /* DiseasesUtil.m */,
+				6A2E3B4A189A11D20048E4DA /* Diseases_Catalog_2.plist */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -262,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A2E3B4B189A11D20048E4DA /* Diseases_Catalog_2.plist in Resources */,
 				A657DDA716F747F200F3CA8E /* InfoPlist.strings in Resources */,
 				A657DDB616F747F300F3CA8E /* MainStoryboard.storyboard in Resources */,
 				ABD3C67C1892BB0E00D377F2 /* Media.xcassets in Resources */,
@@ -276,12 +305,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A2E3B51189A2E1D0048E4DA /* HealthInfoVC.m in Sources */,
 				A6A66169181FF45D00E94505 /* SelectRelationshipVC.m in Sources */,
+				6A2E3B4118998BE70048E4DA /* HealthInfoNewVC.m in Sources */,
 				A6F53759181F7925006D56EF /* HealthInfoTVC.m in Sources */,
 				A657DDA916F747F200F3CA8E /* main.m in Sources */,
 				ABD3C6831892E5D300D377F2 /* FamilyBackgroundTVC.m in Sources */,
+				6A2E3B441899AC000048E4DA /* SelectDiseaseVC.m in Sources */,
 				A657DDAD16F747F200F3CA8E /* AppDelegate.m in Sources */,
 				A67D37AD16FB30F5005C9987 /* RelativesTableVC.m in Sources */,
+				6A2E3B471899AD680048E4DA /* DiseasesUtil.m in Sources */,
 				A694BECA17F2177A006B2B43 /* Myself.m in Sources */,
 				AB91F7B618906E7D00A271DA /* PedigreeDataModel.xcdatamodeld in Sources */,
 				A6778BB31815ADF200962394 /* PersonalInfoTVC.m in Sources */,
@@ -293,6 +326,7 @@
 				A694BED317F2177A006B2B43 /* Relative.m in Sources */,
 				A66FACC217F307EC002D260E /* MainTabBarVC.m in Sources */,
 				A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */,
+				6A2E3B4E189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m in Sources */,
 				ABD3C67118917E8100D377F2 /* IntroVC.m in Sources */,
 				ABD3C67F1892C2F400D377F2 /* UILabel+Boldify.m in Sources */,
 				A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */,
@@ -347,7 +381,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -371,7 +405,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

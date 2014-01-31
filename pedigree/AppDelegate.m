@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainTabBarVC.h"
 #import "AppManager.h"
+#import "IntroVC.h"
 
 @implementation AppDelegate
 

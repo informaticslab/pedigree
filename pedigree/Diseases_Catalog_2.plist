@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Disease_Number</key>
+		<integer>0</integer>
+		<key>Disease_Name</key>
+		<string>No Known Diseases</string>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Cancer</string>
+		<key>Disease_Number</key>
+		<integer>1</integer>
+		<key>Disease_Sub_Category</key>
+		<array>
+			<string>Bone Cancer</string>
+			<string>Brain Cancer</string>
+			<string>Breast Cancer</string>
+			<string>Colon Cancer</string>
+			<string>Esophageal Cancer</string>
+			<string>Gastric Cancer</string>
+			<string>Kidney Cancer</string>
+			<string>Leukemia</string>
+			<string>Liver Cancer</string>
+			<string>Lung Cancer</string>
+			<string>Muscle cancer</string>
+			<string>Other Cancer</string>
+			<string>Ovarian Cancer</string>
+			<string>Pancreatic Cancer</string>
+			<string>Prostate Cancer</string>
+			<string>Rectal Cancer</string>
+			<string>Skin Cancer</string>
+			<string>Thyroid Cancer</string>
+			<string>Unknown Cancer</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Clotting Disorder</string>
+		<key>Disease_Number</key>
+		<integer>2</integer>
+		<key>Disease_Sub_Category</key>
+		<array>
+			<string>Clotting Disorder</string>
+			<string>Deep Vein Thrombosis (DVT)</string>
+			<string>Pulmonary Embolism</string>
+			<string>Unknown Clotting Disorder</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Dementia/Alzheimers</string>
+		<key>Disease_Number</key>
+		<integer>3</integer>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Diabetes/ Pre-Diabetes/ Metabolic Syndrome</string>
+		<key>Disease_Number</key>
+		<integer>4</integer>
+		<key>Disease_Sub_Category</key>
+		<array>
+			<string>Diabetes</string>
+			<string>Gestational Diabetes</string>
+			<string>Impaired Fasting Glucose</string>
+			<string>Impaired Glucose Tolerance</string>
+			<string>Insulin Resistance</string>
+			<string>Maturity Onset Diabetes Mellitus in Young (MODY)</string>
+			<string>Pre-diabetes</string>
+			<string>Type-1 Diabetes</string>
+			<string>Type-2 Diabetes</string>
+			<string>Unknown Diabetes</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Gastrointestinal Disorder</string>
+		<key>Disease_Number</key>
+		<integer>5</integer>
+		<key>Disease_Sub_category</key>
+		<array>
+			<string>Colon Polyp</string>
+			<string>Crohn&apos;s Disease</string>
+			<string>Familial Adenomatous Polyposis (FAP)</string>
+			<string>Gastrointestinal Disorder</string>
+			<string>Irritable Bowel Syndrome</string>
+			<string>Lynch Syndrome/ Hereditary non-polyposis colon cancer</string>
+			<string>Ulcerative Colitis</string>
+			<string>Unknown Gastrointestinal Disorder</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Heart Disease</string>
+		<key>Disease_Number</key>
+		<integer>6</integer>
+		<key>Disease_Sub_Category</key>
+		<array>
+			<string>Angina</string>
+			<string>Coronary Artery Disease</string>
+			<string>Heart Attack</string>
+			<string>Heart Disease</string>
+			<string>Unknown Heart Disease</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>High Cholesterol</string>
+		<key>Disease_Number</key>
+		<integer>7</integer>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Hypertension</string>
+		<key>Disease_Number</key>
+		<integer>8</integer>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Kidney Disease</string>
+		<key>Disease_Number</key>
+		<integer>9</integer>
+		<key>Disease_Sub_Category</key>
+		<array>
+			<string>Cystic Kidney Disease</string>
+			<string>Diabetic Kidney Disease</string>
+			<string>Kidney Disease present from Birth</string>
+			<string>Kidney Nephrosis</string>
+			<string>Nephritis</string>
+			<string>Nephrotic Syndrome</string>
+			<string>Other Kidney Disease</string>
+			<string>Unknown Kidney Disease</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Lung Disease</string>
+		<key>Disease_Number</key>
+		<integer>10</integer>
+		<key>Disease_Sub_Category</key>
+		<array>
+			<string>Asthma</string>
+			<string>COPD</string>
+			<string>Chronic Bronchitis</string>
+			<string>Chronic Lower Respiratory Disease</string>
+			<string>Emphysema</string>
+			<string>Influenze/ Pneumonia</string>
+			<string>Unknown Lung Disease</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Osteoporosis</string>
+		<key>Disease_Number</key>
+		<integer>11</integer>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Psychological Disorder</string>
+		<key>Disease_Number</key>
+		<integer>12</integer>
+		<key>Disease_Sub_Category</key>
+		<array>
+			<string>Anxiety</string>
+			<string>Attention Deficit Disorder - Hyperactivity</string>
+			<string>Autism</string>
+			<string>Bipolar Disorder</string>
+			<string>Dimentia</string>
+			<string>Depression</string>
+			<string>Eating Disorder</string>
+			<string>Mental Disorder</string>
+			<string>Obsessive Compulsive Disorder</string>
+			<string>Panic Disorder</string>
+			<string>Personality Disorder</string>
+			<string>Post Tarumatic Stress Disorder</string>
+			<string>Schizophrenia</string>
+			<string>Social Phobia</string>
+			<string>Unknown Psychological Disorder</string>
+		</array>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Septecemia</string>
+		<key>Disease_Number</key>
+		<integer>13</integer>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Stroke/ Brain Attack</string>
+		<key>Disease_Number</key>
+		<integer>14</integer>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Sudden Infant Death Syndrome</string>
+		<key>Disease_Number</key>
+		<integer>15</integer>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Unknown Disease</string>
+		<key>Disease_Number</key>
+		<integer>16</integer>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>Disease_Name</key>
+		<string>Other-Add New</string>
+		<key>Disease_Number</key>
+		<integer>17</integer>
+		<key>Disease_Sub_Category</key>
+		<array/>
+	</dict>
+</array>
+</plist>

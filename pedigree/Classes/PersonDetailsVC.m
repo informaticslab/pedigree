@@ -52,6 +52,13 @@ BOOL editMode = NO;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
+    [self.txtFirstName setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+    [self.txtLastName setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+    
+    _segControl.selectedSegmentIndex = 0;
+    self.personalInfoView.hidden = NO;
+    self.healthInfoView.hidden = YES;
+    self.familyBackgroundView.hidden = YES;
     
 }
 
@@ -90,6 +97,11 @@ BOOL editMode = NO;
         personalInfoTVC = (PersonalInfoTVC *)segue.destinationViewController;
         personalInfoTVC.relative = self.me;
     }
+  /*  if([segue.identifier isEqualToString:@"embedHealthInfoTV"])
+    {
+        healthInfoTVC = (HealthInfoTVC *)segue.destinationViewController;
+        healthInfoTVC.relative = self.me;
+    }*/
     if([segue.identifier isEqualToString:@"embedHealthInfoTV"])
     {
         healthInfoTVC = (HealthInfoTVC *)segue.destinationViewController;
@@ -108,6 +120,11 @@ BOOL editMode = NO;
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 /*

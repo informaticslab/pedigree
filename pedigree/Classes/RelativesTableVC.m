@@ -34,7 +34,8 @@ Relative *currRelative;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.navigationItem.hidesBackButton = YES;
+
     // load application manager
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
@@ -123,9 +124,11 @@ Relative *currRelative;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
+  /*temporarily disabling...until the next view is cleaned 
+   // Navigation logic may go here. Create and push another view controller.
     // [self.navigationController pushViewController:detailViewController animated:YES];
      [self performSegueWithIdentifier:@"showRelativeDetailsSegue" sender:nil];
+   */
 
 }
 
