@@ -54,10 +54,6 @@
                       @"Stroke/ Brain Attack", @"Sudden Infant Death Syndrome", @"Unknown Disease", @"Other-Add New"];
     [_diseasePicker selectRow:4 inComponent:0 animated:YES];
     
-  /*  NSString* path = [[NSBundle mainBundle] pathForResource:@"Diseases_Catalog_2" ofType:@"plist"];
-    NSArray* arr = [NSArray arrayWithContentsOfFile:path];
-   */
-    
     _ageGroupArr = [[NSArray alloc] initWithObjects:
                     @"Pre-Birth",@"Newborn",@"In Infancy",@"In Childhood",@"In Adolescence", @"20-29 years", @"30-39 years", @"40-49 years", @"50-59 years", @"60 years and older", @"Unknown",nil];
 

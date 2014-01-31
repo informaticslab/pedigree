@@ -10,8 +10,8 @@
 #import "Person.h"
 #import "PersonalInfoTVC.h"
 #import "HealthInfoTVC.h"
-#import "FamilyBackgroundTVC.h"
 #import "RelativesTableVC.h"
+#import "FamilyBackgroundVC.h"
 
 @interface PersonDetailsVC ()
 
@@ -30,7 +30,7 @@
 
 PersonalInfoTVC *personalInfoTVC;
 HealthInfoTVC *healthInfoTVC;
-FamilyBackgroundTVC *familyBackgroundTVC;
+FamilyBackgroundVC *familyBackgroundVC;
 
 RelativesTableVC *relativesTVC;
 
@@ -97,15 +97,15 @@ BOOL editMode = NO;
         personalInfoTVC = (PersonalInfoTVC *)segue.destinationViewController;
         personalInfoTVC.relative = self.me;
     }
-  /*  if([segue.identifier isEqualToString:@"embedHealthInfoTV"])
-    {
-        healthInfoTVC = (HealthInfoTVC *)segue.destinationViewController;
-        healthInfoTVC.relative = self.me;
-    }*/
     if([segue.identifier isEqualToString:@"embedHealthInfoTV"])
     {
         healthInfoTVC = (HealthInfoTVC *)segue.destinationViewController;
         healthInfoTVC.relative = self.me;
+    }
+    if([segue.identifier isEqualToString:@"embedFamilyInfoVC"])
+    {
+        familyBackgroundVC = (FamilyBackgroundVC *)segue.destinationViewController;
+        familyBackgroundVC.relative = self.me;
     }
     if([segue.identifier isEqualToString:@"showTabBar"])
     {

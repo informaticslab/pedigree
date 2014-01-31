@@ -10,28 +10,6 @@
 
 @interface DiseasesUtil : NSObject
 
-/*typedef enum Diseases : int32_t {
-    kNoKnownConditions = 0,
-    kCancer = 1,
-    kClottingDisorder = 2,
-    kDementiaAlzheimers = 3,
-    kDiabetes = 4,
-    kGastro = 5,
-    kHeart = 6,
-    kHighCholesterol = 7,
-    kHyperTension = 8,
-    kKidney = 9,
-    kLung = 10,
-    kOsteoporosis = 11,
-    kPsychologicalDisorder = 12,
-    kSepticemia = 13,
-    kStrokeBrainAttack = 14,
-    kSuddenInfantDeathSyndrome = 15,
-    kUnknownDisease = 16,
-    kOtherAddNew = 17
-}Diseases;
- */
-
 typedef NS_ENUM(int32_t, Diseases){
     kNoKnownConditions = 0,
     kCancer = 1,
@@ -68,5 +46,8 @@ typedef NS_ENUM(int32_t, AgeAtDiagnosis){
   
 };
 
+@property (nonatomic, strong) NSArray *mainDiseaseCategoryArr;
+@property (nonatomic, strong) NSArray *subDiseaseCategoryArr;
+@property (nonatomic, strong) NSArray *ageGroupArr;
 
 @end
