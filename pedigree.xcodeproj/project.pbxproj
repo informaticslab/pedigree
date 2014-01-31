@@ -36,7 +36,6 @@
 		A6F53759181F7925006D56EF /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F53758181F7925006D56EF /* HealthInfoTVC.m */; };
 		AB0B8BB218981274000DD190 /* EditPersonalInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B8BB118981274000DD190 /* EditPersonalInfoVC.m */; };
 		AB91F7B618906E7D00A271DA /* PedigreeDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */; };
-		AB91F7B818906F8300A271DA /* Disease-Catalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB91F7B718906F8300A271DA /* Disease-Catalog.plist */; };
 		ABD3C67118917E8100D377F2 /* IntroVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD3C67018917E8100D377F2 /* IntroVC.m */; };
 		ABD3C67A1891C4ED00D377F2 /* PersonDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD3C6791891C4ED00D377F2 /* PersonDetailsVC.m */; };
 		ABD3C67C1892BB0E00D377F2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD3C67B1892BB0E00D377F2 /* Media.xcassets */; };
@@ -99,7 +98,6 @@
 		AB0B8BB018981274000DD190 /* EditPersonalInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPersonalInfoVC.h; sourceTree = "<group>"; };
 		AB0B8BB118981274000DD190 /* EditPersonalInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPersonalInfoVC.m; sourceTree = "<group>"; };
 		AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PedigreeDataModel.xcdatamodel; sourceTree = "<group>"; };
-		AB91F7B718906F8300A271DA /* Disease-Catalog.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Disease-Catalog.plist"; sourceTree = "<group>"; };
 		ABD3C66F18917E8100D377F2 /* IntroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroVC.h; sourceTree = "<group>"; };
 		ABD3C67018917E8100D377F2 /* IntroVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroVC.m; sourceTree = "<group>"; };
 		ABD3C6781891C4ED00D377F2 /* PersonDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonDetailsVC.h; path = Classes/PersonDetailsVC.h; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				ABD3C6801892C2FB00D377F2 /* Util */,
-				AB91F7B718906F8300A271DA /* Disease-Catalog.plist */,
 				A657DDA416F747F200F3CA8E /* pedigree-Info.plist */,
 				A657DDA516F747F200F3CA8E /* InfoPlist.strings */,
 				A657DDA816F747F200F3CA8E /* main.m */,
@@ -295,7 +292,6 @@
 				A657DDA716F747F200F3CA8E /* InfoPlist.strings in Resources */,
 				A657DDB616F747F300F3CA8E /* MainStoryboard.storyboard in Resources */,
 				ABD3C67C1892BB0E00D377F2 /* Media.xcassets in Resources */,
-				AB91F7B818906F8300A271DA /* Disease-Catalog.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
