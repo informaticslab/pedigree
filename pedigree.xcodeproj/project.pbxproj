@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A2E3B4118998BE70048E4DA /* HealthInfoNewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B4018998BE70048E4DA /* HealthInfoNewVC.m */; };
+		6A1281F018A2B6BB001259D3 /* ContractedDisease.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1281EF18A2B6BB001259D3 /* ContractedDisease.m */; };
+		6A1281F318A2B6BB001259D3 /* Relative.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1281F218A2B6BB001259D3 /* Relative.m */; };
+		6A1281F618A2B6BB001259D3 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1281F518A2B6BB001259D3 /* Person.m */; };
+		6A1281F918A2B6BB001259D3 /* Myself.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1281F818A2B6BB001259D3 /* Myself.m */; };
+		6A12820218A31C77001259D3 /* SelectRaceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A12820118A31C77001259D3 /* SelectRaceVC.m */; };
+		6A12820518A32B80001259D3 /* RaceEthnicityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A12820418A32B80001259D3 /* RaceEthnicityUtil.m */; };
 		6A2E3B441899AC000048E4DA /* SelectDiseaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B431899AC000048E4DA /* SelectDiseaseVC.m */; };
 		6A2E3B471899AD680048E4DA /* DiseasesUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B461899AD680048E4DA /* DiseasesUtil.m */; };
 		6A2E3B4B189A11D20048E4DA /* Diseases_Catalog_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A2E3B4A189A11D20048E4DA /* Diseases_Catalog_2.plist */; };
 		6A2E3B4E189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */; };
 		6A2E3B51189A2E1D0048E4DA /* HealthInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */; };
-		6A664508189C43ED0017573F /* FamilyBackgroundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A664507189C43ED0017573F /* FamilyBackgroundVC.m */; };
 		6A66450B189C4FD60017573F /* ParentsRelationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A66450A189C4FD60017573F /* ParentsRelationCell.m */; };
+		6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */; };
+		6AB3881318A20A5B0064ADB5 /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */; };
 		A656EB6117F0AFFD00B51323 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656EB6017F0AFFD00B51323 /* CoreData.framework */; };
 		A657DD9D16F747F200F3CA8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9C16F747F200F3CA8E /* UIKit.framework */; };
 		A657DD9F16F747F200F3CA8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A657DD9E16F747F200F3CA8E /* Foundation.framework */; };
@@ -29,13 +35,8 @@
 		A67D37AD16FB30F5005C9987 /* RelativesTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37AC16FB30F5005C9987 /* RelativesTableVC.m */; };
 		A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37B216FB3CCA005C9987 /* AppManager.m */; };
 		A67D37B716FB3DBF005C9987 /* FamilyTree.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D37B616FB3DBF005C9987 /* FamilyTree.m */; };
-		A694BECA17F2177A006B2B43 /* Myself.m in Sources */ = {isa = PBXBuildFile; fileRef = A694BEC917F2177A006B2B43 /* Myself.m */; };
-		A694BECD17F2177A006B2B43 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A694BECC17F2177A006B2B43 /* Person.m */; };
-		A694BED017F2177A006B2B43 /* ContractedDisease.m in Sources */ = {isa = PBXBuildFile; fileRef = A694BECF17F2177A006B2B43 /* ContractedDisease.m */; };
-		A694BED317F2177A006B2B43 /* Relative.m in Sources */ = {isa = PBXBuildFile; fileRef = A694BED217F2177A006B2B43 /* Relative.m */; };
 		A6A66169181FF45D00E94505 /* SelectRelationshipVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A66168181FF45D00E94505 /* SelectRelationshipVC.m */; };
 		A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */; };
-		A6F53759181F7925006D56EF /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F53758181F7925006D56EF /* HealthInfoTVC.m */; };
 		AB0B8BB218981274000DD190 /* EditPersonalInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B8BB118981274000DD190 /* EditPersonalInfoVC.m */; };
 		AB91F7B618906E7D00A271DA /* PedigreeDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */; };
 		ABD3C67118917E8100D377F2 /* IntroVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD3C67018917E8100D377F2 /* IntroVC.m */; };
@@ -45,8 +46,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A2E3B3F18998BE70048E4DA /* HealthInfoNewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoNewVC.h; sourceTree = "<group>"; };
-		6A2E3B4018998BE70048E4DA /* HealthInfoNewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoNewVC.m; sourceTree = "<group>"; };
+		6A1281EE18A2B6BB001259D3 /* ContractedDisease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractedDisease.h; sourceTree = "<group>"; };
+		6A1281EF18A2B6BB001259D3 /* ContractedDisease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractedDisease.m; sourceTree = "<group>"; };
+		6A1281F118A2B6BB001259D3 /* Relative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relative.h; sourceTree = "<group>"; };
+		6A1281F218A2B6BB001259D3 /* Relative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relative.m; sourceTree = "<group>"; };
+		6A1281F418A2B6BB001259D3 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		6A1281F518A2B6BB001259D3 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		6A1281F718A2B6BB001259D3 /* Myself.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myself.h; sourceTree = "<group>"; };
+		6A1281F818A2B6BB001259D3 /* Myself.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myself.m; sourceTree = "<group>"; };
+		6A12820018A31C77001259D3 /* SelectRaceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRaceVC.h; sourceTree = "<group>"; };
+		6A12820118A31C77001259D3 /* SelectRaceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRaceVC.m; sourceTree = "<group>"; };
+		6A12820318A32B80001259D3 /* RaceEthnicityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceEthnicityUtil.h; sourceTree = "<group>"; };
+		6A12820418A32B80001259D3 /* RaceEthnicityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceEthnicityUtil.m; sourceTree = "<group>"; };
 		6A2E3B421899AC000048E4DA /* SelectDiseaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDiseaseVC.h; sourceTree = "<group>"; };
 		6A2E3B431899AC000048E4DA /* SelectDiseaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDiseaseVC.m; sourceTree = "<group>"; };
 		6A2E3B451899AD680048E4DA /* DiseasesUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiseasesUtil.h; sourceTree = "<group>"; };
@@ -56,11 +67,13 @@
 		6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiseaseSubCategoryVCViewController.m; sourceTree = "<group>"; };
 		6A2E3B4F189A2E1D0048E4DA /* HealthInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoVC.h; sourceTree = "<group>"; };
 		6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoVC.m; sourceTree = "<group>"; };
-		6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PedigreeDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
-		6A664506189C43ED0017573F /* FamilyBackgroundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyBackgroundVC.h; sourceTree = "<group>"; };
-		6A664507189C43ED0017573F /* FamilyBackgroundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyBackgroundVC.m; sourceTree = "<group>"; };
+		6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PedigreeDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		6A664509189C4FD60017573F /* ParentsRelationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsRelationCell.h; sourceTree = "<group>"; };
 		6A66450A189C4FD60017573F /* ParentsRelationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentsRelationCell.m; sourceTree = "<group>"; };
+		6AB387EF189FFA0A0064ADB5 /* FamilyBackgroundTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyBackgroundTVC.h; sourceTree = "<group>"; };
+		6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyBackgroundTVC.m; sourceTree = "<group>"; };
+		6AB3881118A20A5B0064ADB5 /* HealthInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoTVC.h; sourceTree = "<group>"; };
+		6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoTVC.m; sourceTree = "<group>"; };
 		A656EB6017F0AFFD00B51323 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A657DD9916F747F200F3CA8E /* FamilyHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657DD9C16F747F200F3CA8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -86,20 +99,10 @@
 		A67D37B416FB3D78005C9987 /* Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Debug.h; path = Classes/Debug.h; sourceTree = "<group>"; };
 		A67D37B516FB3DBF005C9987 /* FamilyTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamilyTree.h; path = Classes/FamilyTree.h; sourceTree = "<group>"; };
 		A67D37B616FB3DBF005C9987 /* FamilyTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FamilyTree.m; path = Classes/FamilyTree.m; sourceTree = "<group>"; };
-		A694BEC817F2177A006B2B43 /* Myself.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myself.h; sourceTree = "<group>"; };
-		A694BEC917F2177A006B2B43 /* Myself.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myself.m; sourceTree = "<group>"; };
-		A694BECB17F2177A006B2B43 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		A694BECC17F2177A006B2B43 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		A694BECE17F2177A006B2B43 /* ContractedDisease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractedDisease.h; sourceTree = "<group>"; };
-		A694BECF17F2177A006B2B43 /* ContractedDisease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractedDisease.m; sourceTree = "<group>"; };
-		A694BED117F2177A006B2B43 /* Relative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relative.h; sourceTree = "<group>"; };
-		A694BED217F2177A006B2B43 /* Relative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relative.m; sourceTree = "<group>"; };
 		A6A66167181FF45D00E94505 /* SelectRelationshipVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRelationshipVC.h; sourceTree = "<group>"; };
 		A6A66168181FF45D00E94505 /* SelectRelationshipVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRelationshipVC.m; sourceTree = "<group>"; };
 		A6A6616A181FFD5400E94505 /* SelectBirthdateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectBirthdateVC.h; path = Classes/SelectBirthdateVC.h; sourceTree = "<group>"; };
 		A6A6616B181FFD5400E94505 /* SelectBirthdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectBirthdateVC.m; path = Classes/SelectBirthdateVC.m; sourceTree = "<group>"; };
-		A6F53757181F7925006D56EF /* HealthInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoTVC.h; sourceTree = "<group>"; };
-		A6F53758181F7925006D56EF /* HealthInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoTVC.m; sourceTree = "<group>"; };
 		AB0B8BB018981274000DD190 /* EditPersonalInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPersonalInfoVC.h; sourceTree = "<group>"; };
 		AB0B8BB118981274000DD190 /* EditPersonalInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPersonalInfoVC.m; sourceTree = "<group>"; };
 		AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PedigreeDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -160,30 +163,30 @@
 			isa = PBXGroup;
 			children = (
 				AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */,
+				6A1281F718A2B6BB001259D3 /* Myself.h */,
+				6A1281F818A2B6BB001259D3 /* Myself.m */,
+				6A1281F418A2B6BB001259D3 /* Person.h */,
+				6A1281F518A2B6BB001259D3 /* Person.m */,
+				6A1281F118A2B6BB001259D3 /* Relative.h */,
+				6A1281F218A2B6BB001259D3 /* Relative.m */,
+				6A1281EE18A2B6BB001259D3 /* ContractedDisease.h */,
+				6A1281EF18A2B6BB001259D3 /* ContractedDisease.m */,
+				6AB3881118A20A5B0064ADB5 /* HealthInfoTVC.h */,
+				6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */,
 				ABD3C66F18917E8100D377F2 /* IntroVC.h */,
 				ABD3C67018917E8100D377F2 /* IntroVC.m */,
 				A657DDAB16F747F200F3CA8E /* AppDelegate.h */,
 				A657DDAC16F747F200F3CA8E /* AppDelegate.m */,
 				A67D37B116FB3CCA005C9987 /* AppManager.h */,
 				A67D37B216FB3CCA005C9987 /* AppManager.m */,
-				A694BECE17F2177A006B2B43 /* ContractedDisease.h */,
-				A694BECF17F2177A006B2B43 /* ContractedDisease.m */,
 				A67D37B416FB3D78005C9987 /* Debug.h */,
 				A67D37B516FB3DBF005C9987 /* FamilyTree.h */,
 				A67D37B616FB3DBF005C9987 /* FamilyTree.m */,
-				A6F53757181F7925006D56EF /* HealthInfoTVC.h */,
-				A6F53758181F7925006D56EF /* HealthInfoTVC.m */,
 				A657DDB416F747F300F3CA8E /* MainStoryboard.storyboard */,
 				A66FACC017F307EC002D260E /* MainTabBarVC.h */,
 				A66FACC117F307EC002D260E /* MainTabBarVC.m */,
-				A694BEC817F2177A006B2B43 /* Myself.h */,
-				A694BEC917F2177A006B2B43 /* Myself.m */,
-				A694BECB17F2177A006B2B43 /* Person.h */,
-				A694BECC17F2177A006B2B43 /* Person.m */,
 				A6778BB11815ADF200962394 /* PersonalInfoTVC.h */,
 				A6778BB21815ADF200962394 /* PersonalInfoTVC.m */,
-				A694BED117F2177A006B2B43 /* Relative.h */,
-				A694BED217F2177A006B2B43 /* Relative.m */,
 				A66FACC317F4A5A3002D260E /* RelativeDetailsVC.h */,
 				A66FACC417F4A5A3002D260E /* RelativeDetailsVC.m */,
 				A67D37AB16FB30F5005C9987 /* RelativesTableVC.h */,
@@ -196,18 +199,18 @@
 				ABD3C6791891C4ED00D377F2 /* PersonDetailsVC.m */,
 				AB0B8BB018981274000DD190 /* EditPersonalInfoVC.h */,
 				AB0B8BB118981274000DD190 /* EditPersonalInfoVC.m */,
-				6A2E3B3F18998BE70048E4DA /* HealthInfoNewVC.h */,
-				6A2E3B4018998BE70048E4DA /* HealthInfoNewVC.m */,
 				6A2E3B421899AC000048E4DA /* SelectDiseaseVC.h */,
 				6A2E3B431899AC000048E4DA /* SelectDiseaseVC.m */,
 				6A2E3B4C189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.h */,
 				6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */,
 				6A2E3B4F189A2E1D0048E4DA /* HealthInfoVC.h */,
 				6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */,
-				6A664506189C43ED0017573F /* FamilyBackgroundVC.h */,
-				6A664507189C43ED0017573F /* FamilyBackgroundVC.m */,
 				6A664509189C4FD60017573F /* ParentsRelationCell.h */,
 				6A66450A189C4FD60017573F /* ParentsRelationCell.m */,
+				6AB387EF189FFA0A0064ADB5 /* FamilyBackgroundTVC.h */,
+				6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */,
+				6A12820018A31C77001259D3 /* SelectRaceVC.h */,
+				6A12820118A31C77001259D3 /* SelectRaceVC.m */,
 				A657DDA316F747F200F3CA8E /* Supporting Files */,
 			);
 			path = pedigree;
@@ -233,6 +236,8 @@
 				6A2E3B451899AD680048E4DA /* DiseasesUtil.h */,
 				6A2E3B461899AD680048E4DA /* DiseasesUtil.m */,
 				6A2E3B4A189A11D20048E4DA /* Diseases_Catalog_2.plist */,
+				6A12820318A32B80001259D3 /* RaceEthnicityUtil.h */,
+				6A12820418A32B80001259D3 /* RaceEthnicityUtil.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -309,28 +314,29 @@
 			files = (
 				6A2E3B51189A2E1D0048E4DA /* HealthInfoVC.m in Sources */,
 				A6A66169181FF45D00E94505 /* SelectRelationshipVC.m in Sources */,
-				6A2E3B4118998BE70048E4DA /* HealthInfoNewVC.m in Sources */,
-				A6F53759181F7925006D56EF /* HealthInfoTVC.m in Sources */,
 				A657DDA916F747F200F3CA8E /* main.m in Sources */,
 				6A2E3B441899AC000048E4DA /* SelectDiseaseVC.m in Sources */,
+				6A12820518A32B80001259D3 /* RaceEthnicityUtil.m in Sources */,
+				6A12820218A31C77001259D3 /* SelectRaceVC.m in Sources */,
+				6AB3881318A20A5B0064ADB5 /* HealthInfoTVC.m in Sources */,
 				A657DDAD16F747F200F3CA8E /* AppDelegate.m in Sources */,
 				A67D37AD16FB30F5005C9987 /* RelativesTableVC.m in Sources */,
-				6A664508189C43ED0017573F /* FamilyBackgroundVC.m in Sources */,
 				6A2E3B471899AD680048E4DA /* DiseasesUtil.m in Sources */,
-				A694BECA17F2177A006B2B43 /* Myself.m in Sources */,
 				AB91F7B618906E7D00A271DA /* PedigreeDataModel.xcdatamodeld in Sources */,
 				A6778BB31815ADF200962394 /* PersonalInfoTVC.m in Sources */,
+				6A1281F318A2B6BB001259D3 /* Relative.m in Sources */,
 				6A66450B189C4FD60017573F /* ParentsRelationCell.m in Sources */,
+				6A1281F018A2B6BB001259D3 /* ContractedDisease.m in Sources */,
 				A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */,
-				A694BED017F2177A006B2B43 /* ContractedDisease.m in Sources */,
+				6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */,
 				ABD3C67A1891C4ED00D377F2 /* PersonDetailsVC.m in Sources */,
-				A694BECD17F2177A006B2B43 /* Person.m in Sources */,
 				AB0B8BB218981274000DD190 /* EditPersonalInfoVC.m in Sources */,
-				A694BED317F2177A006B2B43 /* Relative.m in Sources */,
 				A66FACC217F307EC002D260E /* MainTabBarVC.m in Sources */,
 				A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */,
+				6A1281F918A2B6BB001259D3 /* Myself.m in Sources */,
 				6A2E3B4E189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m in Sources */,
 				ABD3C67118917E8100D377F2 /* IntroVC.m in Sources */,
+				6A1281F618A2B6BB001259D3 /* Person.m in Sources */,
 				ABD3C67F1892C2F400D377F2 /* UILabel+Boldify.m in Sources */,
 				A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */,
 				A67D37B716FB3DBF005C9987 /* FamilyTree.m in Sources */,
@@ -479,7 +485,7 @@
 				6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */,
 				AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */,
 			);
-			currentVersion = AB91F7B518906E7D00A271DA /* PedigreeDataModel.xcdatamodel */;
+			currentVersion = 6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */;
 			path = PedigreeDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

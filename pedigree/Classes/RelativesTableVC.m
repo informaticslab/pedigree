@@ -82,6 +82,27 @@ Relative *currRelative;
     cell.textLabel.text = currRelative.relationDescription;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", currRelative.firstName, currRelative.lastName];
     
+ /*   //temporarily displaying the diseases that are added to the user's profile
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"ContractedDisease" inManagedObjectContext:APP_MGR.managedObjectContext]];
+    NSError *error = nil;
+    NSArray *results = [APP_MGR.managedObjectContext executeFetchRequest:request error:&error];
+    
+    if (error)
+    {
+        DebugLog(@"Problem retrieving the relative's diseases %@", error);
+    }
+   
+    NSLog(@"The total number of diseases the user has are: %d", [results count]);
+    if (results != NULL) {
+        NSLog(@"Disease name: %@", [[results objectAtIndex:0] name]);
+        NSLog(@"Disease category name: %@", [[results objectAtIndex:0] categoryName]);
+        NSLog(@"Age of diagnosis: %d", [[[results objectAtIndex:0] ageAtDiagnosis] integerValue]);
+    }
+  */
+    
+    NSLog(@"The total number of diseases the user has are: %d", [currRelative.contractedDisease count]);
+
     return cell;
 }
 
@@ -133,7 +154,6 @@ Relative *currRelative;
     // [self.navigationController pushViewController:detailViewController animated:YES];
      [self performSegueWithIdentifier:@"showRelativeDetailsSegue" sender:nil];
    */
-
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -142,13 +162,11 @@ Relative *currRelative;
     {
         RelativeDetailsVC *relativeDetailsVC = segue.destinationViewController;
         relativeDetailsVC.relative = currRelative;
-        
     }
     if([segue.identifier isEqualToString:@"showPersonDetailsSegue"])
     {
         _personDetailsVC = (PersonDetailsVC *)segue.destinationViewController;
         _personDetailsVC.me = _me;
-        
     }
 }
 

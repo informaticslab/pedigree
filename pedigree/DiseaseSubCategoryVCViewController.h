@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContractedDisease.h"
 
-@interface DiseaseSubCategoryVCViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
+@interface DiseaseSubCategoryVCViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic) NSNumber *_mainDiseaseId;
+@property (nonatomic, strong) ContractedDisease *contractedDis;
 
 @end

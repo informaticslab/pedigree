@@ -9,27 +9,30 @@
 #import "SelectDiseaseVC.h"
 #import "DiseasesUtil.h"
 #import "DiseaseSubCategoryVCViewController.h"
+#import "AppManager.h"
+#import "ContractedDisease.h"
 
 @interface SelectDiseaseVC ()
 
-@property (nonatomic, strong) IBOutlet UIPickerView *diseasePicker;
 @property (nonatomic, strong) NSArray *mainDiseasesArr;
 @property (nonatomic) NSInteger selectedDiseaseIndex;
 
-@property (nonatomic, strong) DiseaseSubCategoryVCViewController *diseaseSubCatVC;
-@property (nonatomic, strong) IBOutlet UIView *ageView;
-
-@property (nonatomic, strong) IBOutlet UIPickerView *agePicker;
 @property (nonatomic, strong) NSArray *ageGroupArr;
 @property (nonatomic) NSInteger selectedAgeIndex;
 
-
-- (IBAction)dismissSelectDiseaseVC:(id)sender;
-- (IBAction)hideAgeView:(id)sender;
+@property (nonatomic, weak) IBOutlet UITableView *tblView;
+@property (nonatomic, strong) DiseaseSubCategoryVCViewController *diseaseSubCatVC;
+@property (nonatomic, strong) IBOutlet UIPickerView *agePicker;
+@property (nonatomic, weak) IBOutlet UITextField *txtAge;
 
 @end
 
+
 @implementation SelectDiseaseVC
+
+@synthesize contractedDis;
+
+AppManager *appMgr;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,19 +47,34 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    _ageView.hidden = YES;
+    contractedDis = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease" inManagedObjectContext:APP_MGR.managedObjectContext];
     
     //setting the arr with the list of main disease categories
     _mainDiseasesArr = @[@"No Known Conditions", @"Cancer", @"Clotting Disorder", @"Dementia/Alzheimers", @"Diabetes/Prediabetes/metabolic Syndrome", @"Gastrointestinal Disorder",
-                      @"Heart Disease", @"High Cholesterol", @"Hypertension", @"kidney Disease",
-                      @"Lung Disease", @"Osteoporosis", @"Psychological Disorder", @"Septecemia",
-                      @"Stroke/ Brain Attack", @"Sudden Infant Death Syndrome", @"Unknown Disease", @"Other-Add New"];
-    [_diseasePicker selectRow:4 inComponent:0 animated:YES];
+                         @"Heart Disease", @"High Cholesterol", @"Hypertension", @"kidney Disease",
+                         @"Lung Disease", @"Osteoporosis", @"Psychological Disorder", @"Septecemia",
+                         @"Stroke/ Brain Attack", @"Sudden Infant Death Syndrome", @"Unknown Disease", @"Other-Add New"];
+    
+    _selectedDiseaseIndex = -1;
     
     _ageGroupArr = [[NSArray alloc] initWithObjects:
                     @"Pre-Birth",@"Newborn",@"In Infancy",@"In Childhood",@"In Adolescence", @"20-29 years", @"30-39 years", @"40-49 years", @"50-59 years", @"60 years and older", @"Unknown",nil];
-
+    
+    //setting up the Age PickerView
+    _agePicker =[[UIPickerView alloc]init];
+    _agePicker.delegate = self;
+    _agePicker.dataSource = self;
+    _agePicker.showsSelectionIndicator=YES;
+    [_agePicker selectRow:0 inComponent:0 animated:YES];
+    
+    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
+    toolBar.barStyle = UIBarStyleBlackOpaque;
+    
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneBtnPressToGetValue:)];
+    
+    [toolBar setItems:[NSArray arrayWithObject:btn]];
+    _txtAge.inputAccessoryView = toolBar;
+    _txtAge.inputView = _agePicker;
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,151 +87,46 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (NSInteger)numberOfComponentsInPickerView:
-(UIPickerView *)pickerView
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger count;
-    if (pickerView.tag == 0)
-        count = _mainDiseasesArr.count;
-    else count = _ageGroupArr.count;
-    return count;
+    // Return the number of rows in the section.
+    return [_mainDiseasesArr count];
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView
-             titleForRow:(NSInteger)row
-            forComponent:(NSInteger)component
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *str = @"";
-    if (pickerView.tag == 0)
-        str = _mainDiseasesArr[row];
-    else
-        str = _ageGroupArr[row];
-    return str;
-
-}
-
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
-      inComponent:(NSInteger)component
-{ 
-    if (pickerView.tag == 0){
-        NSString *resultString = _mainDiseasesArr[row];
-        _selectedDiseaseIndex = row;
-        DebugLog(@"The selected Main Disease is: %@", resultString);
-    }
-    else if (pickerView.tag == 1){
-        NSString *resultString2 = _ageGroupArr[row];
-        _selectedAgeIndex = row;
-        DebugLog(@"The Age at which the disease occured is: %@", resultString2);
-    }
-}
-
--(IBAction)addDisease:(id)sender{
+    static NSString *CellIdentifier = @"DiseaseCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
-    switch (_selectedDiseaseIndex) {
-        case kNoKnownConditions:
-        {
-            _ageView.hidden = NO;
-            break;
-        }
-        case kCancer:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kClottingDisorder:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kDementiaAlzheimers:
-        {
-            _ageView.hidden = NO;
-            break;
-        }
-        case kDiabetes:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kGastro:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kHeart:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kHighCholesterol:
-        {
-            _ageView.hidden = NO;
-            break;
-        }case kHyperTension:
-        {
-            _ageView.hidden = NO;
-            break;
-        }case kKidney:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kLung:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kOsteoporosis:
-        {
-            _ageView.hidden = NO;
-            break;
-        }
-        case kPsychologicalDisorder:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kSepticemia:
-        {
-            _ageView.hidden = NO;
-            break;
-        }
-        case kStrokeBrainAttack:
-        {
-            _ageView.hidden = NO;
-            break;
-        }
-        case kSuddenInfantDeathSyndrome:
-        {
-            _ageView.hidden = NO;
-            break;
-        }
-        case kUnknownDisease:
-        {
-            _ageView.hidden = NO;
-            break;
-        }
-        case kOtherAddNew:
-        {
-            _ageView.hidden = NO;
-            break;
-        }
-        default:
-            break;
-            
+    cell.textLabel.text = [_mainDiseasesArr objectAtIndex:indexPath.row];
+    if(indexPath.row == _selectedDiseaseIndex){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
-    
+    return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    _selectedDiseaseIndex = indexPath.row;
+    
+    contractedDis.name = @"";
+    contractedDis.categoryName = [_mainDiseasesArr objectAtIndex:_selectedDiseaseIndex];
+    [self.tblView reloadData];
+    [self showDiseaseSubCategory];
+}
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"showDiseaseSubCategoryVC"])
+    if([segue.identifier isEqualToString:@"showDiseaseSubCategorySegue"])
     {
         _diseaseSubCatVC = segue.destinationViewController;
         _diseaseSubCatVC._mainDiseaseId = [NSNumber numberWithInteger:_selectedDiseaseIndex];
@@ -221,8 +134,119 @@ numberOfRowsInComponent:(NSInteger)component
     
 }
 
-- (IBAction)hideAgeView:(id)sender{
-    _ageView.hidden = YES;
+-(void)showDiseaseSubCategory{
+    
+    switch (_selectedDiseaseIndex) {
+     case kNoKnownConditions:
+     {
+         break;
+     }
+     case kCancer:
+     {
+         [self performSegueWithIdentifier:@"showDiseaseSubCategorySegue" sender:self];
+         break;
+     }
+     case kClottingDisorder:
+     {
+         [self performSegueWithIdentifier:@"showDiseaseSubCategorySegue" sender:self];
+         break;
+     }
+     case kDementiaAlzheimers:
+     {
+         break;
+     }
+     case kDiabetes:
+     {
+         [self performSegueWithIdentifier:@"showDiseaseSubCategorySegue" sender:self];
+         break;
+     }
+     case kGastro:
+     {
+         [self performSegueWithIdentifier:@"showDiseaseSubCategorySegue" sender:self];
+         break;
+     }
+     case kHeart:
+     {
+         [self performSegueWithIdentifier:@"showDiseaseSubCategorySegue" sender:self];
+         break;
+     }
+     case kHighCholesterol:
+     {
+         break;
+     }case kHyperTension:
+     {
+         break;
+     }case kKidney:
+     {
+         [self performSegueWithIdentifier:@"showDiseaseSubCategorySegue" sender:self];
+         break;
+     }
+     case kLung:
+     {
+         [self performSegueWithIdentifier:@"showDiseaseSubCategorySegue" sender:self];
+         break;
+     }
+     case kOsteoporosis:
+     {
+         break;
+     }
+     case kPsychologicalDisorder:
+     {
+         [self performSegueWithIdentifier:@"showDiseaseSubCategorySegue" sender:self];
+         break;
+     }
+     case kSepticemia:
+     {
+         break;
+     }
+     case kStrokeBrainAttack:
+     {
+         break;
+     }
+     case kSuddenInfantDeathSyndrome:
+     {
+         break;
+     }
+     case kUnknownDisease:
+     {
+         break;
+     }
+     case kOtherAddNew:
+     {
+         break;
+     }
+     default:
+         break;
+     
+   }
+}
+
+- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [_mainDiseasesArr count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [_ageGroupArr objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    _txtAge.text = [_ageGroupArr objectAtIndex:row];
+    _selectedAgeIndex = row;
+    
+    contractedDis.ageAtDiagnosis = [NSNumber numberWithInteger:_selectedAgeIndex];
+}
+
+-(IBAction)doneBtnPressToGetValue:(id)sender
+{
+    [_txtAge resignFirstResponder];
 }
 
 @end

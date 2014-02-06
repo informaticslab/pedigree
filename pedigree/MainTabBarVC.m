@@ -82,7 +82,7 @@
     }
   */
     
-    Relative *newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
+ /*   Relative *newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
     newRelative.lastName = @"Doe";
     newRelative.firstName = @"John";
     newRelative.relationDescription = @"Self";
@@ -106,7 +106,7 @@
     {
         DebugLog(@"Problem loading test data: %@", error);
     }
-
+*/
 
 }
 

@@ -7,13 +7,13 @@
 //
 
 #import "SelectRelationshipVC.h"
-
+#import "PersonalInfoTVC.h"
 
 @implementation SelectRelationshipVC
 
+@synthesize relDescription;
+
 NSArray *relationships;
-
-
 
 - (void)viewDidLoad
 {
@@ -24,7 +24,7 @@ NSArray *relationships;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    relationships = @[@"Father", @"Mother", @"Brother", @"Sister", @"Son", @"Daughter",
+    relationships = @[@"Myself", @"Father", @"Mother", @"Brother", @"Sister", @"Son", @"Daughter",
                       @"Paternal Grandfather", @"Paternal Grandmother", @"Paternal Uncle", @"Paternal Aunt",
                       @"Maternal Grandfather", @"Maternal Grandmother", @"Maternal Uncle", @"Maternal Aunt",
                       @"Nephew", @"Niece", @"Grandson", @"Granddaughter", @"Cousin", @"Half-Brother", @"Half-Sister"];
@@ -76,10 +76,8 @@ NSArray *relationships;
     // Configure the cell...
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     _relative.relationDescription = relationships[indexPath.row];
+    relDescription = relationships[indexPath.row];
     
 }
-
-
-
 
 @end

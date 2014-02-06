@@ -10,4 +10,8 @@
 
 @interface SelectBirthdateVC : UIViewController
 
+@property (nonatomic, weak) NSDate *birthDate;
+@property (nonatomic, weak) IBOutlet UIDatePicker *datePicker;
+@property (nonatomic, weak) IBOutlet UILabel *dateLbl;
+
 @end

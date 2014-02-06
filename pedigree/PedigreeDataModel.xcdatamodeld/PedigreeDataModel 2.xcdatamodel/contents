@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ContractedDisease" representedClassName="ContractedDisease" syncable="YES">
         <attribute name="ageAtDiagnosis" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,7 +23,7 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="race" optional="YES" attributeType="Integer 32" defaultValueString="-1" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="contractedDisease" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContractedDisease" inverseName="person" inverseEntity="ContractedDisease" syncable="YES"/>
+        <relationship name="contractedDisease" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContractedDisease" inverseName="person" inverseEntity="ContractedDisease" syncable="YES"/>
     </entity>
     <entity name="Relative" representedClassName="Relative" parentEntity="Person" syncable="YES">
         <attribute name="relationDescription" optional="YES" attributeType="String" syncable="YES"/>

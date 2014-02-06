@@ -2,7 +2,7 @@
 //  HealthInfoVC.m
 //  pedigree
 //
-//  Created by Murali Tammineni on 1/30/14.
+//  Created by Madhavi Tammineni on 1/30/14.
 //  Copyright (c) 2014 CDC Informatics R&D Lab. All rights reserved.
 //
 
@@ -10,10 +10,10 @@
 #import "DiseasesUtil.h"
 #import "SelectDiseaseVC.h"
 #import "DiseaseSubCategoryVCViewController.h"
+#import "AppManager.h"
 
 @interface HealthInfoVC ()
 
-@property (nonatomic, strong) IBOutlet UIPickerView *diseasePicker;
 @property (nonatomic, strong) IBOutlet UITableView *conditionsTblView;
 @property (nonatomic, strong) NSMutableArray *conditionsArr;
 
@@ -22,11 +22,12 @@
 @property (nonatomic, strong) DiseaseSubCategoryVCViewController *diseaseSubCatVC;
 @property (nonatomic, strong) SelectDiseaseVC *diseaseVC;
 
--(IBAction)addDisease:(id)sender;
-
 @end
 
 @implementation HealthInfoVC
+
+@synthesize arrContractedDiseases;
+@synthesize relative;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,16 +43,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    //setting the arr with the list of main disease categories
-    _mainDiseasesArr = @[@"No Known Conditions", @"Cancer", @"Clotting Disorder", @"Dementia/Alzheimers", @"Diabetes/Prediabetes/metabolic Syndrome", @"Gastrointestinal Disorder",
-                         @"Heart Disease", @"High Cholesterol", @"Hypertension", @"kidney Disease",
-                         @"Lung Disease", @"Osteoporosis", @"Psychological Disorder", @"Septecemia",
-                         @"Stroke/ Brain Attack", @"Sudden Infant Death Syndrome", @"Unknown Disease", @"Other-Add New"];
+    //creating the arr to hold the contactedDiseases objects
+    if (arrContractedDiseases == nil) {
+        arrContractedDiseases = [[NSMutableArray alloc] init];;
+    }
     
-   [_diseasePicker selectRow:4 inComponent:0 animated:YES];
-    
-    _conditionsArr = [[NSMutableArray alloc] init];
-}
+    if (relative == nil) {
+       relative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
+    }
+ }
 
 - (void)didReceiveMemoryWarning
 {
@@ -59,143 +59,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfComponentsInPickerView:
-(UIPickerView *)pickerView
-{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component
-{
-    return _mainDiseasesArr.count;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView
-             titleForRow:(NSInteger)row
-            forComponent:(NSInteger)component
-{
-    return _mainDiseasesArr[row];
-}
-
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
-      inComponent:(NSInteger)component
-{
-    NSString *resultString = _mainDiseasesArr[row];
-    NSLog(@"The selected Main Disease is: %@", resultString);
-    _selectedDiseaseIndex = row;
-}
-
--(IBAction)addDisease:(id)sender{
-    
-    switch (_selectedDiseaseIndex) {
-        case kNoKnownConditions:
-        {
-            //do nothing
-            break;
-        }
-        case kCancer:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kClottingDisorder:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kDementiaAlzheimers:
-        {
-            //do nothing
-            break;
-        }
-        case kDiabetes:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kGastro:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kHeart:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kHighCholesterol:
-        {
-            //do nothing
-            break;
-        }case kHyperTension:
-        {
-            //do nothing
-            break;
-        }case kKidney:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kLung:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kOsteoporosis:
-        {
-            //do nothing
-            break;
-        }
-        case kPsychologicalDisorder:
-        {
-            [self performSegueWithIdentifier:@"showDiseaseSubCategoryVC" sender:self];
-            break;
-        }
-        case kSepticemia:
-        {
-            //do nothing
-            break;
-        }
-        case kStrokeBrainAttack:
-        {
-            //do nothing
-            break;
-        }
-        case kSuddenInfantDeathSyndrome:
-        {
-            //do nothing
-            break;
-        }
-        case kUnknownDisease:
-        {
-            //do nothing
-            break;
-        }
-        case kOtherAddNew:
-        {
-            //do nothing
-            break;
-        }
-        default:
-            break;
-        
-    }
+- (IBAction)dismissWithDoneSelectDiseaseVC:(UIStoryboardSegue *)segue {
+    SelectDiseaseVC *selectDiseaseVC = segue.sourceViewController;
+    [relative addContractedDiseaseObject:selectDiseaseVC.contractedDis];
+  
+      [arrContractedDiseases addObject:selectDiseaseVC.contractedDis];
+      NSLog(@"HealthInfoVC :: The total number of diseases in the HealthVC are: %lu", (unsigned long)[relative.contractedDisease count]);
+    [selectDiseaseVC dismissViewControllerAnimated:YES completion:nil];
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"showDiseaseSubCategoryVC"])
-    {
-        _diseaseSubCatVC = segue.destinationViewController;
-        _diseaseSubCatVC._mainDiseaseId = [NSNumber numberWithInteger:_selectedDiseaseIndex];
-    }
-   
-    if([segue.identifier isEqualToString:@"showDiseaseVC"])
-    {
-        _diseaseVC = segue.destinationViewController;
-    }
+- (IBAction)dismissWithCancelSelectDiseaseVC:(UIStoryboardSegue *)segue {
+    SelectDiseaseVC *selectDiseaseVC = segue.sourceViewController;
+    [selectDiseaseVC dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)dismissWithDoneDiseaseSubCategoryVC:(UIStoryboardSegue *)segue {
+    
+    DiseaseSubCategoryVCViewController *diseaseSubCatVC = segue.sourceViewController;
+    [relative addContractedDiseaseObject:diseaseSubCatVC.contractedDis];
+ 
+      [arrContractedDiseases addObject:diseaseSubCatVC.contractedDis];
+      NSLog(@"HealthInfoVC :: The total number of diseases in the HealthVC are: %lu", (unsigned long)[relative.contractedDisease count]);
+    [diseaseSubCatVC dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)dismissWithCancelDiseaseSubCategoryVC:(UIStoryboardSegue *)segue {
+    
+    DiseaseSubCategoryVCViewController *diseaseSubCatVC = segue.sourceViewController;
+    [diseaseSubCatVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -206,15 +98,17 @@ numberOfRowsInComponent:(NSInteger)component
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_conditionsArr count] ;
+   // return [_conditionsArr count] ;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"HealthCell";
+    static NSString *CellIdentifier = @"ExistingConditionsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
@@ -222,7 +116,5 @@ numberOfRowsInComponent:(NSInteger)component
     cell.detailTextLabel.text = @"Diagnosed at age 62";
     return cell;
 }
-
-
 
 @end

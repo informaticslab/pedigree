@@ -2,23 +2,25 @@
 //  Myself.h
 //  pedigree
 //
-//  Created by jtq6 on 9/24/13.
-//  Copyright (c) 2013 CDC Informatics R&D Lab. All rights reserved.
+//  Created by Murali Tammineni on 2/5/14.
+//  Copyright (c) 2014 CDC Informatics R&D Lab. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Person.h"
 
+@class Relative;
 
-@interface Myself : NSManagedObject
+@interface Myself : Person
 
 @property (nonatomic, retain) NSSet *relatives;
 @end
 
 @interface Myself (CoreDataGeneratedAccessors)
 
-- (void)addRelativesObject:(NSManagedObject *)value;
-- (void)removeRelativesObject:(NSManagedObject *)value;
+- (void)addRelativesObject:(Relative *)value;
+- (void)removeRelativesObject:(Relative *)value;
 - (void)addRelatives:(NSSet *)values;
 - (void)removeRelatives:(NSSet *)values;
 

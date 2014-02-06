@@ -8,10 +8,12 @@
 
 #import "PersonalInfoTVC.h"
 #import "SelectBirthdateVC.h"
-#import "SelectRelationshipVC.h"
-
 
 @implementation PersonalInfoTVC
+
+@synthesize lblRelationship;
+@synthesize lblGender;
+@synthesize selectRelationshipTVC;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,8 +34,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   //  _lblRelationship.text = _relative.relationDescription;
-    _lblRelationship.text = @"Me";
-   
+    
+    [_switchLiving addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [_switchTwin addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [_switchIdenticalTwin addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [_switchAdopted addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,29 +51,36 @@
 - (IBAction)dismissWithDoneBirthdateVC:(UIStoryboardSegue *)segue {
     SelectBirthdateVC *birthdateVC = segue.sourceViewController;
     
+    NSDate *date = [birthdateVC.datePicker date];
+    NSLocale *usLocale = [[NSLocale alloc]
+                          initWithLocaleIdentifier:@"en_US"];
+    self.lblBirthdate.text = [[NSString alloc]
+                         initWithFormat:@"%@",
+                         [date descriptionWithLocale:usLocale]];
+
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.tableView reloadData];
 
 }
 
 - (IBAction)dismissWithCancelBirthdateVC:(UIStoryboardSegue *)segue {
     SelectBirthdateVC *birthdateVC = segue.sourceViewController;
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [birthdateVC dismissViewControllerAnimated:YES completion:nil];
 
 }
 
 - (IBAction)dismissWithDoneRelationshipVC:(UIStoryboardSegue *)segue {
     SelectRelationshipVC *relationshipVC = segue.sourceViewController;
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    self.lblRelationship.text = relationshipVC.relDescription;
+    [relationshipVC dismissViewControllerAnimated:YES completion:nil];
     [self.tableView reloadData];
     
 }
 
+
 - (IBAction)dismissWithCancelRelationshipVC:(UIStoryboardSegue *)segue {
     SelectRelationshipVC *relationshipVC = segue.sourceViewController;
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [relationshipVC dismissViewControllerAnimated:YES completion:nil];
     
 }
 
@@ -76,9 +89,8 @@
 {
     if([segue.identifier isEqualToString:@"showSelectRelationship"])
     {
-        SelectRelationshipVC *selectRelationshipTVC = segue.destinationViewController;
+        selectRelationshipTVC = segue.destinationViewController;
         selectRelationshipTVC.relative = _relative;
-        
     }
 }
 
@@ -133,5 +145,49 @@
 }
 
  */
+
+- (void)switchValueChanged:(id)sender{
+
+    if([sender tag] == 0){
+        if ([sender isOn]) {
+            _relative.isLiving = [NSNumber numberWithBool:YES];
+        }
+        else{
+            _relative.isLiving = [NSNumber numberWithBool:NO];
+        }
+        
+    }
+    else if ([sender tag] == 1){
+        if ([sender isOn]) {
+            _relative.isTwin = [NSNumber numberWithBool:YES];
+        }
+        else{
+            _relative.isTwin = [NSNumber numberWithBool:NO];
+        }
+    }
+    else if ([sender tag] == 2){
+        if ([sender isOn]) {
+            _relative.isIdenticalTwin = [NSNumber numberWithBool:YES];
+        }
+        else{
+            _relative.isIdenticalTwin = [NSNumber numberWithBool:NO];
+        }
+    }
+    else if ([sender tag] == 3){
+        if ([sender isOn]) {
+            _relative.isAdopted = [NSNumber numberWithBool:YES];
+        }
+        else{
+            _relative.isAdopted = [NSNumber numberWithBool:NO];
+        }
+        
+    }
+    else{
+        // do nothing
+    }
+    
+}
+
+
 
 @end

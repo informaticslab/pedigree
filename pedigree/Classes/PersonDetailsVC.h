@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "MainTabBarVC.h"
+#import "HealthInfoVC.h"
 
 @interface PersonDetailsVC : UIViewController<UITextFieldDelegate>
 
 @property(nonatomic, weak) Relative *me;
 @property(nonatomic, strong) MainTabBarVC *mainTabBarVC;
+
+@property (strong, nonatomic) IBOutlet UITextField *txtFirstName;
+@property (strong, nonatomic) IBOutlet UITextField *txtLastName;
+
+@property (nonatomic, retain) NSMutableArray *arrContractedDiseases;
+
+-(IBAction)dismissKeyboardOnTap:(id)sender;
 @end

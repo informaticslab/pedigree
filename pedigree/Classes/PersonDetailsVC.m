@@ -11,7 +11,8 @@
 #import "PersonalInfoTVC.h"
 #import "HealthInfoTVC.h"
 #import "RelativesTableVC.h"
-#import "FamilyBackgroundVC.h"
+#import "FamilyBackgroundTVC.h"
+#import "HealthInfoVC.h"
 
 @interface PersonDetailsVC ()
 
@@ -20,23 +21,26 @@
 @property (weak, nonatomic) IBOutlet UIView *familyBackgroundView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
 
-@property (weak, nonatomic) IBOutlet UITextField *txtFirstName;
-@property (weak, nonatomic) IBOutlet UITextField *txtLastName;
-
 - (IBAction)segControlValueChange:(id)sender;
-- (IBAction)editPersonalInfo:(id)sender;
+- (IBAction)saveRelation:(id)sender;
 
 @end
 
 PersonalInfoTVC *personalInfoTVC;
-HealthInfoTVC *healthInfoTVC;
-FamilyBackgroundVC *familyBackgroundVC;
-
+HealthInfoVC *healthInfoVC;
+FamilyBackgroundTVC *familyBackgroundTVC;
 RelativesTableVC *relativesTVC;
 
 BOOL editMode = NO;
 
 @implementation PersonDetailsVC
+
+AppManager *appMgr;
+
+@synthesize txtFirstName;
+@synthesize txtLastName;
+@synthesize arrContractedDiseases;
+@synthesize me;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,14 +56,15 @@ BOOL editMode = NO;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
-    [self.txtFirstName setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
-    [self.txtLastName setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+    [self.txtFirstName setDelegate:self];
+    [self.txtLastName setDelegate:self];
     
     _segControl.selectedSegmentIndex = 0;
     self.personalInfoView.hidden = NO;
     self.healthInfoView.hidden = YES;
     self.familyBackgroundView.hidden = YES;
     
+    [self.view bringSubviewToFront:txtFirstName];
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,49 +102,29 @@ BOOL editMode = NO;
         personalInfoTVC = (PersonalInfoTVC *)segue.destinationViewController;
         personalInfoTVC.relative = self.me;
     }
-    if([segue.identifier isEqualToString:@"embedHealthInfoTV"])
+    if([segue.identifier isEqualToString:@"embedHealthInfoView"])
     {
-        healthInfoTVC = (HealthInfoTVC *)segue.destinationViewController;
-        healthInfoTVC.relative = self.me;
+        healthInfoVC = (HealthInfoVC *)segue.destinationViewController;
+        healthInfoVC.relative = self.me;
+
     }
-    if([segue.identifier isEqualToString:@"embedFamilyInfoVC"])
+    if([segue.identifier isEqualToString:@"embedFamilyInfoTVC"])
     {
-        familyBackgroundVC = (FamilyBackgroundVC *)segue.destinationViewController;
-        familyBackgroundVC.relative = self.me;
+        familyBackgroundTVC = (FamilyBackgroundTVC *)segue.destinationViewController;
+       // familyBackgroundTVC.relative = self.me;
     }
-    if([segue.identifier isEqualToString:@"showTabBar"])
+    if([segue.identifier isEqualToString:@"showRelativesTV"])
+    {
+        relativesTVC = (RelativesTableVC *)segue.destinationViewController;
+    }
+  /*  if([segue.identifier isEqualToString:@"showTabBar"])
     {
         _mainTabBarVC = (MainTabBarVC *)segue.destinationViewController;
         relativesTVC = (RelativesTableVC *)segue.destinationViewController;
         //relativesTVC.relative = self.me;
     }
+   */
 }
-
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
-    [super touchesBegan:touches withEvent:event];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    return YES;
-}
-
-/*
-- (void)setEditing:(BOOL)flag animated:(BOOL)animated
-{
-    [super setEditing:flag animated:animated];
-    //    [detailsTVC setEditing:flag animated:animated];
-    
-    if (flag == YES) {
-        // change view to edit mode
-    }
-    else {
-        // Save the changes if needed and change the views to noneditable.
-        [self.view endEditing:YES];
-    }
-}
- 
 
 -(BOOL) textFieldShouldBeginEditing:(UITextField *)textField
 {
@@ -150,15 +135,64 @@ BOOL editMode = NO;
     return YES;
 }
 
--(BOOL) textFieldShouldReturn:(UITextField *)textField
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    if(textField == txtFirstName){
+        [txtFirstName resignFirstResponder];
+    }
+    else if(textField == txtLastName){
+        [txtLastName resignFirstResponder];
+    }
     return YES;
 }
- */
 
-- (IBAction)editPersonalInfo:(id)sender
+-(IBAction)dismissKeyboardOnTap:(id)sender{
+  
+   // [[self view] endEditing:YES];
+    [txtFirstName resignFirstResponder];
+    [txtLastName resignFirstResponder];
+}
+
+
+- (IBAction)saveRelation:(id)sender
 {
-   // [self setEditing:YES animated:YES];
+    Relative *_newRelative;
+    _newRelative = healthInfoVC.relative;
+    
+    if (_newRelative == nil) {
+        NSLog(@"The relative value is nil. So, setting it up");
+        _newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
+    }
+    
+//    _newRelative.contractedDisease = [NSSet setWithSet:healthInfoVC.relative.contractedDisease];
+    _newRelative.firstName = txtFirstName.text;
+    _newRelative.lastName = txtLastName.text;
+    _newRelative.relationDescription = personalInfoTVC.lblRelationship.text;
+    _newRelative.isLiving = personalInfoTVC.relative.isLiving;
+    _newRelative.isTwin = personalInfoTVC.relative.isTwin;
+    _newRelative.isIdenticalTwin = personalInfoTVC.relative.isIdenticalTwin;
+    _newRelative.isAdopted = personalInfoTVC.relative.isAdopted;
+    
+    _newRelative.gender = [NSNumber numberWithInt:1];
+    _newRelative.height = [NSNumber numberWithDouble:5.2];
+    _newRelative.race = [NSNumber numberWithInt:5];
+    _newRelative.weight = [NSNumber numberWithInt:120];
+    
+  /*  for (ContractedDisease *dis in healthInfoVC.arrContractedDiseases) {
+        [_newRelative addContractedDiseaseObject:dis];
+    }
+   */
+    
+    NSError *error = nil;
+    [APP_MGR.managedObjectContext save:&error];
+    
+    if (error)
+    {
+        DebugLog(@"Problem saving the relative: %@", error);
+    }
+    
+    [self performSegueWithIdentifier:@"showRelativesTV" sender:sender];
+    
 }
 
 @end

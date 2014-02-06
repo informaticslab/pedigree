@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContractedDisease.h"
 
-@interface SelectDiseaseVC : UIViewController
+@interface SelectDiseaseVC : UIViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (nonatomic, strong) ContractedDisease *contractedDis;
 
 @end
