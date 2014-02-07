@@ -128,6 +128,7 @@ AppManager *appMgr;
 
 -(BOOL) textFieldShouldBeginEditing:(UITextField *)textField
 {
+    NSLog(@"Text Field Begin Editing");
     return YES;
 }
 

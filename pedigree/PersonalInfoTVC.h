@@ -10,7 +10,7 @@
 #import "Relative.h"
 #import "SelectRelationshipVC.h"
 
-@interface PersonalInfoTVC : UITableViewController
+@interface PersonalInfoTVC : UITableViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate>
 @property(nonatomic, weak) Relative *relative;
 @property(nonatomic, weak) SelectRelationshipVC *selectRelationshipTVC;
 
@@ -25,5 +25,9 @@
 @property (weak, nonatomic) IBOutlet UISwitch *switchTwin;
 @property (weak, nonatomic) IBOutlet UISwitch *switchIdenticalTwin;
 @property (weak, nonatomic) IBOutlet UISwitch *switchAdopted;
+
+@property (strong, nonatomic) IBOutlet UIPickerView *customView;
+
+-(void)displayGenderPicker;
 
 @end

@@ -2,12 +2,13 @@
 //  FamilyBackgroundTVC.m
 //  pedigree
 //
-//  Created by Murali Tammineni on 2/3/14.
+//  Created by Madhavi Tammineni on 2/3/14.
 //  Copyright (c) 2014 CDC Informatics R&D Lab. All rights reserved.
 //
 
 #import "FamilyBackgroundTVC.h"
 #import "SelectRaceVC.h"
+#import "SelectEthnicityVC.h"
 
 @interface FamilyBackgroundTVC ()
 
@@ -15,7 +16,16 @@
 
 @implementation FamilyBackgroundTVC
 
+@synthesize switchParentsRelationshipSwitch;
+@synthesize lblRace;
+@synthesize lblEthnicity;
+
+@synthesize areParentsRelatedOtherThanMarriage;
+@synthesize selectedRaces;
+@synthesize selectedEthnicities;
+
 SelectRaceVC *selectRaceVC;
+SelectEthnicityVC *selectEthnicityVC;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -126,11 +136,10 @@ SelectRaceVC *selectRaceVC;
 - (void)switchValueChanged:(id)sender{
     
     if ([sender isOn]) {
-        _areParentsRelatedOtherThanMarriage = YES;
+        areParentsRelatedOtherThanMarriage = YES;
     }
     else{
-        _areParentsRelatedOtherThanMarriage = NO;
-
+        areParentsRelatedOtherThanMarriage = NO;
     }
     
 }
@@ -138,12 +147,27 @@ SelectRaceVC *selectRaceVC;
 - (IBAction)dismissWithDoneSelectRaceVC:(UIStoryboardSegue *)segue {
     
     selectRaceVC = segue.sourceViewController;
+  //  lblRace.text = [NSString stringWithFormat:@"%d", selectRaceVC._checkboxSelections ];
     [selectRaceVC dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)dismissWithCancelDiseaseSubCategoryVC:(UIStoryboardSegue *)segue {
+- (IBAction)dismissWithCancelSelectRaceVC:(UIStoryboardSegue *)segue {
     selectRaceVC = segue.sourceViewController;
     [selectRaceVC dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)dismissWithDoneSelectEthnicityVC:(UIStoryboardSegue *)segue {
+    
+    selectEthnicityVC = segue.sourceViewController;
+    //  lblRace.text = [NSString stringWithFormat:@"%d", selectRaceVC._checkboxSelections ];
+    selectedRaces = selectRaceVC._checkboxSelections;
+    [selectEthnicityVC dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)dismissWithCancelSelectEthnicityVC:(UIStoryboardSegue *)segue {
+    selectEthnicityVC = segue.sourceViewController;
+    selectedEthnicities = selectEthnicityVC._checkboxSelections;
+    [selectEthnicityVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

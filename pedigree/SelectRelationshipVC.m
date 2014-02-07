@@ -11,9 +11,12 @@
 
 @implementation SelectRelationshipVC
 
+@synthesize tv;
 @synthesize relDescription;
 
 NSArray *relationships;
+NSInteger   _checkboxSelections;
+NSInteger _selectedIndex;
 
 - (void)viewDidLoad
 {
@@ -45,10 +48,13 @@ NSArray *relationships;
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Select a Relationship";
-    
+    return @"Select Relationship";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -61,23 +67,20 @@ NSArray *relationships;
 {
     static NSString *CellIdentifier = @"SelectRelationshipCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     // Configure the cell...
     cell.textLabel.text = relationships[indexPath.row];
+    
+    if (indexPath.row == _selectedIndex) cell.accessoryType = UITableViewCellAccessoryCheckmark;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    static NSString *CellIdentifier = @"SelectRelationshipCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    _relative.relationDescription = relationships[indexPath.row];
-    relDescription = relationships[indexPath.row];
-    
+    _selectedIndex = indexPath.row;
+    relDescription = [relationships objectAtIndex:indexPath.row];
+    [self.tv reloadData];
 }
 
 @end

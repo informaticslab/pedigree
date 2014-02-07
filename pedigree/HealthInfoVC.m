@@ -103,7 +103,7 @@
 {
     // Return the number of rows in the section.
    // return [_conditionsArr count] ;
-    return 4;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

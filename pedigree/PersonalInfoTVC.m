@@ -14,6 +14,9 @@
 @synthesize lblRelationship;
 @synthesize lblGender;
 @synthesize selectRelationshipTVC;
+@synthesize customView;
+
+NSArray *arrGender;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,6 +42,8 @@
     [_switchTwin addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
     [_switchIdenticalTwin addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
     [_switchAdopted addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    arrGender = [[NSArray alloc] initWithObjects:@"Male", @"Female", nil];
 
 }
 
@@ -48,22 +53,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 1) {
+        NSLog(@":: Displaying the gender action sheet ::");
+        [self displayGenderPicker];
+    }
+}
+
 - (IBAction)dismissWithDoneBirthdateVC:(UIStoryboardSegue *)segue {
+     NSLog(@"dismissWithDoneBirthdateVC");
+    
     SelectBirthdateVC *birthdateVC = segue.sourceViewController;
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+    
     NSDate *date = [birthdateVC.datePicker date];
-    NSLocale *usLocale = [[NSLocale alloc]
-                          initWithLocaleIdentifier:@"en_US"];
-    self.lblBirthdate.text = [[NSString alloc]
-                         initWithFormat:@"%@",
-                         [date descriptionWithLocale:usLocale]];
-
+    
+    self.lblBirthdate.text = [dateFormatter stringFromDate:date];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.tableView reloadData];
-
 }
 
 - (IBAction)dismissWithCancelBirthdateVC:(UIStoryboardSegue *)segue {
+    NSLog(@"dismissWithCancelBirthdateVC");
     SelectBirthdateVC *birthdateVC = segue.sourceViewController;
     [birthdateVC dismissViewControllerAnimated:YES completion:nil];
 
@@ -188,6 +203,17 @@
     
 }
 
+-(void)displayGenderPicker{
+    
+    UIActionSheet *asGenderView = [[UIActionSheet alloc] initWithTitle:@"Gender" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Male", @"Female", nil];
+    [asGenderView setBounds:CGRectMake(0, 0, 320, 500)];
+    
+    [asGenderView showInView:self.view];
+}
 
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+     lblGender.text = [arrGender objectAtIndex:buttonIndex];
+}
 
 @end
