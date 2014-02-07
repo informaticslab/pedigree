@@ -43,7 +43,7 @@ SelectEthnicityVC *selectEthnicityVC;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-//     [_switchParentsRelationshipSwitch addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [switchParentsRelationshipSwitch addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
     
 }
 

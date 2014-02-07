@@ -11,10 +11,20 @@
 
 @implementation PersonalInfoTVC
 
+@synthesize switchLiving;
+@synthesize switchTwin;
+@synthesize switchIdenticalTwin;
+@synthesize switchAdopted;
+
 @synthesize lblRelationship;
 @synthesize lblGender;
 @synthesize selectRelationshipTVC;
 @synthesize customView;
+
+@synthesize isLiving;
+@synthesize isTwin;
+@synthesize isIdenticalTwin;
+@synthesize isAdopted;
 
 NSArray *arrGender;
 
@@ -38,10 +48,10 @@ NSArray *arrGender;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   //  _lblRelationship.text = _relative.relationDescription;
     
-    [_switchLiving addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
-    [_switchTwin addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
-    [_switchIdenticalTwin addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
-    [_switchAdopted addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [switchLiving addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [switchTwin addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [switchIdenticalTwin addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [switchAdopted addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
     
     arrGender = [[NSArray alloc] initWithObjects:@"Male", @"Female", nil];
 
@@ -164,36 +174,40 @@ NSArray *arrGender;
 - (void)switchValueChanged:(id)sender{
 
     if([sender tag] == 0){
+        
         if ([sender isOn]) {
-            _relative.isLiving = [NSNumber numberWithBool:YES];
+            isLiving = YES;
         }
         else{
-            _relative.isLiving = [NSNumber numberWithBool:NO];
+            isLiving = NO;
         }
         
     }
     else if ([sender tag] == 1){
+        
         if ([sender isOn]) {
-            _relative.isTwin = [NSNumber numberWithBool:YES];
+           isTwin = YES;
         }
         else{
-            _relative.isTwin = [NSNumber numberWithBool:NO];
+            isTwin = NO;
         }
     }
     else if ([sender tag] == 2){
+        
         if ([sender isOn]) {
-            _relative.isIdenticalTwin = [NSNumber numberWithBool:YES];
+            isIdenticalTwin = YES;
         }
         else{
-            _relative.isIdenticalTwin = [NSNumber numberWithBool:NO];
+            isIdenticalTwin = NO;
         }
     }
     else if ([sender tag] == 3){
+        
         if ([sender isOn]) {
-            _relative.isAdopted = [NSNumber numberWithBool:YES];
+            isAdopted = YES;
         }
         else{
-            _relative.isAdopted = [NSNumber numberWithBool:NO];
+            isAdopted = NO;
         }
         
     }
@@ -213,7 +227,16 @@ NSArray *arrGender;
 
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-     lblGender.text = [arrGender objectAtIndex:buttonIndex];
+    
+    if (buttonIndex == 0) {
+        lblGender.text = [arrGender objectAtIndex:buttonIndex];
+    }
+    else if (buttonIndex == 1) {
+        lblGender.text = [arrGender objectAtIndex:buttonIndex];
+    }
+    else{
+        // do nothing
+    }
 }
 
 @end

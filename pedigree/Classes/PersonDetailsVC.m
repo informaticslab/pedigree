@@ -128,7 +128,6 @@ AppManager *appMgr;
 
 -(BOOL) textFieldShouldBeginEditing:(UITextField *)textField
 {
-    NSLog(@"Text Field Begin Editing");
     return YES;
 }
 
@@ -169,14 +168,18 @@ AppManager *appMgr;
     _newRelative.firstName = txtFirstName.text;
     _newRelative.lastName = txtLastName.text;
     _newRelative.relationDescription = personalInfoTVC.lblRelationship.text;
-    _newRelative.isLiving = personalInfoTVC.relative.isLiving;
-    _newRelative.isTwin = personalInfoTVC.relative.isTwin;
-    _newRelative.isIdenticalTwin = personalInfoTVC.relative.isIdenticalTwin;
-    _newRelative.isAdopted = personalInfoTVC.relative.isAdopted;
+   
+    _newRelative.isLiving = [NSNumber numberWithBool:personalInfoTVC.isLiving];
+    _newRelative.isTwin = [NSNumber numberWithBool:personalInfoTVC.isTwin];
+    _newRelative.isIdenticalTwin = [NSNumber numberWithBool:personalInfoTVC.isIdenticalTwin];
+    _newRelative.isAdopted = [NSNumber numberWithBool:personalInfoTVC.isAdopted];
+    
+    _newRelative.areParentsRelatedOtherThanMarraige = [NSNumber numberWithBool:familyBackgroundTVC.areParentsRelatedOtherThanMarriage];
+    _newRelative.race = [NSNumber numberWithInteger:familyBackgroundTVC.selectedRaces];
+    _newRelative.ethnicity = [NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities];
     
     _newRelative.gender = [NSNumber numberWithInt:1];
     _newRelative.height = [NSNumber numberWithDouble:5.2];
-    _newRelative.race = [NSNumber numberWithInt:5];
     _newRelative.weight = [NSNumber numberWithInt:120];
     
   /*  for (ContractedDisease *dis in healthInfoVC.arrContractedDiseases) {

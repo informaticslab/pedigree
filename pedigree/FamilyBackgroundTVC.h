@@ -18,5 +18,6 @@
 @property (nonatomic, assign) NSInteger selectedRaces;
 @property (nonatomic, assign) NSInteger selectedEthnicities;
 
+- (void)switchValueChanged:(id)sender;
 
 @end
