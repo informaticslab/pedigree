@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UILabel+Boldify.h"
 
 @interface IntroVC : UIViewController
 

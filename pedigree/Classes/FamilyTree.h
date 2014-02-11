@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Relative.h"
 
+@class Relative;
 @interface FamilyTree : NSObject
 
 @property (nonatomic, strong) NSMutableArray *famTree;
@@ -16,6 +16,5 @@
 -(void)loadTestData;
 -(NSInteger)numberOfRelatives;
 -(Relative *)relativeFromIndex:(NSInteger) index;
-
 
 @end

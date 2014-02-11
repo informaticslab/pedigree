@@ -22,6 +22,7 @@
 @synthesize customView;
 
 @synthesize isLiving;
+@synthesize gender;
 @synthesize isTwin;
 @synthesize isIdenticalTwin;
 @synthesize isAdopted;
@@ -230,9 +231,11 @@ NSArray *arrGender;
     
     if (buttonIndex == 0) {
         lblGender.text = [arrGender objectAtIndex:buttonIndex];
+        gender = buttonIndex;
     }
     else if (buttonIndex == 1) {
         lblGender.text = [arrGender objectAtIndex:buttonIndex];
+        gender = buttonIndex;
     }
     else{
         // do nothing

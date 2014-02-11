@@ -14,4 +14,9 @@
 @property (nonatomic) NSNumber *_mainDiseaseId;
 @property (nonatomic, strong) ContractedDisease *contractedDis;
 
+//new
+@property (nonatomic, retain) NSMutableSet *selectedDiseasesSet;
+@property (nonatomic) NSInteger _checkboxSelections;
+@property (nonatomic, strong) NSString *mainDiseaseName;
+
 @end

@@ -16,8 +16,6 @@
 
 @property (nonatomic, weak) Relative *relative;
 @property (weak, nonatomic) IBOutlet UITableView *tv;
-
--(IBAction)closeSelectRelationShipVC:(id)sender;
 @property (nonatomic, strong) NSString *relDescription;
 
 @end

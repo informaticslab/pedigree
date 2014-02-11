@@ -12,6 +12,7 @@
 #import "Debug.h"
 #import "FamilyTree.h"
 
+@class Person;
 @interface AppManager : NSObject 
 
 @property (nonatomic, retain) NSString *appName;

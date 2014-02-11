@@ -42,8 +42,8 @@ static AppManager *sharedAppManager = nil;
 		self.appName = @"Pedigree";
         self.agreedWithEula = FALSE;
         self.tableFont = [UIFont boldSystemFontOfSize: 16];
-        self.famTree = [[FamilyTree alloc] init];
-        [self.famTree loadTestData];
+  //      self.famTree = [[FamilyTree alloc] init];
+   //     [self.famTree loadTestData];
         
         // get Core Data references
         AppDelegate *appDel = (AppDelegate *)[UIApplication sharedApplication].delegate;

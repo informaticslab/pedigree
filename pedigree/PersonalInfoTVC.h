@@ -29,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *customView;
 
 @property (nonatomic, assign) BOOL isLiving;
+@property (nonatomic) NSInteger gender;
 @property (nonatomic, assign) BOOL isTwin;
 @property (nonatomic, assign) BOOL isIdenticalTwin;
 @property (nonatomic, assign) BOOL isAdopted;

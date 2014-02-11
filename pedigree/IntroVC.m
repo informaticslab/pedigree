@@ -36,9 +36,10 @@ PersonDetailsVC *personDetailsVC;
 	// Do any additional setup after loading the view.
     
     self.introLbl.text = @"Start with you or a family member";
-    [self.introLbl boldSubstring:@"Start"];
+ /*   [self.introLbl boldSubstring:@"Start"];
     [self.introLbl boldSubstring:@"you"];
     [self.introLbl boldSubstring:@"family member"];
+  */
 }
 
 - (void)didReceiveMemoryWarning

@@ -11,6 +11,7 @@
 #import "DiseaseSubCategoryVCViewController.h"
 #import "AppManager.h"
 #import "ContractedDisease.h"
+#import "SelectAgeVC.h"
 
 @interface SelectDiseaseVC ()
 
@@ -22,15 +23,17 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *tblView;
 @property (nonatomic, strong) DiseaseSubCategoryVCViewController *diseaseSubCatVC;
-@property (nonatomic, strong) IBOutlet UIPickerView *agePicker;
+@property (nonatomic, strong) IBOutlet UIPickerView *_agePicker;
 @property (nonatomic, weak) IBOutlet UITextField *txtAge;
 
-@end
+@property (nonatomic, strong) SelectAgeVC *selectAgeVC;
 
+@end
 
 @implementation SelectDiseaseVC
 
 @synthesize contractedDis;
+@synthesize _checkboxSelections;
 
 AppManager *appMgr;
 
@@ -60,21 +63,8 @@ AppManager *appMgr;
     _ageGroupArr = [[NSArray alloc] initWithObjects:
                     @"Pre-Birth",@"Newborn",@"In Infancy",@"In Childhood",@"In Adolescence", @"20-29 years", @"30-39 years", @"40-49 years", @"50-59 years", @"60 years and older", @"Unknown",nil];
     
-    //setting up the Age PickerView
-    _agePicker =[[UIPickerView alloc]init];
-    _agePicker.delegate = self;
-    _agePicker.dataSource = self;
-    _agePicker.showsSelectionIndicator=YES;
-    [_agePicker selectRow:0 inComponent:0 animated:YES];
+    _selectedDiseasesSet = [[NSMutableSet alloc] init];
     
-    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
-    toolBar.barStyle = UIBarStyleBlackOpaque;
-    
-    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneBtnPressToGetValue:)];
-    
-    [toolBar setItems:[NSArray arrayWithObject:btn]];
-    _txtAge.inputAccessoryView = toolBar;
-    _txtAge.inputView = _agePicker;
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,18 +97,21 @@ AppManager *appMgr;
     cell.accessoryType = UITableViewCellAccessoryNone;
     
     cell.textLabel.text = [_mainDiseasesArr objectAtIndex:indexPath.row];
-    if(indexPath.row == _selectedDiseaseIndex){
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
+  
+    int flag = 1 << indexPath.row;
+    // update row's accessory if it's "turned on"
+    if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    _checkboxSelections ^= 1 << indexPath.row;
     _selectedDiseaseIndex = indexPath.row;
     
     contractedDis.name = @"";
     contractedDis.categoryName = [_mainDiseasesArr objectAtIndex:_selectedDiseaseIndex];
+    
     [self.tblView reloadData];
     [self showDiseaseSubCategory];
 }
@@ -131,10 +124,17 @@ AppManager *appMgr;
         _diseaseSubCatVC = segue.destinationViewController;
         _diseaseSubCatVC._mainDiseaseId = [NSNumber numberWithInteger:_selectedDiseaseIndex];
     }
-    
+    if([segue.identifier isEqualToString:@"showAgePickerSegue"])
+    {
+        _selectAgeVC = segue.destinationViewController;
+    }
+   
 }
 
 -(void)showDiseaseSubCategory{
+    
+    Disease *_selectedDisease = [[Disease alloc] init];
+    _selectedDisease.categoryName = [_mainDiseasesArr objectAtIndex:_selectedDiseaseIndex];
     
     switch (_selectedDiseaseIndex) {
      case kNoKnownConditions:
@@ -153,6 +153,8 @@ AppManager *appMgr;
      }
      case kDementiaAlzheimers:
      {
+          _selectedDisease.name = [_mainDiseasesArr objectAtIndex:kDementiaAlzheimers];
+         [self performSegueWithIdentifier:@"showAgePickerSegue" sender:self];
          break;
      }
      case kDiabetes:
@@ -172,6 +174,8 @@ AppManager *appMgr;
      }
      case kHighCholesterol:
      {
+         _selectedDisease.name = [_mainDiseasesArr objectAtIndex:kHighCholesterol];
+         [self performSegueWithIdentifier:@"showAgePickerSegue" sender:self];
          break;
      }case kHyperTension:
      {
@@ -188,6 +192,8 @@ AppManager *appMgr;
      }
      case kOsteoporosis:
      {
+         _selectedDisease.name = [_mainDiseasesArr objectAtIndex:kOsteoporosis];
+         [self performSegueWithIdentifier:@"showAgePickerSegue" sender:self];
          break;
      }
      case kPsychologicalDisorder:
@@ -197,18 +203,26 @@ AppManager *appMgr;
      }
      case kSepticemia:
      {
+         _selectedDisease.name = [_mainDiseasesArr objectAtIndex:kSepticemia];
+         [self performSegueWithIdentifier:@"showAgePickerSegue" sender:self];
          break;
      }
      case kStrokeBrainAttack:
      {
+         _selectedDisease.name = [_mainDiseasesArr objectAtIndex:kStrokeBrainAttack];
+         [self performSegueWithIdentifier:@"showAgePickerSegue" sender:self];
          break;
      }
      case kSuddenInfantDeathSyndrome:
      {
+         _selectedDisease.name = [_mainDiseasesArr objectAtIndex:kSuddenInfantDeathSyndrome];
+         [self performSegueWithIdentifier:@"showAgePickerSegue" sender:self];
          break;
      }
      case kUnknownDisease:
      {
+         _selectedDisease.name = [_mainDiseasesArr objectAtIndex:kUnknownDisease];
+         [self performSegueWithIdentifier:@"showAgePickerSegue" sender:self];
          break;
      }
      case kOtherAddNew:
@@ -219,34 +233,8 @@ AppManager *appMgr;
          break;
      
    }
-}
 
-- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-
-- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return [_mainDiseasesArr count];
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return [_ageGroupArr objectAtIndex:row];
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    _txtAge.text = [_ageGroupArr objectAtIndex:row];
-    _selectedAgeIndex = row;
-    
-    contractedDis.ageAtDiagnosis = [NSNumber numberWithInteger:_selectedAgeIndex];
-}
-
--(IBAction)doneBtnPressToGetValue:(id)sender
-{
-    [_txtAge resignFirstResponder];
+    [_selectedDiseasesSet addObject:_selectedDisease];
 }
 
 @end

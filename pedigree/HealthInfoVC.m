@@ -28,6 +28,7 @@
 
 @synthesize arrContractedDiseases;
 @synthesize relative;
+@synthesize arrDiseases;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,6 +68,12 @@
       NSLog(@"HealthInfoVC :: The total number of diseases in the HealthVC are: %lu", (unsigned long)[relative.contractedDisease count]);
     [selectDiseaseVC dismissViewControllerAnimated:YES completion:nil];
     
+    //new
+    arrDiseases = [NSMutableArray arrayWithArray:[selectDiseaseVC.selectedDiseasesSet allObjects]];
+     NSLog(@"HealthInfoVC :: The total number of diseases in the HealthVC, selectedDiseaseSet are: %d", [selectDiseaseVC.selectedDiseasesSet count]);
+    
+    
+    
 }
 
 - (IBAction)dismissWithCancelSelectDiseaseVC:(UIStoryboardSegue *)segue {
@@ -81,6 +88,9 @@
  
       [arrContractedDiseases addObject:diseaseSubCatVC.contractedDis];
       NSLog(@"HealthInfoVC :: The total number of diseases in the HealthVC are: %lu", (unsigned long)[relative.contractedDisease count]);
+    
+    //new
+    arrDiseases = [NSMutableArray arrayWithArray:[diseaseSubCatVC.selectedDiseasesSet allObjects]];
     [diseaseSubCatVC dismissViewControllerAnimated:YES completion:nil];
 }
 

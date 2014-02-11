@@ -13,21 +13,23 @@
 #import "Person.h"
 #import "RelativeDetailsVC.h"
 #import "PersonDetailsVC.h"
+#import "TestVC.h"
 
 @interface RelativesTableVC ()
 
 @property (nonatomic, weak) Relative *me;
 @property (nonatomic, strong) PersonDetailsVC *personDetailsVC;
+@property (nonatomic, strong) TestVC *testVC;
 
 @end
 
 @implementation RelativesTableVC
 
+@synthesize testVC;
 
 AppManager *appMgr;
 FamilyTree *famTree;
 Relative *currRelative;
-
 
 - (void)viewDidLoad
 {
@@ -158,15 +160,19 @@ Relative *currRelative;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"showRelativeDetailsSegue"])
+  /*  if([segue.identifier isEqualToString:@"showRelativeDetailsSegue"])
     {
         RelativeDetailsVC *relativeDetailsVC = segue.destinationViewController;
         relativeDetailsVC.relative = currRelative;
     }
+   */
     if([segue.identifier isEqualToString:@"showPersonDetailsSegue"])
     {
-        _personDetailsVC = (PersonDetailsVC *)segue.destinationViewController;
+       /* _personDetailsVC = (PersonDetailsVC *)segue.destinationViewController;
         _personDetailsVC.me = _me;
+        */
+        testVC = (TestVC *)segue.destinationViewController;
+        
     }
 }
 

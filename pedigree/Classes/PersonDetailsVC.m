@@ -41,6 +41,7 @@ AppManager *appMgr;
 @synthesize txtLastName;
 @synthesize arrContractedDiseases;
 @synthesize me;
+@synthesize txtTest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,15 +57,28 @@ AppManager *appMgr;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
-    [self.txtFirstName setDelegate:self];
-    [self.txtLastName setDelegate:self];
-    
+   
     _segControl.selectedSegmentIndex = 0;
     self.personalInfoView.hidden = NO;
     self.healthInfoView.hidden = YES;
     self.familyBackgroundView.hidden = YES;
     
-    [self.view bringSubviewToFront:txtFirstName];
+    NSMutableParagraphStyle* style = [[NSMutableParagraphStyle alloc] init];
+    style.lineBreakMode = NSLineBreakByTruncatingTail;
+    CGRect placeholderRect = CGRectMake(99, 81, 138, 30);
+    //CGRectMake(txtFirstName.frame.origin.x, (txtFirstName.frame.size.height- txtFirstName.font.pointSize)/2, txtFirstName.frame.size.width, txtFirstName.font.pointSize);
+    NSDictionary *attr = [NSDictionary dictionaryWithObjectsAndKeys:style,NSParagraphStyleAttributeName, self.txtFirstName.font, NSFontAttributeName, self.txtFirstName.textColor, NSForegroundColorAttributeName, nil];
+    [txtFirstName.placeholder drawInRect:placeholderRect withAttributes:attr];
+
+  //  [self.view bringSubviewToFront:txtFirstName];
+    
+//    UIView *v = txtFirstName;
+   /* while ( v.superview != nil )
+    {
+        NSLog( @"%@ - %@", NSStringFromClass([v class]), CGRectContainsRect( v.superview.bounds, v.frame ) ? @"GOOD!" : @"BAD!" );
+        v = v.superview;
+    }*/
+//    NSLog( @"%@ - %@", NSStringFromClass([v class]), CGRectContainsRect( v.superview.bounds, v.frame ) ? @"GOOD!" : @"BAD!" );
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,8 +109,6 @@ AppManager *appMgr;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-     DebugLog(@"The Segue name is: %@", segue.identifier);
-    
     if([segue.identifier isEqualToString:@"embedPersonalInfoTV"])
     {
         personalInfoTVC = (PersonalInfoTVC *)segue.destinationViewController;
@@ -126,31 +138,43 @@ AppManager *appMgr;
    */
 }
 
--(BOOL) textFieldShouldBeginEditing:(UITextField *)textField
-{
+/*
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"Tocuhes began with event:");
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+ */
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    NSLog(@"text filed should begin editing");
     return YES;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+   NSLog(@"text filed did begin editing");
+}
+
+
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    NSLog(@"text filed should end editing");
+    return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    NSLog(@"text filed did end editing");
 }
 
 -(BOOL)textFieldShouldClear:(UITextField *)textField{
+    NSLog(@"Text field should clear");
     return YES;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
-    if(textField == txtFirstName){
-        [txtFirstName resignFirstResponder];
-    }
-    else if(textField == txtLastName){
-        [txtLastName resignFirstResponder];
-    }
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+     NSLog(@"Text field should return");
+    [textField resignFirstResponder];
     return YES;
-}
-
--(IBAction)dismissKeyboardOnTap:(id)sender{
-  
-   // [[self view] endEditing:YES];
-    [txtFirstName resignFirstResponder];
-    [txtLastName resignFirstResponder];
 }
 
 
@@ -170,6 +194,7 @@ AppManager *appMgr;
     _newRelative.relationDescription = personalInfoTVC.lblRelationship.text;
    
     _newRelative.isLiving = [NSNumber numberWithBool:personalInfoTVC.isLiving];
+    _newRelative.gender = [NSNumber numberWithInteger:personalInfoTVC.gender];
     _newRelative.isTwin = [NSNumber numberWithBool:personalInfoTVC.isTwin];
     _newRelative.isIdenticalTwin = [NSNumber numberWithBool:personalInfoTVC.isIdenticalTwin];
     _newRelative.isAdopted = [NSNumber numberWithBool:personalInfoTVC.isAdopted];
@@ -178,11 +203,10 @@ AppManager *appMgr;
     _newRelative.race = [NSNumber numberWithInteger:familyBackgroundTVC.selectedRaces];
     _newRelative.ethnicity = [NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities];
     
-    _newRelative.gender = [NSNumber numberWithInt:1];
     _newRelative.height = [NSNumber numberWithDouble:5.2];
     _newRelative.weight = [NSNumber numberWithInt:120];
     
-  /*  for (ContractedDisease *dis in healthInfoVC.arrContractedDiseases) {
+  /* for (ContractedDisease *dis in healthInfoVC.arrContractedDiseases) {
         [_newRelative addContractedDiseaseObject:dis];
     }
    */

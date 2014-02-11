@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "ContractedDisease.h"
+#import "Disease.h"
 
-@interface SelectDiseaseVC : UIViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface SelectDiseaseVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) ContractedDisease *contractedDis;
+
+//new
+@property (nonatomic, retain) NSMutableSet *selectedDiseasesSet;
+@property (nonatomic) NSInteger _checkboxSelections;
 
 @end
