@@ -63,22 +63,13 @@ AppManager *appMgr;
     self.healthInfoView.hidden = YES;
     self.familyBackgroundView.hidden = YES;
     
-    NSMutableParagraphStyle* style = [[NSMutableParagraphStyle alloc] init];
+/*    NSMutableParagraphStyle* style = [[NSMutableParagraphStyle alloc] init];
     style.lineBreakMode = NSLineBreakByTruncatingTail;
     CGRect placeholderRect = CGRectMake(99, 81, 138, 30);
     //CGRectMake(txtFirstName.frame.origin.x, (txtFirstName.frame.size.height- txtFirstName.font.pointSize)/2, txtFirstName.frame.size.width, txtFirstName.font.pointSize);
     NSDictionary *attr = [NSDictionary dictionaryWithObjectsAndKeys:style,NSParagraphStyleAttributeName, self.txtFirstName.font, NSFontAttributeName, self.txtFirstName.textColor, NSForegroundColorAttributeName, nil];
     [txtFirstName.placeholder drawInRect:placeholderRect withAttributes:attr];
-
-  //  [self.view bringSubviewToFront:txtFirstName];
-    
-//    UIView *v = txtFirstName;
-   /* while ( v.superview != nil )
-    {
-        NSLog( @"%@ - %@", NSStringFromClass([v class]), CGRectContainsRect( v.superview.bounds, v.frame ) ? @"GOOD!" : @"BAD!" );
-        v = v.superview;
-    }*/
-//    NSLog( @"%@ - %@", NSStringFromClass([v class]), CGRectContainsRect( v.superview.bounds, v.frame ) ? @"GOOD!" : @"BAD!" );
+ */
 }
 
 - (void)didReceiveMemoryWarning
@@ -189,8 +180,21 @@ AppManager *appMgr;
     }
     
 //    _newRelative.contractedDisease = [NSSet setWithSet:healthInfoVC.relative.contractedDisease];
-    _newRelative.firstName = txtFirstName.text;
-    _newRelative.lastName = txtLastName.text;
+    
+    if (txtFirstName.text != NULL) {
+        _newRelative.firstName = txtFirstName.text;
+    }
+    else{
+         _newRelative.firstName = @"";
+    }
+    
+    if (txtLastName.text != NULL) {
+        _newRelative.lastName = txtLastName.text;
+    }
+    else{
+         _newRelative.lastName = @"";
+    }
+    
     _newRelative.relationDescription = personalInfoTVC.lblRelationship.text;
    
     _newRelative.isLiving = [NSNumber numberWithBool:personalInfoTVC.isLiving];
