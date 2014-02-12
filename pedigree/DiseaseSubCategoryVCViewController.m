@@ -127,6 +127,7 @@ AppManager *appMgr;
     [_selectedDiseasesSet addObject:_selectedDisease];
     
     [self.tblView reloadData];
+    [self performSegueWithIdentifier:@"showAgePickerSegue2" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -136,6 +137,12 @@ AppManager *appMgr;
         _selectAgeVC = segue.destinationViewController;
     }
     
+}
+
+- (IBAction)dismissWithDoneSelectAgeVC:(UIStoryboardSegue *)segue {
+    
+    SelectAgeVC *selectAgeVC = segue.sourceViewController;
+    [selectAgeVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

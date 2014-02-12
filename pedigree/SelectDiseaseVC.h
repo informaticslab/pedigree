@@ -12,7 +12,7 @@
 
 @interface SelectDiseaseVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) ContractedDisease *contractedDis;
+//@property (nonatomic, strong) ContractedDisease *contractedDis;
 
 //new
 @property (nonatomic, retain) NSMutableSet *selectedDiseasesSet;

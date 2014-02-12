@@ -81,7 +81,9 @@ Relative *currRelative;
     NSInteger index = [indexPath row];
     currRelative = (Relative *)[_relatives objectAtIndex:index];
     
-    cell.textLabel.text = currRelative.relationDescription;
+    
+  //  cell.textLabel.text = currRelative.relationDescription;
+    cell.textLabel.text = @"";
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", currRelative.firstName, currRelative.lastName];
     
  /*   //temporarily displaying the diseases that are added to the user's profile
