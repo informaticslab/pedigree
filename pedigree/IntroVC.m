@@ -48,7 +48,6 @@ PersonDetailsVC *personDetailsVC;
     // Dispose of any resources that can be recreated.
 }
 
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"showMyProfile"])
@@ -57,7 +56,6 @@ PersonDetailsVC *personDetailsVC;
         personDetailsVC.me = _me;
     }
 }
-
 
 -(IBAction)viewMyProfile:(id)sender{
     
