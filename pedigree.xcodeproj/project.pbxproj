@@ -24,7 +24,6 @@
 		6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */; };
 		6AB3881318A20A5B0064ADB5 /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */; };
 		6AE8C79918A8615B003FB173 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8C79818A8615A003FB173 /* TestVC.m */; };
-		6AEDAB3F18A949170063DA13 /* TestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AEDAB3E18A949170063DA13 /* TestStoryboard.storyboard */; };
 		6AEDAB4218A955E10063DA13 /* Disease.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDAB4118A955E10063DA13 /* Disease.m */; };
 		6AEDAB4518A9A2D20063DA13 /* SelectAgeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDAB4418A9A2D20063DA13 /* SelectAgeVC.m */; };
 		A656EB6117F0AFFD00B51323 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656EB6017F0AFFD00B51323 /* CoreData.framework */; };
@@ -85,7 +84,6 @@
 		6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoTVC.m; sourceTree = "<group>"; };
 		6AE8C79718A8615A003FB173 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
 		6AE8C79818A8615A003FB173 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
-		6AEDAB3E18A949170063DA13 /* TestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TestStoryboard.storyboard; sourceTree = "<group>"; };
 		6AEDAB4018A955E10063DA13 /* Disease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disease.h; sourceTree = "<group>"; };
 		6AEDAB4118A955E10063DA13 /* Disease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Disease.m; sourceTree = "<group>"; };
 		6AEDAB4318A9A2D20063DA13 /* SelectAgeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAgeVC.h; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 		A657DD9016F747F200F3CA8E = {
 			isa = PBXGroup;
 			children = (
-				6AEDAB3E18A949170063DA13 /* TestStoryboard.storyboard */,
 				ABD3C67B1892BB0E00D377F2 /* Media.xcassets */,
 				A657DDA216F747F200F3CA8E /* pedigree */,
 				A657DD9B16F747F200F3CA8E /* Frameworks */,
@@ -322,7 +319,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A2E3B4B189A11D20048E4DA /* Diseases_Catalog_2.plist in Resources */,
-				6AEDAB3F18A949170063DA13 /* TestStoryboard.storyboard in Resources */,
 				A657DDA716F747F200F3CA8E /* InfoPlist.strings in Resources */,
 				A657DDB616F747F300F3CA8E /* MainStoryboard.storyboard in Resources */,
 				ABD3C67C1892BB0E00D377F2 /* Media.xcassets in Resources */,
