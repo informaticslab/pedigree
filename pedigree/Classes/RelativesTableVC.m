@@ -173,6 +173,7 @@ Relative *currRelative;
        /* _personDetailsVC = (PersonDetailsVC *)segue.destinationViewController;
         _personDetailsVC.me = _me;
         */
+       
         testVC = (TestVC *)segue.destinationViewController;
         
     }
