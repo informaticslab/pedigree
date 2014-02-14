@@ -26,7 +26,6 @@
 
 @implementation HealthInfoVC
 
-@synthesize arrContractedDiseases;
 @synthesize relative;
 @synthesize arrDiseases;
 
@@ -44,20 +43,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    //creating the arr to hold the contactedDiseases objects
-    if (arrContractedDiseases == nil) {
-        arrContractedDiseases = [[NSMutableArray alloc] init];;
-    }
-    
     if (arrDiseases == nil) {
-        arrDiseases = [[NSMutableArray alloc] init];;
+        arrDiseases = [[NSMutableArray alloc] init];
     }
-    
-    if (relative == nil) {
-       relative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
-    }
-    
- }
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -66,44 +55,18 @@
 }
 
 - (IBAction)dismissWithDoneSelectDiseaseVC:(UIStoryboardSegue *)segue {
-    SelectDiseaseVC *selectDiseaseVC = segue.sourceViewController;
- //   [relative addContractedDiseaseObject:selectDiseaseVC.contractedDis];
-//   [arrContractedDiseases addObject:selectDiseaseVC.contractedDis];
-//NSLog(@"HealthInfoVC :: The total number of diseases in the HealthVC are: %lu", (unsigned long)[relative.contractedDisease count]);
-   
-    [arrDiseases addObjectsFromArray:[selectDiseaseVC.selectedDiseasesSet allObjects]];
-     NSLog(@"HealthInfoVC :: The total number of diseases in the HealthVC, selectedDiseaseSet are: %d", [selectDiseaseVC.selectedDiseasesSet count]);
-    
+    _diseaseVC = segue.sourceViewController;
+ 
+    [arrDiseases addObjectsFromArray:[_diseaseVC.setSelectedDiseases allObjects]];
     [_conditionsTblView reloadData];
-    [selectDiseaseVC dismissViewControllerAnimated:YES completion:nil];
+    [_diseaseVC dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (IBAction)dismissWithCancelSelectDiseaseVC:(UIStoryboardSegue *)segue {
     SelectDiseaseVC *selectDiseaseVC = segue.sourceViewController;
     [selectDiseaseVC dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-- (IBAction)dismissWithDoneDiseaseSubCategoryVC:(UIStoryboardSegue *)segue {
-    
-    DiseaseSubCategoryVCViewController *diseaseSubCatVC = segue.sourceViewController;
-    [relative addContractedDiseaseObject:diseaseSubCatVC.contractedDis];
- 
-    [arrContractedDiseases addObject:diseaseSubCatVC.contractedDis];
-    
-    [arrDiseases addObjectsFromArray:[diseaseSubCatVC.selectedDiseasesSet allObjects]];
-     NSLog(@"HealthInfoVC :: The total number of diseases in the HealthVC, arrDiseases are: %d", [arrDiseases count]);
-    
-    [_conditionsTblView reloadData];
-    [diseaseSubCatVC dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)dismissWithCancelDiseaseSubCategoryVC:(UIStoryboardSegue *)segue {
-    
-    DiseaseSubCategoryVCViewController *diseaseSubCatVC = segue.sourceViewController;
-    [diseaseSubCatVC dismissViewControllerAnimated:YES completion:nil];
-}
- */
 
 #pragma mark - Table view data source
 

@@ -14,9 +14,6 @@
 @interface HealthInfoVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, weak) Relative *relative;
-@property (nonatomic, strong) NSMutableArray *arrContractedDiseases;
-
-//new
 @property (nonatomic, strong) NSMutableArray *arrDiseases;
 
 @end

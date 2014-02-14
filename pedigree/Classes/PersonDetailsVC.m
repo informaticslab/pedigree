@@ -13,6 +13,8 @@
 #import "RelativesTableVC.h"
 #import "FamilyBackgroundTVC.h"
 #import "HealthInfoVC.h"
+#import "Disease.h"
+#import "ContractedDisease.h"
 
 @interface PersonDetailsVC ()
 
@@ -39,7 +41,6 @@ AppManager *appMgr;
 
 @synthesize txtFirstName;
 @synthesize txtLastName;
-@synthesize arrContractedDiseases;
 @synthesize me;
 @synthesize txtTest;
 
@@ -62,14 +63,6 @@ AppManager *appMgr;
     self.personalInfoView.hidden = NO;
     self.healthInfoView.hidden = YES;
     self.familyBackgroundView.hidden = YES;
-    
-/*    NSMutableParagraphStyle* style = [[NSMutableParagraphStyle alloc] init];
-    style.lineBreakMode = NSLineBreakByTruncatingTail;
-    CGRect placeholderRect = CGRectMake(99, 81, 138, 30);
-    //CGRectMake(txtFirstName.frame.origin.x, (txtFirstName.frame.size.height- txtFirstName.font.pointSize)/2, txtFirstName.frame.size.width, txtFirstName.font.pointSize);
-    NSDictionary *attr = [NSDictionary dictionaryWithObjectsAndKeys:style,NSParagraphStyleAttributeName, self.txtFirstName.font, NSFontAttributeName, self.txtFirstName.textColor, NSForegroundColorAttributeName, nil];
-    [txtFirstName.placeholder drawInRect:placeholderRect withAttributes:attr];
- */
 }
 
 - (void)didReceiveMemoryWarning
@@ -139,31 +132,24 @@ AppManager *appMgr;
  */
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    NSLog(@"text filed should begin editing");
-    return YES;
+     return YES;
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-   NSLog(@"text filed did begin editing");
 }
 
-
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    NSLog(@"text filed should end editing");
     return YES;
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
-    NSLog(@"text filed did end editing");
 }
 
 -(BOOL)textFieldShouldClear:(UITextField *)textField{
-    NSLog(@"Text field should clear");
     return YES;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-     NSLog(@"Text field should return");
     [textField resignFirstResponder];
     return YES;
 }
@@ -172,14 +158,10 @@ AppManager *appMgr;
 - (IBAction)saveRelation:(id)sender
 {
     Relative *_newRelative;
-    _newRelative = healthInfoVC.relative;
     
     if (_newRelative == nil) {
-        NSLog(@"The relative value is nil. So, setting it up");
         _newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
     }
-    
-//    _newRelative.contractedDisease = [NSSet setWithSet:healthInfoVC.relative.contractedDisease];
     
     if (txtFirstName.text != NULL) {
         _newRelative.firstName = txtFirstName.text;
@@ -210,11 +192,17 @@ AppManager *appMgr;
     _newRelative.height = [NSNumber numberWithDouble:5.2];
     _newRelative.weight = [NSNumber numberWithInt:120];
     
-  /* for (ContractedDisease *dis in healthInfoVC.arrContractedDiseases) {
-        [_newRelative addContractedDiseaseObject:dis];
+    for (Disease *dis in healthInfoVC.arrDiseases) {
+       
+       ContractedDisease *contractedDis = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease"inManagedObjectContext:APP_MGR.managedObjectContext ];
+       
+       contractedDis.categoryName = dis.categoryName;
+       contractedDis.name = dis.name;
+       contractedDis.ageAtDiagnosis = dis.ageAtDiagnosis;
+       
+       [_newRelative addContractedDiseaseObject:contractedDis];
     }
-   */
-    
+   
     NSError *error = nil;
     [APP_MGR.managedObjectContext save:&error];
     

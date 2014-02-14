@@ -83,7 +83,7 @@
 		<string>Gastrointestinal Disorder</string>
 		<key>Disease_Number</key>
 		<integer>5</integer>
-		<key>Disease_Sub_category</key>
+		<key>Disease_Sub_Category</key>
 		<array>
 			<string>Colon Polyp</string>
 			<string>Crohn&apos;s Disease</string>

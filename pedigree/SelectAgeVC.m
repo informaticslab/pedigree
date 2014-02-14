@@ -12,14 +12,12 @@
 
 @property (nonatomic, retain) IBOutlet UIPickerView *agePicker;
 @property (nonatomic, strong) NSArray *ageGroupArr;
-@property (nonatomic) NSInteger selectedAgeIndex;
 
 @end
 
 @implementation SelectAgeVC
 
 @synthesize agePicker;
-@synthesize selectedDisease;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +32,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.navigationItem.hidesBackButton = YES;
     
     _ageGroupArr = [[NSArray alloc] initWithObjects:
                     @"Pre-Birth",@"Newborn",@"In Infancy",@"In Childhood",@"In Adolescence", @"20-29 years", @"30-39 years", @"40-49 years", @"50-59 years", @"60 years and older", @"Unknown",nil];
@@ -69,7 +69,6 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     _selectedAgeIndex = row;
-    selectedDisease.ageAtDiagnosis = [NSNumber numberWithInteger:row];
 }
 
 @end

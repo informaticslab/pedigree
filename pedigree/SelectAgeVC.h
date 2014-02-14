@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Disease.h"
 
 @interface SelectAgeVC : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (nonatomic, strong) Disease *selectedDisease;
+@property (nonatomic) NSInteger selectedAgeIndex;
 
 @end

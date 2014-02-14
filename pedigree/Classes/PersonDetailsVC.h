@@ -23,7 +23,4 @@
 @property (nonatomic, strong) IBOutlet UITextField *txtLastName;
 @property (nonatomic, strong) UITextField *txtTest;
 
-@property (nonatomic, retain) NSMutableArray *arrContractedDiseases;
-
-//-(IBAction)dismissKeyboardOnTap:(id)sender;
 @end

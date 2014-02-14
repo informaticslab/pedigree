@@ -12,6 +12,7 @@
 #import "AppManager.h"
 #import "ContractedDisease.h"
 #import "SelectAgeVC.h"
+#import "Disease.h"
 
 @interface SelectDiseaseVC ()
 
@@ -25,13 +26,14 @@
 @property (nonatomic, strong) SelectAgeVC *selectAgeVC;
 @property (nonatomic, strong) DiseaseSubCategoryVCViewController *diseaseSubCatVC;
 
+@property (nonatomic, strong) Disease *selectedDisease;
+
 @end
 
 @implementation SelectDiseaseVC
 
-//@synthesize contractedDis;
 @synthesize _checkboxSelections;
-
+@synthesize setSelectedDiseases;
 AppManager *appMgr;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -47,21 +49,15 @@ AppManager *appMgr;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    contractedDis = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease" inManagedObjectContext:APP_MGR.managedObjectContext];
-    
+
     //setting the arr with the list of main disease categories
-    _mainDiseasesArr = @[@"No Known Conditions", @"Cancer", @"Clotting Disorder", @"Dementia/Alzheimers", @"Diabetes/Prediabetes/metabolic Syndrome", @"Gastrointestinal Disorder",
-                         @"Heart Disease", @"High Cholesterol", @"Hypertension", @"kidney Disease",
-                         @"Lung Disease", @"Osteoporosis", @"Psychological Disorder", @"Septecemia",
-                         @"Stroke/ Brain Attack", @"Sudden Infant Death Syndrome", @"Unknown Disease", @"Other-Add New"];
+    _mainDiseasesArr = @[@"No Known Conditions", @"Cancer", @"Clotting Disorder", @"Dementia/Alzheimers", @"Diabetes/Prediabetes/metabolic Syndrome", @"Gastrointestinal Disorder", @"Heart Disease", @"High Cholesterol", @"Hypertension", @"kidney Disease", @"Lung Disease", @"Osteoporosis", @"Psychological Disorder", @"Septecemia", @"Stroke/ Brain Attack", @"Sudden Infant Death Syndrome", @"Unknown Disease", @"Other-Add New"];
     
     _selectedDiseaseIndex = -1;
-    
-//    _ageGroupArr = [[NSArray alloc] initWithObjects:
-//                    @"Pre-Birth",@"Newborn",@"In Infancy",@"In Childhood",@"In Adolescence", @"20-29 years", @"30-39 years", @"40-49 years", @"50-59 years", @"60 years and older", @"Unknown",nil];
-//    
-    _selectedDiseasesSet = [[NSMutableSet alloc] init];
-    
+
+    if (setSelectedDiseases == nil) {
+        setSelectedDiseases = [[NSMutableSet alloc] init];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,7 +69,6 @@ AppManager *appMgr;
 - (IBAction)dismissSelectDiseaseVC:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -105,10 +100,7 @@ AppManager *appMgr;
 {
     _checkboxSelections ^= 1 << indexPath.row;
     _selectedDiseaseIndex = indexPath.row;
-    
-//    contractedDis.name = @"";
-//    contractedDis.categoryName = [_mainDiseasesArr objectAtIndex:_selectedDiseaseIndex];
-    
+
     [self.tblView reloadData];
     [self showDiseaseSubCategory];
 }
@@ -130,7 +122,7 @@ AppManager *appMgr;
 
 -(void)showDiseaseSubCategory{
     
-    Disease *_selectedDisease = [[Disease alloc] init];
+    _selectedDisease = [[Disease alloc] init];
     _selectedDisease.categoryName = [_mainDiseasesArr objectAtIndex:_selectedDiseaseIndex];
     
     switch (_selectedDiseaseIndex) {
@@ -174,12 +166,14 @@ AppManager *appMgr;
          _selectedDisease.name = [_mainDiseasesArr objectAtIndex:kHighCholesterol];
          [self performSegueWithIdentifier:@"showAgePickerSegue" sender:self];
          break;
-     }case kHyperTension:
+     }
+     case kHyperTension:
      {
          _selectedDisease.name = [_mainDiseasesArr objectAtIndex:kHighCholesterol];
          [self performSegueWithIdentifier:@"showAgePickerSegue" sender:self];
          break;
-     }case kKidney:
+     }
+     case kKidney:
      {
          [self performSegueWithIdentifier:@"showDiseaseSubCategorySegue" sender:self];
          break;
@@ -230,24 +224,35 @@ AppManager *appMgr;
      }
      default:
          break;
-     
-   }
+    }
 
-    [_selectedDiseasesSet addObject:_selectedDisease];
 }
 
 
+- (IBAction)dismissWithDoneSelectAgeVC:(UIStoryboardSegue *)segue {
+    
+    _selectAgeVC = segue.sourceViewController;
+    _selectedDisease.ageAtDiagnosis = [NSNumber numberWithInteger:_selectAgeVC.selectedAgeIndex];
+    [setSelectedDiseases addObject:_selectedDisease];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)dismissWithDoneDiseaseSubCategoryVC:(UIStoryboardSegue *)segue {
     
-    DiseaseSubCategoryVCViewController *diseaseSubCatVC = segue.sourceViewController;
-    [_selectedDiseasesSet addObjectsFromArray:[diseaseSubCatVC.selectedDiseasesSet allObjects]];
-    [diseaseSubCatVC dismissViewControllerAnimated:YES completion:nil];
+    _diseaseSubCatVC = segue.sourceViewController;
+    NSLog(@"Inside SelectDiseaseVC :: dismissWithDoneDiseaseSubCategoryVC :: The total number of diseases selected are: %d", [_diseaseSubCatVC.setSelectedDiseases count]);
+    [self.setSelectedDiseases unionSet:_diseaseSubCatVC.setSelectedDiseases];
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)dismissWithCancelDiseaseSubCategoryVC:(UIStoryboardSegue *)segue {
     
-    DiseaseSubCategoryVCViewController *diseaseSubCatVC = segue.sourceViewController;
-    [diseaseSubCatVC dismissViewControllerAnimated:YES completion:nil];
+    _diseaseSubCatVC = segue.sourceViewController;
+    [self.setSelectedDiseases removeAllObjects];
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
