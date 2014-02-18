@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h> 
 #import "MainTabBarVC.h"
 #import "HealthInfoVC.h"
 #import "Relative.h"
@@ -22,5 +23,6 @@
 @property (nonatomic, strong) IBOutlet UITextField *txtFirstName;
 @property (nonatomic, strong) IBOutlet UITextField *txtLastName;
 @property (nonatomic, strong) UITextField *txtTest;
+@property (nonatomic, weak) NSString *relationToBeAdded;
 
 @end

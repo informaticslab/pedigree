@@ -43,6 +43,7 @@ AppManager *appMgr;
 @synthesize txtLastName;
 @synthesize me;
 @synthesize txtTest;
+@synthesize relationToBeAdded;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,6 +59,7 @@ AppManager *appMgr;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.title = relationToBeAdded;
    
     _segControl.selectedSegmentIndex = 0;
     self.personalInfoView.hidden = NO;
@@ -97,6 +99,8 @@ AppManager *appMgr;
     {
         personalInfoTVC = (PersonalInfoTVC *)segue.destinationViewController;
         personalInfoTVC.relative = self.me;
+        personalInfoTVC.lblRelationship.text = relationToBeAdded;
+        
     }
     if([segue.identifier isEqualToString:@"embedHealthInfoView"])
     {
@@ -154,65 +158,88 @@ AppManager *appMgr;
     return YES;
 }
 
-
 - (IBAction)saveRelation:(id)sender
 {
-    Relative *_newRelative;
+    NSLog(@"The txtFirstName and txtlastName respectively are: %@,%@", txtFirstName.text, txtLastName.text);
     
-    if (_newRelative == nil) {
-        _newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
+    if (([txtFirstName.text  isEqual: @""]) || ([txtLastName.text  isEqual: @""])){
+        
+        [self validateInput];
     }
-    
-    if (txtFirstName.text != NULL) {
+    else if((![txtFirstName.text  isEqual: @""]) && (![txtLastName.text  isEqual: @""])){
+        
+        Relative *_newRelative;
+        
+        if (_newRelative == nil) {
+            _newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
+        }
+        
         _newRelative.firstName = txtFirstName.text;
-    }
-    else{
-         _newRelative.firstName = @"";
-    }
-    
-    if (txtLastName.text != NULL) {
         _newRelative.lastName = txtLastName.text;
-    }
-    else{
-         _newRelative.lastName = @"";
-    }
-    
-    _newRelative.relationDescription = personalInfoTVC.lblRelationship.text;
-   
-    _newRelative.isLiving = [NSNumber numberWithBool:personalInfoTVC.isLiving];
-    _newRelative.gender = [NSNumber numberWithInteger:personalInfoTVC.gender];
-    _newRelative.isTwin = [NSNumber numberWithBool:personalInfoTVC.isTwin];
-    _newRelative.isIdenticalTwin = [NSNumber numberWithBool:personalInfoTVC.isIdenticalTwin];
-    _newRelative.isAdopted = [NSNumber numberWithBool:personalInfoTVC.isAdopted];
-    
-    _newRelative.areParentsRelatedOtherThanMarraige = [NSNumber numberWithBool:familyBackgroundTVC.areParentsRelatedOtherThanMarriage];
-    _newRelative.race = [NSNumber numberWithInteger:familyBackgroundTVC.selectedRaces];
-    _newRelative.ethnicity = [NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities];
-    
-    _newRelative.height = [NSNumber numberWithDouble:5.2];
-    _newRelative.weight = [NSNumber numberWithInt:120];
-    
-    for (Disease *dis in healthInfoVC.arrDiseases) {
+        _newRelative.relationDescription = personalInfoTVC.lblRelationship.text;
+        
+        _newRelative.isLiving = [NSNumber numberWithBool:personalInfoTVC.isLiving];
+        _newRelative.gender = [NSNumber numberWithInteger:personalInfoTVC.gender];
+        _newRelative.isTwin = [NSNumber numberWithBool:personalInfoTVC.isTwin];
+        _newRelative.isIdenticalTwin = [NSNumber numberWithBool:personalInfoTVC.isIdenticalTwin];
+        _newRelative.isAdopted = [NSNumber numberWithBool:personalInfoTVC.isAdopted];
+        
+        _newRelative.areParentsRelatedOtherThanMarraige = [NSNumber numberWithBool:familyBackgroundTVC.areParentsRelatedOtherThanMarriage];
+        _newRelative.race = [NSNumber numberWithInteger:familyBackgroundTVC.selectedRaces];
+        _newRelative.ethnicity = [NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities];
+        
+        _newRelative.height = [NSNumber numberWithDouble:5.2];
+        _newRelative.weight = [NSNumber numberWithInt:120];
+        
+        for (Disease *dis in healthInfoVC.arrDiseases) {
+            
+            ContractedDisease *contractedDis = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease"inManagedObjectContext:APP_MGR.managedObjectContext ];
+            
+            contractedDis.categoryName = dis.categoryName;
+            contractedDis.name = dis.name;
+            contractedDis.ageAtDiagnosis = dis.ageAtDiagnosis;
+            
+            [_newRelative addContractedDiseaseObject:contractedDis];
+        }
+        
+        NSError *error = nil;
+        [APP_MGR.managedObjectContext save:&error];
+        
+        if (error)
+        {
+            DebugLog(@"Problem saving the relative: %@", error);
+        }
+        
+     //   [self performSegueWithIdentifier:@"showRelativesTV" sender:sender];
        
-       ContractedDisease *contractedDis = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease"inManagedObjectContext:APP_MGR.managedObjectContext ];
-       
-       contractedDis.categoryName = dis.categoryName;
-       contractedDis.name = dis.name;
-       contractedDis.ageAtDiagnosis = dis.ageAtDiagnosis;
-       
-       [_newRelative addContractedDiseaseObject:contractedDis];
-    }
-   
-    NSError *error = nil;
-    [APP_MGR.managedObjectContext save:&error];
-    
-    if (error)
-    {
-        DebugLog(@"Problem saving the relative: %@", error);
+        [self dismissViewControllerAnimated:YES completion:nil];
+
     }
     
-    [self performSegueWithIdentifier:@"showRelativesTV" sender:sender];
+}
+
+
+-(void)validateInput
+{
+    NSString *alertMsg = @"Please provide ";
+    BOOL msgFlag = NO;
+    //first name, last name and relation
+    if ([txtFirstName.text  isEqual: @""]) {
+        msgFlag = YES;
+        alertMsg = [alertMsg stringByAppendingString:@"First Name, "];
+    }
+    if ([txtLastName.text  isEqual: @""]) {
+        msgFlag = YES;
+        alertMsg = [alertMsg stringByAppendingString:@"Last Name "];
+    }
     
+    alertMsg = [alertMsg stringByAppendingString:@"to add a relative"];
+    
+    if (msgFlag == YES) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missing Data" message:alertMsg delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alertView show];
+    
+    }
 }
 
 @end

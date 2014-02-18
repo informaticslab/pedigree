@@ -14,7 +14,7 @@
 @property(nonatomic, weak) Relative *relative;
 @property(nonatomic, weak) SelectRelationshipVC *selectRelationshipTVC;
 
-@property (weak, nonatomic) IBOutlet UILabel *lblRelationship;
+@property (strong, nonatomic) IBOutlet UILabel *lblRelationship;
 @property (weak, nonatomic) IBOutlet UILabel *lblBirthdate;
 @property (weak, nonatomic) IBOutlet UILabel *lblLiving;
 @property (weak, nonatomic) IBOutlet UILabel *lblTwin;

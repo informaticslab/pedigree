@@ -13,19 +13,19 @@
 #import "Person.h"
 #import "RelativeDetailsVC.h"
 #import "PersonDetailsVC.h"
-#import "TestVC.h"
+#import "SelectRelationshipVC.h"
 
 @interface RelativesTableVC ()
 
 @property (nonatomic, weak) Relative *me;
 @property (nonatomic, strong) PersonDetailsVC *personDetailsVC;
-@property (nonatomic, strong) TestVC *testVC;
+@property (nonatomic, weak) NSString *relationToBeAdded;
 
 @end
 
 @implementation RelativesTableVC
 
-@synthesize testVC;
+@synthesize personDetailsVC;
 
 AppManager *appMgr;
 FamilyTree *famTree;
@@ -168,15 +168,31 @@ Relative *currRelative;
         relativeDetailsVC.relative = currRelative;
     }
    */
-    if([segue.identifier isEqualToString:@"showPersonDetailsSegue"])
+    if([segue.identifier isEqualToString:@"showPersonSegue"])
     {
-       /* _personDetailsVC = (PersonDetailsVC *)segue.destinationViewController;
-        _personDetailsVC.me = _me;
-        */
-       
-        testVC = (TestVC *)segue.destinationViewController;
-        
+        NSLog(@"Inside showPersonSegue :: The next view controller to be displayed is: %@", [segue.destinationViewController description]);
+     //   personDetailsVC = (PersonDetailsVC *)segue.destinationViewController;
+        personDetailsVC = (PersonDetailsVC *)[segue.destinationViewController topViewController];
+        personDetailsVC.relationToBeAdded = _relationToBeAdded;
     }
+}
+
+- (IBAction)dismissWithDoneRelationshipVC:(UIStoryboardSegue *)segue {
+    SelectRelationshipVC *relationshipVC = segue.sourceViewController;
+    _relationToBeAdded = relationshipVC.relDescription;
+    
+    [relationshipVC dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"showPersonSegue" sender:self];
+}
+
+- (IBAction)dismissWithCancelPersonVC:(UIStoryboardSegue *)segue {
+    personDetailsVC = segue.sourceViewController;
+    [personDetailsVC dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)dismissWithDoneAddingPersonVC:(UIStoryboardSegue *)segue {
+    personDetailsVC = segue.sourceViewController;
+    [personDetailsVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
