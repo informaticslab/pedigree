@@ -26,6 +26,7 @@
 @implementation RelativesTableVC
 
 @synthesize personDetailsVC;
+@synthesize tblView;
 
 AppManager *appMgr;
 FamilyTree *famTree;
@@ -50,6 +51,11 @@ Relative *currRelative;
     self.relatives = [APP_MGR getAllPeople];
     self.title = @"Family";
 
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self loadRelatives];
 }
 
 - (void)didReceiveMemoryWarning
@@ -181,8 +187,16 @@ Relative *currRelative;
     SelectRelationshipVC *relationshipVC = segue.sourceViewController;
     _relationToBeAdded = relationshipVC.relDescription;
     
-    [relationshipVC dismissViewControllerAnimated:YES completion:nil];
-    [self performSegueWithIdentifier:@"showPersonSegue" sender:self];
+    if (relationshipVC._selectedIndex < 0) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missing Data" message:@"Please select a relationship to add a relative" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alertView show];
+    }
+    else{
+       
+        [relationshipVC dismissViewControllerAnimated:YES completion:nil];
+        [self performSegueWithIdentifier:@"showPersonSegue" sender:self];
+    }
 }
 
 - (IBAction)dismissWithCancelPersonVC:(UIStoryboardSegue *)segue {
@@ -193,6 +207,19 @@ Relative *currRelative;
 - (IBAction)dismissWithDoneAddingPersonVC:(UIStoryboardSegue *)segue {
     personDetailsVC = segue.sourceViewController;
     [personDetailsVC dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)loadRelatives{
+    
+    // load application manager
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    self.relatives = [APP_MGR getAllPeople];
+    self.title = @"Family";
+    
+    [[self tblView] reloadData];
 }
 
 @end

@@ -17,5 +17,5 @@
 @property (nonatomic, weak) Relative *relative;
 @property (weak, nonatomic) IBOutlet UITableView *tv;
 @property (nonatomic, strong) NSString *relDescription;
-
+@property (nonatomic) NSInteger _selectedIndex;
 @end

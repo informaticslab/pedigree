@@ -16,7 +16,7 @@
 
 @implementation FamilyBackgroundTVC
 
-@synthesize switchParentsRelationshipSwitch;
+@synthesize lblParentsRelationship;
 @synthesize lblRace;
 @synthesize lblEthnicity;
 
@@ -26,6 +26,8 @@
 
 SelectRaceVC *selectRaceVC;
 SelectEthnicityVC *selectEthnicityVC;
+
+NSArray *arrBoolean;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -43,8 +45,7 @@ SelectEthnicityVC *selectEthnicityVC;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    [switchParentsRelationshipSwitch addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
-    
+    arrBoolean = [[NSArray alloc] initWithObjects:@"Yes", @"No", nil];
 }
 
 
@@ -133,16 +134,53 @@ SelectEthnicityVC *selectEthnicityVC;
 
  */
 
-- (void)switchValueChanged:(id)sender{
-    
-    if ([sender isOn]) {
-        areParentsRelatedOtherThanMarriage = YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:
+            [self displayParentRelationshipPicker];
+            break;
+        default:
+            break;
     }
-    else{
-        areParentsRelatedOtherThanMarriage = NO;
+}
+
+-(void)displayParentRelationshipPicker{
+    
+    UIActionSheet *asParentRelationshipView = [[UIActionSheet alloc] initWithTitle:@"Are your parents related to each other in any way other than marriage?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Yes", @"No", nil];
+    
+    asParentRelationshipView.tag = 0;
+    [asParentRelationshipView setBounds:CGRectMake(0, 0, 320, 500)];
+    
+    [asParentRelationshipView showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    
+    switch (actionSheet.tag) {
+        case 0:
+        {
+            if (buttonIndex == 0) {
+                areParentsRelatedOtherThanMarriage = YES;
+                lblParentsRelationship.text = [arrBoolean objectAtIndex:buttonIndex];
+            }
+            else if (buttonIndex == 1) {
+                areParentsRelatedOtherThanMarriage = NO;
+                lblParentsRelationship.text = [arrBoolean objectAtIndex:buttonIndex];
+            }
+            else{
+               areParentsRelatedOtherThanMarriage = NO;
+               lblParentsRelationship.text = @"";
+            }
+            break;
+        }
+        default:
+        break;
     }
     
 }
+
 
 - (IBAction)dismissWithDoneSelectRaceVC:(UIStoryboardSegue *)segue {
     

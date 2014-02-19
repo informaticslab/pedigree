@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ContractedDisease.h"
 #import "PersonDetailsVC.h"
+#import "ExistingConditionsCell.h"
+#import "DiseasesUtil.h"
 
 @class PersonDetailsVC;
 @interface HealthInfoVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property(nonatomic, weak) Relative *relative;
+@property (nonatomic, weak) Relative *relative;
 @property (nonatomic, strong) NSMutableArray *arrDiseases;
 
 @end

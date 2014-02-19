@@ -10,6 +10,11 @@
 #import "Relative.h"
 
 @interface RelativesTableVC : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    UITableView *tblView;
+}
 
 @property (nonatomic, strong) NSArray *relatives;
+@property (nonatomic, strong) IBOutlet UITableView *tblView;
+-(void)loadRelatives;
 @end

@@ -11,17 +11,17 @@
 @implementation DiseasesUtil
 
 @synthesize mainDiseaseCategoryArr;
-@dynamic subDiseaseCategoryArr;
-@dynamic ageGroupArr;
+@synthesize subDiseaseCategoryArr;
+@synthesize ageGroupArr;
 
-/*-(DiseasesUtil *) init
-{
-    mainDiseaseCategoryArr = @[@"No Known Conditions", @"Cancer", @"Clotting Disorder", @"Dementia/Alzheimers", @"Diabetes/Prediabetes/metabolic Syndrome", @"Gastrointestinal Disorder",
-                               @"Heart Disease", @"High Cholesterol", @"Hypertension", @"kidney Disease",
-                               @"Lung Disease", @"Osteoporosis", @"Psychological Disorder", @"Septecemia",
-                               @"Stroke/ Brain Attack", @"Sudden Infant Death Syndrome", @"Unknown Disease", @"Other-Add New"];
 
+
+- (id)init {
+    if (self = [super init]) {
+        ageGroupArr = [[NSArray alloc] initWithObjects:
+                        @"Pre-Birth",@"Newborn",@"In Infancy",@"In Childhood",@"In Adolescence", @"20-29 years", @"30-39 years", @"40-49 years", @"50-59 years", @"60 years and older", @"Unknown",nil];
+    }
+    return self;
 }
- */
 
 @end

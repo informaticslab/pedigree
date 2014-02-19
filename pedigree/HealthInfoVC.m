@@ -22,6 +22,8 @@
 @property (nonatomic, strong) DiseaseSubCategoryVCViewController *diseaseSubCatVC;
 @property (nonatomic, strong) SelectDiseaseVC *diseaseVC;
 
+@property (nonatomic, strong) DiseasesUtil *disUtil;
+
 @end
 
 @implementation HealthInfoVC
@@ -46,6 +48,8 @@
     if (arrDiseases == nil) {
         arrDiseases = [[NSMutableArray alloc] init];
     }
+    
+    _disUtil = [[DiseasesUtil alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,10 +90,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ExistingConditionsCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    ExistingConditionsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[arrDiseases objectAtIndex:indexPath.row] name];
-    cell.detailTextLabel.text = [[arrDiseases objectAtIndex:indexPath.row] categoryName];
+    cell.lbldisease.text = [[arrDiseases objectAtIndex:indexPath.row] name];
+    cell.lbldiseaseCategory.text = [[arrDiseases objectAtIndex:indexPath.row] categoryName];
+    cell.lblAge.text = [@"Age at Diagnosis: " stringByAppendingString:[_disUtil.ageGroupArr objectAtIndex:indexPath.row]];
     
     return cell;
 }

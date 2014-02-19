@@ -65,6 +65,8 @@ AppManager *appMgr;
     self.personalInfoView.hidden = NO;
     self.healthInfoView.hidden = YES;
     self.familyBackgroundView.hidden = YES;
+    
+    personalInfoTVC.lblRelationship.text = relationToBeAdded;
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,6 +82,8 @@ AppManager *appMgr;
         self.healthInfoView.hidden = YES;
         self.familyBackgroundView.hidden = YES;
         
+        personalInfoTVC.lblRelationship.text = relationToBeAdded;
+         
     } else if (_segControl.selectedSegmentIndex == 1) {
         self.personalInfoView.hidden = YES;
         self.healthInfoView.hidden = NO;
@@ -210,8 +214,6 @@ AppManager *appMgr;
             DebugLog(@"Problem saving the relative: %@", error);
         }
         
-     //   [self performSegueWithIdentifier:@"showRelativesTV" sender:sender];
-       
         [self dismissViewControllerAnimated:YES completion:nil];
 
     }

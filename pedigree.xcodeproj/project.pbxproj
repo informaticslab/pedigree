@@ -20,6 +20,7 @@
 		6A2E3B4B189A11D20048E4DA /* Diseases_Catalog_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A2E3B4A189A11D20048E4DA /* Diseases_Catalog_2.plist */; };
 		6A2E3B4E189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */; };
 		6A2E3B51189A2E1D0048E4DA /* HealthInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */; };
+		6A3D4D8F18B53CFA002EC23F /* ExistingConditionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4D8E18B53CFA002EC23F /* ExistingConditionsCell.m */; };
 		6A66450B189C4FD60017573F /* ParentsRelationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A66450A189C4FD60017573F /* ParentsRelationCell.m */; };
 		6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */; };
 		6AB3881318A20A5B0064ADB5 /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */; };
@@ -75,6 +76,8 @@
 		6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiseaseSubCategoryVCViewController.m; sourceTree = "<group>"; };
 		6A2E3B4F189A2E1D0048E4DA /* HealthInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoVC.h; sourceTree = "<group>"; };
 		6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoVC.m; sourceTree = "<group>"; };
+		6A3D4D8D18B53CFA002EC23F /* ExistingConditionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExistingConditionsCell.h; sourceTree = "<group>"; };
+		6A3D4D8E18B53CFA002EC23F /* ExistingConditionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistingConditionsCell.m; sourceTree = "<group>"; };
 		6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PedigreeDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		6A664509189C4FD60017573F /* ParentsRelationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsRelationCell.h; sourceTree = "<group>"; };
 		6A66450A189C4FD60017573F /* ParentsRelationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentsRelationCell.m; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				6AE8C79818A8615A003FB173 /* TestVC.m */,
 				6AEDAB4018A955E10063DA13 /* Disease.h */,
 				6AEDAB4118A955E10063DA13 /* Disease.m */,
+				6A3D4D8D18B53CFA002EC23F /* ExistingConditionsCell.h */,
+				6A3D4D8E18B53CFA002EC23F /* ExistingConditionsCell.m */,
 			);
 			path = pedigree;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				6AE8C79918A8615B003FB173 /* TestVC.m in Sources */,
 				6A66450B189C4FD60017573F /* ParentsRelationCell.m in Sources */,
 				6A1281F018A2B6BB001259D3 /* ContractedDisease.m in Sources */,
+				6A3D4D8F18B53CFA002EC23F /* ExistingConditionsCell.m in Sources */,
 				A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */,
 				6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */,
 				ABD3C67A1891C4ED00D377F2 /* PersonDetailsVC.m in Sources */,

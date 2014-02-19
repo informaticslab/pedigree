@@ -14,17 +14,14 @@
 @property(nonatomic, weak) Relative *relative;
 @property(nonatomic, weak) SelectRelationshipVC *selectRelationshipTVC;
 
-@property (strong, nonatomic) IBOutlet UILabel *lblRelationship;
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet UILabel *lblRelationship;
 @property (weak, nonatomic) IBOutlet UILabel *lblBirthdate;
 @property (weak, nonatomic) IBOutlet UILabel *lblLiving;
 @property (weak, nonatomic) IBOutlet UILabel *lblTwin;
 @property (weak, nonatomic) IBOutlet UILabel *lblAdopted;
 @property (weak, nonatomic) IBOutlet UILabel *lblGender;
-
-@property (weak, nonatomic) IBOutlet UISwitch *switchLiving;
-@property (weak, nonatomic) IBOutlet UISwitch *switchTwin;
-@property (weak, nonatomic) IBOutlet UISwitch *switchIdenticalTwin;
-@property (weak, nonatomic) IBOutlet UISwitch *switchAdopted;
+@property (weak, nonatomic) IBOutlet UILabel *lblIdenticalTwin;
 
 @property (strong, nonatomic) IBOutlet UIPickerView *customView;
 

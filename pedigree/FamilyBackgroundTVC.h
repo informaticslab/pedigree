@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FamilyBackgroundTVC : UITableViewController
+@interface FamilyBackgroundTVC : UITableViewController<UIActionSheetDelegate>
 
-@property (weak, nonatomic) IBOutlet UISwitch *switchParentsRelationshipSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *lblParentsRelationship;
 @property (weak, nonatomic) IBOutlet UILabel *lblRace;
 @property (weak, nonatomic) IBOutlet UILabel *lblEthnicity;
 
 @property (assign) BOOL areParentsRelatedOtherThanMarriage;
 @property (nonatomic, assign) NSInteger selectedRaces;
 @property (nonatomic, assign) NSInteger selectedEthnicities;
-
-- (void)switchValueChanged:(id)sender;
 
 @end
