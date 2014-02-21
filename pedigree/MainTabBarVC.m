@@ -10,8 +10,11 @@
 #import "Relative.h"
 #import "Person.h"
 #import "ContractedDisease.h"
+#import "IntroVC.h"
 
 @interface MainTabBarVC ()
+
+@property (nonatomic, retain) IntroVC *introVC;
 
 @end
 
@@ -22,9 +25,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
     }
     return self;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+   // [self showIntroView];
 }
 
 - (void)viewDidLoad
@@ -32,7 +38,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     //[self loadTestData];
-    //[self createMyself];
     
 }
 
@@ -111,35 +116,13 @@
 
 }
 
--(void) createMyself
+-(void)showIntroView
 {
-    Relative *_newRelative;
+  /*  UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroNavController"];
+    [self presentViewController:navController animated:YES completion:nil];
+   */
     
-    if (_newRelative == nil) {
-        _newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
-    }
-    
-    _newRelative.firstName = @"Myself";
-    _newRelative.lastName = @"Myself";
-    _newRelative.relationDescription = @"Myself";
-    
-    _newRelative.isLiving = [NSNumber numberWithBool:YES];
-    _newRelative.gender = [NSNumber numberWithInteger:0];
-    _newRelative.isTwin = [NSNumber numberWithBool:NO];
-    _newRelative.isIdenticalTwin = [NSNumber numberWithBool:NO];
-    _newRelative.isAdopted = [NSNumber numberWithBool:NO];
-    
-    _newRelative.areParentsRelatedOtherThanMarraige = [NSNumber numberWithBool:NO];
-    
-    NSError *error = nil;
-    [APP_MGR.managedObjectContext save:&error];
-    
-    if (error)
-    {
-        DebugLog(@"Problem saving the relative: %@", error);
-    }
-
-    
+    [self performSegueWithIdentifier:@"showIntroSegue" sender:self];
 }
 
 @end

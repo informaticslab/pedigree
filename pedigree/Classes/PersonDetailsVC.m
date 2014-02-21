@@ -45,8 +45,8 @@ AppManager *appMgr;
 @synthesize txtLastName;
 @synthesize me;
 @synthesize txtTest;
-@synthesize relationToBeAdded;
 @synthesize selectedRelationId;
+@synthesize myself;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,19 +62,24 @@ AppManager *appMgr;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
-  //  self.navigationItem.title = relationToBeAdded;
-    self.navigationItem.title = [relUtil relationshipNameForRelationshipId:selectedRelationId];
+    
    
     _segControl.selectedSegmentIndex = 0;
     self.personalInfoView.hidden = NO;
     self.healthInfoView.hidden = YES;
     self.familyBackgroundView.hidden = YES;
     
-  //  personalInfoTVC.lblRelationship.text = relationToBeAdded;
-    personalInfoTVC.lblRelationship.text = [relUtil relationshipNameForRelationshipId:selectedRelationId];
-    
     relUtil = [[RelationshipUtil alloc] init];
-    personalInfoTVC.lblGender.text = [relUtil genderForRelation:self.selectedRelationId];
+    
+    if (myself) {
+        personalInfoTVC.lblRelationship.text = @"";
+        personalInfoTVC.lblGender.text = @"";
+        self.navigationItem.title = @"Me";
+    } else {
+        personalInfoTVC.lblRelationship.text = [relUtil relationshipNameForRelationshipId:selectedRelationId];
+        personalInfoTVC.lblGender.text = [relUtil genderForRelation:self.selectedRelationId];
+        self.navigationItem.title = [relUtil relationshipNameForRelationshipId:selectedRelationId];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,13 +90,15 @@ AppManager *appMgr;
 
 - (IBAction)segControlValueChange:(id)sender {
     
+    [self.txtFirstName resignFirstResponder];
+    [self.txtLastName resignFirstResponder];
+    
     if (_segControl.selectedSegmentIndex == 0) {
         self.personalInfoView.hidden = NO;
         self.healthInfoView.hidden = YES;
         self.familyBackgroundView.hidden = YES;
+     //   personalInfoTVC.lblRelationship.text = [relUtil relationshipNameForRelationshipId:selectedRelationId];
         
-        personalInfoTVC.lblRelationship.text = relationToBeAdded;
-         
     } else if (_segControl.selectedSegmentIndex == 1) {
         self.personalInfoView.hidden = YES;
         self.healthInfoView.hidden = NO;
@@ -107,6 +114,9 @@ AppManager *appMgr;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [self.txtFirstName resignFirstResponder];
+    [self.txtLastName resignFirstResponder];
+    
     if([segue.identifier isEqualToString:@"embedPersonalInfoTV"])
     {
         personalInfoTVC = (PersonalInfoTVC *)segue.destinationViewController;
@@ -117,7 +127,6 @@ AppManager *appMgr;
     {
         healthInfoVC = (HealthInfoVC *)segue.destinationViewController;
         healthInfoVC.relative = self.me;
-
     }
     if([segue.identifier isEqualToString:@"embedFamilyInfoTVC"])
     {
@@ -128,23 +137,18 @@ AppManager *appMgr;
     {
         relativesTVC = (RelativesTableVC *)segue.destinationViewController;
     }
-  /*  if([segue.identifier isEqualToString:@"showTabBar"])
+    if([segue.identifier isEqualToString:@"showTabBarSegue"])
     {
         _mainTabBarVC = (MainTabBarVC *)segue.destinationViewController;
-        relativesTVC = (RelativesTableVC *)segue.destinationViewController;
-        //relativesTVC.relative = self.me;
+      //  relativesTVC =
     }
-   */
-}
-
-/*
+ }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"Tocuhes began with event:");
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }
- */
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
      return YES;
@@ -222,11 +226,11 @@ AppManager *appMgr;
         }
         
         [self dismissViewControllerAnimated:YES completion:nil];
-
+     //   [self performSegueWithIdentifier:@"showTabBarSegue" sender:self];
+        
     }
     
 }
-
 
 -(void)validateInput
 {

@@ -23,7 +23,8 @@
 @property (nonatomic, strong) IBOutlet UITextField *txtFirstName;
 @property (nonatomic, strong) IBOutlet UITextField *txtLastName;
 @property (nonatomic, strong) UITextField *txtTest;
-@property (nonatomic, weak) NSString *relationToBeAdded;
 @property (nonatomic) NSInteger selectedRelationId;
+
+@property (nonatomic) BOOL myself;
 
 @end

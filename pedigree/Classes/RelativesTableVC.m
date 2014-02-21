@@ -51,7 +51,8 @@ Relative *currRelative;
     [fetchRequest setEntity:entity];
     self.relatives = [APP_MGR getAllPeople];
     self.title = @"Family";
-
+    
+  //  self.tabBarController.tabBar.hidden = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -178,15 +179,13 @@ Relative *currRelative;
     if([segue.identifier isEqualToString:@"showPersonSegue"])
     {
         personDetailsVC = (PersonDetailsVC *)[segue.destinationViewController topViewController];
-      //  personDetailsVC.relationToBeAdded = _relationToBeAdded;
         personDetailsVC.selectedRelationId = _selectedRelationId;
     }
 }
 
 - (IBAction)dismissWithDoneRelationshipVC:(UIStoryboardSegue *)segue {
     SelectRelationshipVC *relationshipVC = segue.sourceViewController;
- //   _relationToBeAdded = relationshipVC.relDescription;
-    _selectedRelationId = relationshipVC._selectedIndex;
+   _selectedRelationId = relationshipVC._selectedIndex;
     
     if (relationshipVC._selectedIndex < 0) {
         

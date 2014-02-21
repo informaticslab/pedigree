@@ -69,6 +69,8 @@ AppManager *appMgr;
     if (setSelectedDiseases == nil) {
         setSelectedDiseases = [[NSMutableSet alloc] init];
     }
+    
+    self.navigationItem.title = [_mainDiseasesArr objectAtIndex:_mainDiseaseId.integerValue];
 }
 
 - (void)didReceiveMemoryWarning
