@@ -21,6 +21,7 @@
 		6A2E3B4E189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B4D189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m */; };
 		6A2E3B51189A2E1D0048E4DA /* HealthInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */; };
 		6A3D4D8F18B53CFA002EC23F /* ExistingConditionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4D8E18B53CFA002EC23F /* ExistingConditionsCell.m */; };
+		6A3D4D9218B68D74002EC23F /* RelationshipUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4D9118B68D74002EC23F /* RelationshipUtil.m */; };
 		6A66450B189C4FD60017573F /* ParentsRelationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A66450A189C4FD60017573F /* ParentsRelationCell.m */; };
 		6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */; };
 		6AB3881318A20A5B0064ADB5 /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */; };
@@ -78,6 +79,8 @@
 		6A2E3B50189A2E1D0048E4DA /* HealthInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoVC.m; sourceTree = "<group>"; };
 		6A3D4D8D18B53CFA002EC23F /* ExistingConditionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExistingConditionsCell.h; sourceTree = "<group>"; };
 		6A3D4D8E18B53CFA002EC23F /* ExistingConditionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistingConditionsCell.m; sourceTree = "<group>"; };
+		6A3D4D9018B68D74002EC23F /* RelationshipUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationshipUtil.h; sourceTree = "<group>"; };
+		6A3D4D9118B68D74002EC23F /* RelationshipUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationshipUtil.m; sourceTree = "<group>"; };
 		6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PedigreeDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		6A664509189C4FD60017573F /* ParentsRelationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsRelationCell.h; sourceTree = "<group>"; };
 		6A66450A189C4FD60017573F /* ParentsRelationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentsRelationCell.m; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 				6A12820418A32B80001259D3 /* RaceUtil.m */,
 				6A12820C18A53FF0001259D3 /* EthnicityUtil.h */,
 				6A12820D18A53FF0001259D3 /* EthnicityUtil.m */,
+				6A3D4D9018B68D74002EC23F /* RelationshipUtil.h */,
+				6A3D4D9118B68D74002EC23F /* RelationshipUtil.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				6A1281F618A2B6BB001259D3 /* Person.m in Sources */,
 				A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */,
 				A67D37B716FB3DBF005C9987 /* FamilyTree.m in Sources */,
+				6A3D4D9218B68D74002EC23F /* RelationshipUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pedigree/pedigree-Prefix.pch";

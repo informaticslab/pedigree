@@ -81,6 +81,34 @@
 }
 
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40.0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.conditionsTblView.frame.size.width, 40)];
+    
+    UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, self.conditionsTblView.frame.size.width, 40)];
+    [lbl setFont:[UIFont boldSystemFontOfSize:16.0]];
+    
+    NSString *str = @"Existing Conditions";
+    [lbl setText:str];
+    
+    [headerView addSubview:lbl];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    [btn setFrame:CGRectMake(275.0, 5.0, 40.0, 40.0)];
+    btn.tag = section;
+    btn.hidden = NO;
+    [btn addTarget:self action:@selector(showDiseases:) forControlEvents:UIControlEventTouchDown];
+    [headerView addSubview:btn];
+    
+    return headerView;
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
@@ -98,5 +126,44 @@
     
     return cell;
 }
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
+
+
+-(IBAction)showDiseases:(id)sender
+{
+    [self performSegueWithIdentifier:@"showSelectDiseaseSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+
 
 @end

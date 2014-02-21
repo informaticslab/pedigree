@@ -49,8 +49,6 @@ AppManager *appMgr;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.navigationItem.hidesBackButton = YES;
-    
     _mainDiseasesArr = @[@"No Known Conditions", @"Cancer", @"Clotting Disorder", @"Dementia/Alzheimers", @"Diabetes/Prediabetes/metabolic Syndrome", @"Gastrointestinal Disorder",
                          @"Heart Disease", @"High Cholesterol", @"Hypertension", @"kidney Disease",
                          @"Lung Disease", @"Osteoporosis", @"Psychological Disorder", @"Septecemia",

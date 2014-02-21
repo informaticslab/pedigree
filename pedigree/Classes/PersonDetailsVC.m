@@ -15,6 +15,7 @@
 #import "HealthInfoVC.h"
 #import "Disease.h"
 #import "ContractedDisease.h"
+#import "RelationshipUtil.h"
 
 @interface PersonDetailsVC ()
 
@@ -32,6 +33,7 @@ PersonalInfoTVC *personalInfoTVC;
 HealthInfoVC *healthInfoVC;
 FamilyBackgroundTVC *familyBackgroundTVC;
 RelativesTableVC *relativesTVC;
+RelationshipUtil *relUtil;
 
 BOOL editMode = NO;
 
@@ -44,6 +46,7 @@ AppManager *appMgr;
 @synthesize me;
 @synthesize txtTest;
 @synthesize relationToBeAdded;
+@synthesize selectedRelationId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,14 +62,19 @@ AppManager *appMgr;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.title = relationToBeAdded;
+  //  self.navigationItem.title = relationToBeAdded;
+    self.navigationItem.title = [relUtil relationshipNameForRelationshipId:selectedRelationId];
    
     _segControl.selectedSegmentIndex = 0;
     self.personalInfoView.hidden = NO;
     self.healthInfoView.hidden = YES;
     self.familyBackgroundView.hidden = YES;
     
-    personalInfoTVC.lblRelationship.text = relationToBeAdded;
+  //  personalInfoTVC.lblRelationship.text = relationToBeAdded;
+    personalInfoTVC.lblRelationship.text = [relUtil relationshipNameForRelationshipId:selectedRelationId];
+    
+    relUtil = [[RelationshipUtil alloc] init];
+    personalInfoTVC.lblGender.text = [relUtil genderForRelation:self.selectedRelationId];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,8 +111,7 @@ AppManager *appMgr;
     {
         personalInfoTVC = (PersonalInfoTVC *)segue.destinationViewController;
         personalInfoTVC.relative = self.me;
-        personalInfoTVC.lblRelationship.text = relationToBeAdded;
-        
+        personalInfoTVC.lblRelationship.text = [relUtil relationshipNameForRelationshipId:selectedRelationId];
     }
     if([segue.identifier isEqualToString:@"embedHealthInfoView"])
     {

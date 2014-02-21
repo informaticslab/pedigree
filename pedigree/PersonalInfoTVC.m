@@ -8,6 +8,7 @@
 
 #import "PersonalInfoTVC.h"
 #import "SelectBirthdateVC.h"
+#import "RelationshipUtil.h"
 
 @implementation PersonalInfoTVC
 
@@ -30,6 +31,7 @@
 
 NSArray *arrGender;
 NSArray *arrBoolean;
+RelationshipUtil *relUtil;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,6 +54,8 @@ NSArray *arrBoolean;
   
     arrGender = [[NSArray alloc] initWithObjects:@"Male", @"Female", nil];
     arrBoolean = [[NSArray alloc] initWithObjects:@"Yes", @"No", nil];
+    
+    relUtil = [[RelationshipUtil alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,18 +112,23 @@ NSArray *arrBoolean;
 }
 
 - (IBAction)dismissWithDoneRelationshipVC:(UIStoryboardSegue *)segue {
+    
     SelectRelationshipVC *relationshipVC = segue.sourceViewController;
-    self.lblRelationship.text = relationshipVC.relDescription;
+    
+    //self.lblRelationship.text = relationshipVC.relDescription;
+    self.lblRelationship.text = [relUtil relationshipNameForRelationshipId:relationshipVC._selectedIndex];
+    self.lblGender.text = [relUtil genderForRelation:relationshipVC._selectedIndex];
     [relationshipVC dismissViewControllerAnimated:YES completion:nil];
+    
     [self.tableView reloadData];
     
 }
 
 
 - (IBAction)dismissWithCancelRelationshipVC:(UIStoryboardSegue *)segue {
+    
     SelectRelationshipVC *relationshipVC = segue.sourceViewController;
     [relationshipVC dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 

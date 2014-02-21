@@ -8,6 +8,7 @@
 
 #import "SelectRelationshipVC.h"
 #import "PersonalInfoTVC.h"
+#import "RelationshipUtil.h"
 
 @implementation SelectRelationshipVC
 
@@ -17,6 +18,7 @@
 
 NSArray *relationships;
 NSInteger   _checkboxSelections;
+RelationshipUtil *relUtil;
 
 - (void)viewDidLoad
 {
@@ -30,14 +32,18 @@ NSInteger   _checkboxSelections;
     
     self.navigationItem.hidesBackButton = YES;
     
-    relationships = @[@"Myself", @"Father", @"Mother", @"Brother", @"Sister", @"Son", @"Daughter",
+/*   relationships = @[@"Father", @"Mother", @"Brother", @"Sister", @"Son", @"Daughter",
                       @"Paternal Grandfather", @"Paternal Grandmother", @"Paternal Uncle", @"Paternal Aunt",
                       @"Maternal Grandfather", @"Maternal Grandmother", @"Maternal Uncle", @"Maternal Aunt",
                       @"Nephew", @"Niece", @"Grandson", @"Granddaughter", @"Cousin", @"Half-Brother", @"Half-Sister"];
+ */
+    
+    
+    relUtil = [[RelationshipUtil alloc] init];
+    relationships = [[NSArray alloc] initWithArray:relUtil.relationshipsArr];
     
     _checkboxSelections = 0;
     _selectedIndex = -1;
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,24 +56,55 @@ NSInteger   _checkboxSelections;
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 60.0;
+    CGFloat height = 0.0;
+    switch (section) {
+        case 0:
+        {
+            height = 60.0;
+            break;
+        }
+        /*case 1:
+        {
+            height = 20.0;
+            break;
+        }*/
+        default:
+            break;
+    }
+    return height;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tv.frame.size.width, 60)];
+    UIView *headerView;
     
-    UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(15, 15, 30, 30)];
-    [img setImage:[UIImage imageNamed:@"111-user.png" ]];
+    switch (section) {
+        case 0:
+        {
+            headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tv.frame.size.width, 60)];
+            
+            UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(15, 15, 30, 30)];
+            [img setImage:[UIImage imageNamed:@"111-user.png" ]];
+            
+            UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(70, 5, self.tv.frame.size.width, 60)];
+            [lbl setFont:[UIFont boldSystemFontOfSize:16.0]];
+            
+            NSString *str = @"Who do you want to add?";
+            [lbl setText:str];
+            
+            [headerView addSubview:img];
+            [headerView addSubview:lbl];
+            
+            break;
+        }
+        case 1:
+        {
+            headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tv.frame.size.width, 0.0)];
+        }
+        default:
+            break;
+    }
     
-    UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(70, 5, self.tv.frame.size.width, 60)];
-    [lbl setFont:[UIFont boldSystemFontOfSize:16.0]];
-    
-    NSString *str = @"Who do you want to add?";
-    [lbl setText:str];
-    
-    [headerView addSubview:img];
-    [headerView addSubview:lbl];
     return headerView;
     
 }
@@ -75,33 +112,92 @@ NSInteger   _checkboxSelections;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [relationships count];
+    NSInteger count = 0;
+    switch (section) {
+        case 0:
+            count = 1;
+            break;
+        case 1:
+            count = [relationships count];
+            break;
+        default:
+            break;
+    }
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SelectRelationshipCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryNone;
     
-    // Configure the cell...
-    cell.textLabel.text = relationships[indexPath.row];
+    switch (indexPath.section) {
+        case 0:
+        {
+            if(indexPath.row == 0){
+                // Configure the cell...
+                cell.backgroundColor = [UIColor lightGrayColor];
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                cell.textLabel.text = @"Myself";
+            }
+            break;
+        }
+        case 1:
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            // Configure the cell...
+            cell.backgroundColor = [UIColor clearColor];
+            cell.textLabel.text = relationships[indexPath.row];
+            if (indexPath.row == _selectedIndex) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            
+            break;
+        }
+            
+        default:
+            break;
+     }
     
-    if (indexPath.row == _selectedIndex) cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    return cell;
+     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    _selectedIndex = indexPath.row;
-    relDescription = [relationships objectAtIndex:indexPath.row];
-    [self.tv reloadData];
+    switch (indexPath.section)
+    {
+        case 1:
+        {
+            _selectedIndex = indexPath.row;
+            relDescription = [relationships objectAtIndex:indexPath.row];
+            [self.tv reloadData];
+
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case 0:
+        {
+            cell.userInteractionEnabled = NO;
+            break;
+        }
+        case 1:{
+            cell.userInteractionEnabled = YES;
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

@@ -32,7 +32,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     //[self loadTestData];
-    [self createMyself];
+    //[self createMyself];
     
 }
 
