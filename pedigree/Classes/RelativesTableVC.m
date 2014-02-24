@@ -194,7 +194,8 @@ Relative *currRelative;
     }
     else{
        
-        [relationshipVC dismissViewControllerAnimated:YES completion:nil];
+      //  [relationshipVC dismissViewControllerAnimated:YES completion:nil];
+        [relationshipVC removeFromParentViewController];
         [self performSegueWithIdentifier:@"showPersonSegue" sender:self];
     }
 }

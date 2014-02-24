@@ -137,11 +137,7 @@ AppManager *appMgr;
     {
         relativesTVC = (RelativesTableVC *)segue.destinationViewController;
     }
-    if([segue.identifier isEqualToString:@"showTabBarSegue"])
-    {
-        _mainTabBarVC = (MainTabBarVC *)segue.destinationViewController;
-      //  relativesTVC =
-    }
+ 
  }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -225,8 +221,9 @@ AppManager *appMgr;
             DebugLog(@"Problem saving the relative: %@", error);
         }
         
-        [self dismissViewControllerAnimated:YES completion:nil];
-     //   [self performSegueWithIdentifier:@"showTabBarSegue" sender:self];
+       // [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self performSegueWithIdentifier:@"showRelativesTV" sender:self];
         
     }
     

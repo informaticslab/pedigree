@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xyR-I9-K9c">
-                                <rect key="frame" x="149" y="240" width="16" height="21"/>
+                                <rect key="frame" x="150" y="264" width="16" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -27,7 +27,7 @@
                                 </state>
                                 <state key="selected" image="you_selected_placeholder"/>
                                 <connections>
-                                    <action selector="viewMyProfile:" destination="TPW-ON-pbe" eventType="touchUpInside" id="ygy-8t-wE7"/>
+                                    <action selector="createMyself:" destination="TPW-ON-pbe" eventType="touchUpInside" id="xHh-hp-rqn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W2H-ft-9F7">
@@ -37,7 +37,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YHP-e3-fkC" kind="push" identifier="showSelectRelationSegue" id="3tL-Sc-3TK"/>
+                                    <action selector="createRelative:" destination="TPW-ON-pbe" eventType="touchUpInside" id="qtP-gw-NK6"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree" id="4so-zX-wki">
@@ -58,7 +58,9 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="introLbl" destination="Evz-E0-rrk" id="lmP-Mm-YEq"/>
-                        <segue destination="fh9-t3-2IA" kind="modal" identifier="showMyProfile" id="GQz-3P-n0O"/>
+                        <segue destination="fh9-t3-2IA" kind="modal" identifier="showRelativeProfile" id="Bla-9F-nMs"/>
+                        <segue destination="fh9-t3-2IA" kind="modal" identifier="showMyProfile" id="T0h-Pj-kvS"/>
+                        <segue destination="YHP-e3-fkC" kind="push" identifier="showSelectRelationSegue" id="ujw-6r-tIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oZ-em-d3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,11 +158,12 @@
                         <outlet property="segControl" destination="84j-Z1-FHn" id="Xru-NP-YzI"/>
                         <outlet property="txtFirstName" destination="uNe-Fg-yaU" id="LcJ-ho-Cpq"/>
                         <outlet property="txtLastName" destination="VgK-Bj-v4Y" id="2xr-YD-hcH"/>
+                        <segue destination="ZRj-wA-aLJ" kind="push" identifier="showRelativesTV" id="lYJ-aU-3sD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qf7-L9-uq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="-3007"/>
+            <point key="canvasLocation" x="767" y="-2479"/>
         </scene>
         <!--Health InfoVC-->
         <scene sceneID="DNb-hl-sTm">
@@ -301,7 +304,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0P-Wq-4eJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tzd-la-peE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1533" y="-2476"/>
+            <point key="canvasLocation" x="201" y="-1260"/>
         </scene>
         <!--Personal InfoTVC-->
         <scene sceneID="9Ej-gu-K2T">
@@ -1088,7 +1091,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6F-ys-grr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="-2072"/>
+            <point key="canvasLocation" x="3386" y="-2072"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RJl-QD-1aQ">
@@ -1106,7 +1109,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ho-M1-46N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260" y="-2072"/>
+            <point key="canvasLocation" x="2786" y="-2072"/>
         </scene>
         <!--View Controller - Settings-->
         <scene sceneID="ymZ-uc-SDp">
@@ -1181,40 +1184,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Q4G-zk-o08" kind="relationship" relationship="viewControllers" id="NFp-HH-mUw"/>
+                        <segue destination="vbr-3R-3mi" kind="relationship" relationship="viewControllers" id="R4l-OT-eIe"/>
                         <segue destination="0sH-CG-xnq" kind="relationship" relationship="viewControllers" id="rh3-g6-T7l"/>
                         <segue destination="Lbf-5D-zd4" kind="relationship" relationship="viewControllers" id="waF-DY-NsA"/>
                         <segue destination="d1B-K0-zzg" kind="relationship" relationship="viewControllers" id="ruc-XD-Pwy"/>
                         <segue destination="P6b-V6-GRP" kind="relationship" relationship="viewControllers" id="3Dm-e1-0qF"/>
-                        <segue destination="vbr-3R-3mi" kind="modal" identifier="showIntroSegue" id="v71-4y-guS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NT2-Da-O2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3187" y="-1433"/>
-        </scene>
-        <!--Navigation Controller - Family Tree-->
-        <scene sceneID="BAE-3N-3Zd">
-            <objects>
-                <navigationController id="Q4G-zk-o08" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Family Tree" image="112-group.png" id="qbR-jU-nJ8"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pem-N9-dM5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zSg-O1-B13">
-                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="ZRj-wA-aLJ" kind="relationship" relationship="rootViewController" id="GJh-Sr-mym"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Krb-ug-ahN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2361" y="-2484"/>
         </scene>
         <!--Select RelationshipVC - Relationship-->
         <scene sceneID="BmA-Kz-1v6">
@@ -1271,7 +1250,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZU-6t-4H9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="-1811"/>
+            <point key="canvasLocation" x="-1116" y="-2443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="de1-5m-2hV">
@@ -1290,12 +1269,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5N-fx-5R2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="-2989"/>
+            <point key="canvasLocation" x="-352" y="-2469"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Family-->
         <scene sceneID="yvl-Bj-zYN">
             <objects>
                 <navigationController storyboardIdentifier="IntroNavController" automaticallyAdjustsScrollViewInsets="NO" id="vbr-3R-3mi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Family" image="112-group" id="SS5-ai-GsV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y1t-Tt-tQu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1313,7 +1293,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="108-badge.png" width="21" height="26"/>
-        <image name="112-group.png" width="26" height="26"/>
+        <image name="112-group" width="32" height="21"/>
         <image name="19-gear.png" width="26" height="26"/>
         <image name="79-medical-bag.png" width="24" height="20"/>
         <image name="83-calendar.png" width="23" height="25"/>
@@ -1329,8 +1309,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="GQz-3P-n0O"/>
-        <segue reference="3tL-Sc-3TK"/>
+        <segue reference="QpQ-wj-8bp"/>
+        <segue reference="4Tg-6Y-A6H"/>
         <segue reference="21l-9c-g7Y"/>
     </inferredMetricsTieBreakers>
 </document>

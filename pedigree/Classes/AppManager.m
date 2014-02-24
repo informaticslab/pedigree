@@ -52,7 +52,7 @@ static AppManager *sharedAppManager = nil;
         self.managedObjectModel = appDel.managedObjectModel;
         self.persistentStoreCoordinator = appDel.persistentStoreCoordinator;
         
-        [self createDefaultUser];
+     //   [self createDefaultUser];
 	}
 	return self;
 }

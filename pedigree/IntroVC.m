@@ -23,6 +23,7 @@
 PersonDetailsVC *personDetailsVC;
 RelativesTableVC *relativesTVC;
 SelectRelationshipVC *selectRelationshipVC;
+NSInteger selectedRelationId;
 
 @implementation IntroVC
 
@@ -40,6 +41,7 @@ SelectRelationshipVC *selectRelationshipVC;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.tabBarController.tabBar.hidden = YES;
     self.introLbl.text = @"Start with you or a family member";
  
     /*[self.introLbl boldSubstring:@"Start"];
@@ -62,24 +64,22 @@ SelectRelationshipVC *selectRelationshipVC;
         //personDetailsVC.me = _me;
         personDetailsVC.myself = YES;
     }
+    if([segue.identifier isEqualToString:@"showRelativeProfile"])
+    {
+        personDetailsVC = (PersonDetailsVC *)[segue.destinationViewController topViewController];
+        //personDetailsVC.me = _me;
+        personDetailsVC.myself = NO;
+    }
     if([segue.identifier isEqualToString:@"showSelectRelationSegue"])
     {
         selectRelationshipVC = (SelectRelationshipVC *)segue.destinationViewController;
         //relativesTVC.relative = self.me;
     }
-
-    if([segue.identifier isEqualToString:@"showTabBarSegue"])
-    {
-        _mainTabBarVC = (MainTabBarVC *)segue.destinationViewController;
-        relativesTVC = (RelativesTableVC *)segue.destinationViewController;
-        //relativesTVC.relative = self.me;
-    }
-
 }
 
 -(IBAction)viewMyProfile:(id)sender{
     
- /*   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
     [fetchRequest setEntity:entity];
@@ -88,30 +88,16 @@ SelectRelationshipVC *selectRelationshipVC;
     _me = [fetchedRelatives objectAtIndex:0];
 
     DebugLog(@"The person's Date Of Birth is: %@", _me.dateOfBirth);
-    DebugLog(@"The person's firstName is: %@", _me.ethnicity);
+    DebugLog(@"The person's ethnicity is: %@", _me.ethnicity);
     DebugLog(@"The person's firstName is: %@", _me.firstName);
     DebugLog(@"The person's lastName is: %@", _me.lastName);
- */
-    
+
     [self performSegueWithIdentifier:@"showMyProfile" sender:self];
-    
-}
-
-- (IBAction)dismissWithCancelPersonVC:(UIStoryboardSegue *)segue {
-    personDetailsVC = segue.sourceViewController;
-    [personDetailsVC dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)dismissWithDoneAddingPersonVC:(UIStoryboardSegue *)segue {
-    personDetailsVC = segue.sourceViewController;
-    [personDetailsVC dismissViewControllerAnimated:YES completion:nil];
-    
-    [self performSegueWithIdentifier:@"showTabBarSegue" sender:self];
 }
 
 - (IBAction)dismissWithDoneRelationshipVC:(UIStoryboardSegue *)segue {
     SelectRelationshipVC *relationshipVC = segue.sourceViewController;
- //   _selectedRelationId = relationshipVC._selectedIndex;
+    selectedRelationId = relationshipVC._selectedIndex;
     
     if (relationshipVC._selectedIndex < 0) {
         
@@ -120,9 +106,25 @@ SelectRelationshipVC *selectRelationshipVC;
     }
     else{
         
-        [relationshipVC dismissViewControllerAnimated:YES completion:nil];
-        [self performSegueWithIdentifier:@"showMyProfile" sender:self];
+      //  [relationshipVC dismissViewControllerAnimated:YES completion:nil];
+        [relationshipVC removeFromParentViewController];
+        [self performSegueWithIdentifier:@"showRelativeProfile" sender:self];
     }
+}
+
+-(IBAction)createMyself:(id)sender
+{
+    [self performSegueWithIdentifier:@"showMyProfile" sender:self];
+}
+
+-(IBAction)createRelative:(id)sender
+{
+    [self performSegueWithIdentifier:@"showSelectRelationSegue" sender:self];
+}
+
+- (IBAction)dismissWithCancelPersonVC:(UIStoryboardSegue *)segue {
+    personDetailsVC = segue.sourceViewController;
+    [personDetailsVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
