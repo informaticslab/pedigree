@@ -14,6 +14,7 @@
 
 @synthesize tblView;
 @synthesize lblRelationship;
+@synthesize lblBirthdate;
 @synthesize lblGender;
 @synthesize lblLiving;
 @synthesize lblAdopted;
@@ -28,6 +29,7 @@
 @synthesize isTwin;
 @synthesize isIdenticalTwin;
 @synthesize isAdopted;
+@synthesize selectedBirthDate;
 
 NSArray *arrGender;
 NSArray *arrBoolean;
@@ -56,6 +58,7 @@ RelationshipUtil *relUtil;
     arrBoolean = [[NSArray alloc] initWithObjects:@"Yes", @"No", nil];
     
     relUtil = [[RelationshipUtil alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,6 +100,7 @@ RelationshipUtil *relUtil;
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     
     NSDate *date = [birthdateVC.datePicker date];
+    selectedBirthDate = date;
     
     self.lblBirthdate.text = [dateFormatter stringFromDate:date];
     
@@ -108,15 +112,19 @@ RelationshipUtil *relUtil;
     NSLog(@"dismissWithCancelBirthdateVC");
     SelectBirthdateVC *birthdateVC = segue.sourceViewController;
     [birthdateVC dismissViewControllerAnimated:YES completion:nil];
-
 }
 
 - (IBAction)dismissWithDoneRelationshipVC:(UIStoryboardSegue *)segue {
     
     SelectRelationshipVC *relationshipVC = segue.sourceViewController;
     
-    //self.lblRelationship.text = relationshipVC.relDescription;
-    self.lblRelationship.text = [relUtil relationshipNameForRelationshipId:relationshipVC._selectedIndex];
+    if (relationshipVC._selectedIndex >= 0) {
+        self.lblRelationship.text = [relUtil relationshipNameForRelationshipId:relationshipVC._selectedIndex];
+    }
+    else
+    {
+      self.lblRelationship.text = @"Myself";
+    }
     self.lblGender.text = [relUtil genderForRelation:relationshipVC._selectedIndex];
     [relationshipVC dismissViewControllerAnimated:YES completion:nil];
     
@@ -330,6 +338,44 @@ RelationshipUtil *relUtil;
             break;
     }
     
+}
+
+-(void)displayRelativeData:(Relative *)currRelative
+{
+    lblRelationship.text = currRelative.relationDescription;
+    lblGender.text = [arrGender objectAtIndex:currRelative.gender.integerValue];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+    lblBirthdate.text = [dateFormatter stringFromDate:currRelative.dateOfBirth];
+    
+    if (currRelative.isLiving.boolValue == YES) {
+        lblLiving.text = @"Yes";
+    }
+    else if (currRelative.isLiving.boolValue == NO) {
+        lblLiving.text = @"No";
+    }
+    
+    if (currRelative.isAdopted.boolValue == YES) {
+        lblAdopted.text = @"Yes";
+    }
+    else if (currRelative.isAdopted.boolValue == NO) {
+        lblAdopted.text = @"No";
+    }
+    
+    if (currRelative.isTwin.boolValue == YES) {
+        lblTwin.text = @"Yes";
+    }
+    else if (currRelative.isTwin.boolValue == NO) {
+        lblTwin.text = @"No";
+    }
+    
+    if (currRelative.isIdenticalTwin.boolValue == YES) {
+        lblIdenticalTwin.text = @"Yes";
+    }
+    else if (currRelative.isIdenticalTwin.boolValue == NO) {
+        lblIdenticalTwin.text = @"No";
+    }
 }
 
 @end

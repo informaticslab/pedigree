@@ -18,7 +18,7 @@
      UITextField *txtLastName;
      UITextField *txtTest;
 }
-@property(nonatomic, weak) Relative *me;
+@property(nonatomic, weak) Relative *relative;
 @property(nonatomic, strong) MainTabBarVC *mainTabBarVC;
 @property (nonatomic, strong) IBOutlet UITextField *txtFirstName;
 @property (nonatomic, strong) IBOutlet UITextField *txtLastName;
@@ -26,5 +26,8 @@
 @property (nonatomic) NSInteger selectedRelationId;
 
 @property (nonatomic) BOOL myself;
+@property (nonatomic) BOOL editingMode;
+
+-(void)displayRelativeData:(Relative *)currRelative;
 
 @end

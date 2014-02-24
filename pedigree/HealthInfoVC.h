@@ -18,4 +18,6 @@
 @property (nonatomic, weak) Relative *relative;
 @property (nonatomic, strong) NSMutableArray *arrDiseases;
 
+-(void)displayRelativeData:(Relative *)currRelative;
+
 @end

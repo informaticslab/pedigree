@@ -15,8 +15,6 @@
 @interface HealthInfoVC ()
 
 @property (nonatomic, strong) IBOutlet UITableView *conditionsTblView;
-@property (nonatomic, strong) NSMutableArray *conditionsArr;
-
 @property (nonatomic, strong) NSArray *mainDiseasesArr;
 @property (nonatomic) NSInteger selectedDiseaseIndex;
 @property (nonatomic, strong) DiseaseSubCategoryVCViewController *diseaseSubCatVC;
@@ -122,7 +120,8 @@
     
     cell.lbldisease.text = [[arrDiseases objectAtIndex:indexPath.row] name];
     cell.lbldiseaseCategory.text = [[arrDiseases objectAtIndex:indexPath.row] categoryName];
-    cell.lblAge.text = [@"Age at Diagnosis: " stringByAppendingString:[_disUtil.ageGroupArr objectAtIndex:indexPath.row]];
+  //  cell.lblAge.text = [@"Age at Diagnosis: " stringByAppendingString:[_disUtil.ageGroupArr objectAtIndex:indexPath.row]];
+    cell.lblAge.text = [@"Age at Diagnosis: " stringByAppendingString:[_disUtil.ageGroupArr objectAtIndex:[[[arrDiseases objectAtIndex:indexPath.row] ageAtDiagnosis] integerValue]]];
     
     return cell;
 }
@@ -165,5 +164,10 @@
     // Pass the selected object to the new view controller.
 }
 
+-(void)displayRelativeData:(Relative *)currRelative
+{
+    arrDiseases = [[currRelative.contractedDisease allObjects] mutableCopy];
+    [self.conditionsTblView reloadData];
+}
 
 @end

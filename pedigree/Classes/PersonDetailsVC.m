@@ -35,18 +35,16 @@ FamilyBackgroundTVC *familyBackgroundTVC;
 RelativesTableVC *relativesTVC;
 RelationshipUtil *relUtil;
 
-BOOL editMode = NO;
-
 @implementation PersonDetailsVC
 
 AppManager *appMgr;
-
 @synthesize txtFirstName;
 @synthesize txtLastName;
-@synthesize me;
+@synthesize relative;
 @synthesize txtTest;
 @synthesize selectedRelationId;
 @synthesize myself;
+@synthesize editingMode;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,7 +60,6 @@ AppManager *appMgr;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
-    
    
     _segControl.selectedSegmentIndex = 0;
     self.personalInfoView.hidden = NO;
@@ -71,14 +68,22 @@ AppManager *appMgr;
     
     relUtil = [[RelationshipUtil alloc] init];
     
-    if (myself) {
-        personalInfoTVC.lblRelationship.text = @"";
-        personalInfoTVC.lblGender.text = @"";
-        self.navigationItem.title = @"Me";
-    } else {
-        personalInfoTVC.lblRelationship.text = [relUtil relationshipNameForRelationshipId:selectedRelationId];
-        personalInfoTVC.lblGender.text = [relUtil genderForRelation:self.selectedRelationId];
-        self.navigationItem.title = [relUtil relationshipNameForRelationshipId:selectedRelationId];
+    if (editingMode == NO) {
+     //   self.navigationItem.title = relative.relationDescription;
+        [self displayRelativeData:relative];
+    }
+    else if ( editingMode == YES){
+        
+        if (myself) {
+            personalInfoTVC.lblRelationship.text = @"Myself";
+            personalInfoTVC.lblGender.text = @"";
+            self.navigationItem.title = @"Me";
+        }
+        else {
+            personalInfoTVC.lblRelationship.text = [relUtil relationshipNameForRelationshipId:selectedRelationId];
+            personalInfoTVC.lblGender.text = [relUtil genderForRelation:self.selectedRelationId];
+            self.navigationItem.title = [relUtil relationshipNameForRelationshipId:selectedRelationId];
+        }
     }
 }
 
@@ -97,14 +102,13 @@ AppManager *appMgr;
         self.personalInfoView.hidden = NO;
         self.healthInfoView.hidden = YES;
         self.familyBackgroundView.hidden = YES;
-     //   personalInfoTVC.lblRelationship.text = [relUtil relationshipNameForRelationshipId:selectedRelationId];
-        
-    } else if (_segControl.selectedSegmentIndex == 1) {
+    }
+    else if (_segControl.selectedSegmentIndex == 1) {
         self.personalInfoView.hidden = YES;
         self.healthInfoView.hidden = NO;
         self.familyBackgroundView.hidden = YES;
-    
-    }else if (_segControl.selectedSegmentIndex == 2) {
+    }
+    else if (_segControl.selectedSegmentIndex == 2) {
         self.personalInfoView.hidden = YES;
         self.healthInfoView.hidden = YES;
         self.familyBackgroundView.hidden = NO;
@@ -120,13 +124,13 @@ AppManager *appMgr;
     if([segue.identifier isEqualToString:@"embedPersonalInfoTV"])
     {
         personalInfoTVC = (PersonalInfoTVC *)segue.destinationViewController;
-        personalInfoTVC.relative = self.me;
+        personalInfoTVC.relative = self.relative;
         personalInfoTVC.lblRelationship.text = [relUtil relationshipNameForRelationshipId:selectedRelationId];
     }
     if([segue.identifier isEqualToString:@"embedHealthInfoView"])
     {
         healthInfoVC = (HealthInfoVC *)segue.destinationViewController;
-        healthInfoVC.relative = self.me;
+        healthInfoVC.relative = self.relative;
     }
     if([segue.identifier isEqualToString:@"embedFamilyInfoTVC"])
     {
@@ -171,63 +175,68 @@ AppManager *appMgr;
 
 - (IBAction)saveRelation:(id)sender
 {
-    NSLog(@"The txtFirstName and txtlastName respectively are: %@,%@", txtFirstName.text, txtLastName.text);
-    
-    if (([txtFirstName.text  isEqual: @""]) || ([txtLastName.text  isEqual: @""])){
-        
-        [self validateInput];
+    if (editingMode == NO) {
+        // do not save the data - view only mode
     }
-    else if((![txtFirstName.text  isEqual: @""]) && (![txtLastName.text  isEqual: @""])){
-        
-        Relative *_newRelative;
-        
-        if (_newRelative == nil) {
-            _newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
+    else {
+        if (([txtFirstName.text  isEqual: @""]) || ([txtLastName.text  isEqual: @""])){
+            
+            [self validateInput];
+        }
+        else if((![txtFirstName.text  isEqual: @""]) && (![txtLastName.text  isEqual: @""])){
+            
+            Relative *_newRelative;
+            
+            if (_newRelative == nil) {
+                _newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
+            }
+            
+            _newRelative.firstName = txtFirstName.text;
+            _newRelative.lastName = txtLastName.text;
+            _newRelative.relationDescription = personalInfoTVC.lblRelationship.text;
+            _newRelative.dateOfBirth = personalInfoTVC.selectedBirthDate;
+            
+            _newRelative.isLiving = [NSNumber numberWithBool:personalInfoTVC.isLiving];
+            _newRelative.gender = [NSNumber numberWithInteger:personalInfoTVC.gender];
+            _newRelative.isTwin = [NSNumber numberWithBool:personalInfoTVC.isTwin];
+            _newRelative.isIdenticalTwin = [NSNumber numberWithBool:personalInfoTVC.isIdenticalTwin];
+            _newRelative.isAdopted = [NSNumber numberWithBool:personalInfoTVC.isAdopted];
+            
+            _newRelative.areParentsRelatedOtherThanMarraige = [NSNumber numberWithBool:familyBackgroundTVC.areParentsRelatedOtherThanMarriage];
+            _newRelative.race = [NSNumber numberWithInteger:familyBackgroundTVC.selectedRaces];
+            _newRelative.ethnicity = [NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities];
+            
+            _newRelative.height = [NSNumber numberWithDouble:5.2];
+            _newRelative.weight = [NSNumber numberWithInt:120];
+            
+            for (Disease *dis in healthInfoVC.arrDiseases) {
+                
+                ContractedDisease *contractedDis = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease"inManagedObjectContext:APP_MGR.managedObjectContext ];
+                
+                contractedDis.categoryName = dis.categoryName;
+                contractedDis.name = dis.name;
+                contractedDis.ageAtDiagnosis = dis.ageAtDiagnosis;
+                
+                [_newRelative addContractedDiseaseObject:contractedDis];
+            }
+            
+            NSError *error = nil;
+            [APP_MGR.managedObjectContext save:&error];
+            
+            if (error)
+            {
+                DebugLog(@"Problem saving the relative: %@", error);
+            }
+            
+//            [self.navigationController popToRootViewControllerAnimated:YES];
+//            [self performSegueWithIdentifier:@"showRelativesTV" sender:self];
         }
         
-        _newRelative.firstName = txtFirstName.text;
-        _newRelative.lastName = txtLastName.text;
-        _newRelative.relationDescription = personalInfoTVC.lblRelationship.text;
-        
-        _newRelative.isLiving = [NSNumber numberWithBool:personalInfoTVC.isLiving];
-        _newRelative.gender = [NSNumber numberWithInteger:personalInfoTVC.gender];
-        _newRelative.isTwin = [NSNumber numberWithBool:personalInfoTVC.isTwin];
-        _newRelative.isIdenticalTwin = [NSNumber numberWithBool:personalInfoTVC.isIdenticalTwin];
-        _newRelative.isAdopted = [NSNumber numberWithBool:personalInfoTVC.isAdopted];
-        
-        _newRelative.areParentsRelatedOtherThanMarraige = [NSNumber numberWithBool:familyBackgroundTVC.areParentsRelatedOtherThanMarriage];
-        _newRelative.race = [NSNumber numberWithInteger:familyBackgroundTVC.selectedRaces];
-        _newRelative.ethnicity = [NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities];
-        
-        _newRelative.height = [NSNumber numberWithDouble:5.2];
-        _newRelative.weight = [NSNumber numberWithInt:120];
-        
-        for (Disease *dis in healthInfoVC.arrDiseases) {
-            
-            ContractedDisease *contractedDis = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease"inManagedObjectContext:APP_MGR.managedObjectContext ];
-            
-            contractedDis.categoryName = dis.categoryName;
-            contractedDis.name = dis.name;
-            contractedDis.ageAtDiagnosis = dis.ageAtDiagnosis;
-            
-            [_newRelative addContractedDiseaseObject:contractedDis];
-        }
-        
-        NSError *error = nil;
-        [APP_MGR.managedObjectContext save:&error];
-        
-        if (error)
-        {
-            DebugLog(@"Problem saving the relative: %@", error);
-        }
-        
-       // [self dismissViewControllerAnimated:YES completion:nil];
         [self.navigationController popToRootViewControllerAnimated:YES];
         [self performSegueWithIdentifier:@"showRelativesTV" sender:self];
-        
     }
     
-}
+   }
 
 -(void)validateInput
 {
@@ -248,8 +257,18 @@ AppManager *appMgr;
     if (msgFlag == YES) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missing Data" message:alertMsg delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alertView show];
-    
     }
+}
+
+-(void)displayRelativeData:(Relative *)currRelative
+{
+    //setting the relative's details from the database
+    txtFirstName.text = relative.firstName;
+    txtLastName.text = relative.lastName;
+    
+    [personalInfoTVC displayRelativeData:currRelative];
+    [healthInfoVC displayRelativeData:currRelative];
+ //   [familyBackgroundTVC displayRelativeData:currRelative];
 }
 
 @end

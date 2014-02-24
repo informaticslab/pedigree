@@ -63,12 +63,14 @@ NSInteger selectedRelationId;
         personDetailsVC = (PersonDetailsVC *)[segue.destinationViewController topViewController];
         //personDetailsVC.me = _me;
         personDetailsVC.myself = YES;
+        personDetailsVC.editingMode = YES;
     }
     if([segue.identifier isEqualToString:@"showRelativeProfile"])
     {
         personDetailsVC = (PersonDetailsVC *)[segue.destinationViewController topViewController];
         //personDetailsVC.me = _me;
         personDetailsVC.myself = NO;
+        personDetailsVC.editingMode = YES;
     }
     if([segue.identifier isEqualToString:@"showSelectRelationSegue"])
     {
@@ -106,7 +108,6 @@ NSInteger selectedRelationId;
     }
     else{
         
-      //  [relationshipVC dismissViewControllerAnimated:YES completion:nil];
         [relationshipVC removeFromParentViewController];
         [self performSegueWithIdentifier:@"showRelativeProfile" sender:self];
     }

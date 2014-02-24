@@ -31,14 +31,7 @@ RelationshipUtil *relUtil;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.navigationItem.hidesBackButton = YES;
-    
-/*   relationships = @[@"Father", @"Mother", @"Brother", @"Sister", @"Son", @"Daughter",
-                      @"Paternal Grandfather", @"Paternal Grandmother", @"Paternal Uncle", @"Paternal Aunt",
-                      @"Maternal Grandfather", @"Maternal Grandmother", @"Maternal Uncle", @"Maternal Aunt",
-                      @"Nephew", @"Niece", @"Grandson", @"Granddaughter", @"Cousin", @"Half-Brother", @"Half-Sister"];
- */
-    
-    
+
     relUtil = [[RelationshipUtil alloc] init];
     relationships = [[NSArray alloc] initWithArray:relUtil.relationshipsArr];
     
@@ -63,11 +56,6 @@ RelationshipUtil *relUtil;
             height = 60.0;
             break;
         }
-        /*case 1:
-        {
-            height = 20.0;
-            break;
-        }*/
         default:
             break;
     }
@@ -170,12 +158,15 @@ RelationshipUtil *relUtil;
 {
     switch (indexPath.section)
     {
+        case 0:
+        {
+            break;
+        }
         case 1:
         {
             _selectedIndex = indexPath.row;
             relDescription = [relationships objectAtIndex:indexPath.row];
             [self.tv reloadData];
-
             break;
         }
         default:

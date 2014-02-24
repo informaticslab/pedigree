@@ -31,6 +31,9 @@
 @property (nonatomic, assign) BOOL isIdenticalTwin;
 @property (nonatomic, assign) BOOL isAdopted;
 
+@property (nonatomic, weak) NSDate *selectedBirthDate;
+
 -(void)displayGenderPicker;
+-(void)displayRelativeData:(Relative *)currRelative;
 
 @end

@@ -71,7 +71,6 @@ BOOL editMode;
     
 }
 
-
 - (void)setEditing:(BOOL)flag animated:(BOOL)animated
 {
     [super setEditing:flag animated:animated];
@@ -87,7 +86,6 @@ BOOL editMode;
 
     }
 }
-
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {

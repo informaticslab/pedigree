@@ -9,6 +9,7 @@
 #import "FamilyBackgroundTVC.h"
 #import "SelectRaceVC.h"
 #import "SelectEthnicityVC.h"
+#import "Relative.h"
 
 @interface FamilyBackgroundTVC ()
 
@@ -16,6 +17,7 @@
 
 @implementation FamilyBackgroundTVC
 
+@synthesize relative;
 @synthesize lblParentsRelationship;
 @synthesize lblRace;
 @synthesize lblEthnicity;
@@ -47,7 +49,6 @@ NSArray *arrBoolean;
     
     arrBoolean = [[NSArray alloc] initWithObjects:@"Yes", @"No", nil];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -178,9 +179,7 @@ NSArray *arrBoolean;
         default:
         break;
     }
-    
 }
-
 
 - (IBAction)dismissWithDoneSelectRaceVC:(UIStoryboardSegue *)segue {
     
@@ -206,6 +205,16 @@ NSArray *arrBoolean;
     selectEthnicityVC = segue.sourceViewController;
     selectedEthnicities = selectEthnicityVC._checkboxSelections;
     [selectEthnicityVC dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)displayRelativeData:(Relative *)currRelative
+{
+    if (currRelative.areParentsRelatedOtherThanMarraige.boolValue == YES) {
+        lblParentsRelationship.text = @"Yes";
+    }
+    else if (currRelative.areParentsRelatedOtherThanMarraige.boolValue == NO) {
+        lblParentsRelationship.text = @"No";
+    }
 }
 
 @end

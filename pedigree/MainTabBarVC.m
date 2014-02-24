@@ -118,10 +118,6 @@
 
 -(void)showIntroView
 {
-  /*  UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroNavController"];
-    [self presentViewController:navController animated:YES completion:nil];
-   */
-    
     [self performSegueWithIdentifier:@"showIntroSegue" sender:self];
 }
 

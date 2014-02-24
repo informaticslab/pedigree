@@ -19,7 +19,6 @@
 
 @property (nonatomic, weak) Relative *me;
 @property (nonatomic, strong) PersonDetailsVC *personDetailsVC;
-//@property (nonatomic, weak) NSString *relationToBeAdded;
 @property (nonatomic) NSInteger selectedRelationId;
 
 @end
@@ -32,6 +31,8 @@
 AppManager *appMgr;
 FamilyTree *famTree;
 Relative *currRelative;
+
+BOOL viewPersonDetails = NO;
 
 - (void)viewDidLoad
 {
@@ -52,7 +53,7 @@ Relative *currRelative;
     self.relatives = [APP_MGR getAllPeople];
     self.title = @"Family";
     
-  //  self.tabBarController.tabBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -87,12 +88,11 @@ Relative *currRelative;
     
     // Configure the cell...
     NSInteger index = [indexPath row];
-    currRelative = (Relative *)[_relatives objectAtIndex:index];
+    Relative *relative = (Relative *)[_relatives objectAtIndex:index];
     
     
-  //  cell.textLabel.text = currRelative.relationDescription;
-    cell.textLabel.text = @"";
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", currRelative.firstName, currRelative.lastName];
+    cell.textLabel.text = relative.relationDescription;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", relative.firstName, relative.lastName];
     
  /*   //temporarily displaying the diseases that are added to the user's profile
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -161,11 +161,9 @@ Relative *currRelative;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  /*temporarily disabling...until the next view is cleaned 
-   // Navigation logic may go here. Create and push another view controller.
-    // [self.navigationController pushViewController:detailViewController animated:YES];
-     [self performSegueWithIdentifier:@"showRelativeDetailsSegue" sender:nil];
-   */
+    viewPersonDetails = YES;
+    currRelative = (Relative *)[_relatives objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"showPersonSegue" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -180,6 +178,14 @@ Relative *currRelative;
     {
         personDetailsVC = (PersonDetailsVC *)[segue.destinationViewController topViewController];
         personDetailsVC.selectedRelationId = _selectedRelationId;
+        
+        if (viewPersonDetails == YES) {
+            personDetailsVC.editingMode = NO;
+            personDetailsVC.relative = currRelative;
+        }
+        else if (viewPersonDetails == NO){
+            personDetailsVC.editingMode = YES;
+        }
     }
 }
 
@@ -194,8 +200,8 @@ Relative *currRelative;
     }
     else{
        
-      //  [relationshipVC dismissViewControllerAnimated:YES completion:nil];
         [relationshipVC removeFromParentViewController];
+        viewPersonDetails = NO;
         [self performSegueWithIdentifier:@"showPersonSegue" sender:self];
     }
 }
