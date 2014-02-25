@@ -14,6 +14,7 @@
 #import "RelativeDetailsVC.h"
 #import "PersonDetailsVC.h"
 #import "SelectRelationshipVC.h"
+#import "IntroVC.h"
 
 @interface RelativesTableVC ()
 
@@ -51,9 +52,13 @@ BOOL viewPersonDetails = NO;
                                    entityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
     [fetchRequest setEntity:entity];
     self.relatives = [APP_MGR getAllPeople];
-    self.title = @"Family";
-    
+   // self.title = @"Family";
     self.tabBarController.tabBar.hidden = NO;
+    
+    if ([self.relatives count] <= 0) {
+        //display the intro VC.
+        [self performSegueWithIdentifier:@"showIntroSegue" sender:self];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -168,12 +173,6 @@ BOOL viewPersonDetails = NO;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-  /*  if([segue.identifier isEqualToString:@"showRelativeDetailsSegue"])
-    {
-        RelativeDetailsVC *relativeDetailsVC = segue.destinationViewController;
-        relativeDetailsVC.relative = currRelative;
-    }
-   */
     if([segue.identifier isEqualToString:@"showPersonSegue"])
     {
         personDetailsVC = (PersonDetailsVC *)[segue.destinationViewController topViewController];
@@ -187,6 +186,7 @@ BOOL viewPersonDetails = NO;
             personDetailsVC.editingMode = YES;
         }
     }
+    
 }
 
 - (IBAction)dismissWithDoneRelationshipVC:(UIStoryboardSegue *)segue {
@@ -205,6 +205,13 @@ BOOL viewPersonDetails = NO;
         [self performSegueWithIdentifier:@"showPersonSegue" sender:self];
     }
 }
+
+- (IBAction)dismissWithCancelRelationshipVC:(UIStoryboardSegue *)segue {
+    
+    SelectRelationshipVC *relationshipVC = segue.sourceViewController;
+    [relationshipVC dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (IBAction)dismissWithCancelPersonVC:(UIStoryboardSegue *)segue {
     personDetailsVC = segue.sourceViewController;

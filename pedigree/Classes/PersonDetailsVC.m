@@ -60,6 +60,9 @@ AppManager *appMgr;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
+    
+    self.txtFirstName.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    self.txtLastName.autocapitalizationType = UITextAutocapitalizationTypeWords;
    
     _segControl.selectedSegmentIndex = 0;
     self.personalInfoView.hidden = NO;
@@ -69,7 +72,6 @@ AppManager *appMgr;
     relUtil = [[RelationshipUtil alloc] init];
     
     if (editingMode == NO) {
-     //   self.navigationItem.title = relative.relationDescription;
         [self displayRelativeData:relative];
     }
     else if ( editingMode == YES){
@@ -137,10 +139,11 @@ AppManager *appMgr;
         familyBackgroundTVC = (FamilyBackgroundTVC *)segue.destinationViewController;
        // familyBackgroundTVC.relative = self.me;
     }
-    if([segue.identifier isEqualToString:@"showRelativesTV"])
+/*    if([segue.identifier isEqualToString:@"showRelativesTV"])
     {
         relativesTVC = (RelativesTableVC *)segue.destinationViewController;
     }
+ */
  
  }
 
@@ -231,7 +234,10 @@ AppManager *appMgr;
         }
         
         [self.navigationController popToRootViewControllerAnimated:YES];
-        [self performSegueWithIdentifier:@"showRelativesTV" sender:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+        
+    //    [self performSegueWithIdentifier:@"showRelativesTV" sender:self];
     }
     
    }
@@ -260,6 +266,8 @@ AppManager *appMgr;
 
 -(void)displayRelativeData:(Relative *)currRelative
 {
+    self.navigationItem.title = relative.relationDescription;
+    
     //setting the relative's details from the database
     txtFirstName.text = relative.firstName;
     txtLastName.text = relative.lastName;

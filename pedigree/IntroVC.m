@@ -41,7 +41,7 @@ NSInteger selectedRelationId;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.tabBarController.tabBar.hidden = YES;
+    //self.tabBarController.tabBar.hidden = YES;
     self.introLbl.text = @"Start with you or a family member";
  
     /*[self.introLbl boldSubstring:@"Start"];
@@ -61,21 +61,20 @@ NSInteger selectedRelationId;
     if([segue.identifier isEqualToString:@"showMyProfile"])
     {
         personDetailsVC = (PersonDetailsVC *)[segue.destinationViewController topViewController];
-        //personDetailsVC.me = _me;
         personDetailsVC.myself = YES;
         personDetailsVC.editingMode = YES;
+        personDetailsVC.selectedRelationId = selectedRelationId;
     }
     if([segue.identifier isEqualToString:@"showRelativeProfile"])
     {
         personDetailsVC = (PersonDetailsVC *)[segue.destinationViewController topViewController];
-        //personDetailsVC.me = _me;
         personDetailsVC.myself = NO;
         personDetailsVC.editingMode = YES;
+        personDetailsVC.selectedRelationId = selectedRelationId;
     }
     if([segue.identifier isEqualToString:@"showSelectRelationSegue"])
     {
         selectRelationshipVC = (SelectRelationshipVC *)segue.destinationViewController;
-        //relativesTVC.relative = self.me;
     }
 }
 
@@ -102,13 +101,14 @@ NSInteger selectedRelationId;
     selectedRelationId = relationshipVC._selectedIndex;
     
     if (relationshipVC._selectedIndex < 0) {
-        
+      
+        [self.navigationController popToRootViewControllerAnimated:YES];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missing Data" message:@"Please select a relationship to add a relative" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alertView show];
     }
     else{
         
-        [relationshipVC removeFromParentViewController];
+        [self.navigationController popToRootViewControllerAnimated:YES];
         [self performSegueWithIdentifier:@"showRelativeProfile" sender:self];
     }
 }
@@ -124,8 +124,16 @@ NSInteger selectedRelationId;
 }
 
 - (IBAction)dismissWithCancelPersonVC:(UIStoryboardSegue *)segue {
+   
     personDetailsVC = segue.sourceViewController;
     [personDetailsVC dismissViewControllerAnimated:YES completion:nil];
+ 
 }
+
+- (IBAction)dismissWithCancelRelationshipVC:(UIStoryboardSegue *)segue {
+    
+   [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 
 @end
