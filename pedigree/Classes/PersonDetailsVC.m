@@ -233,11 +233,17 @@ AppManager *appMgr;
             
         }
         
-        [self.navigationController popToRootViewControllerAnimated:YES];
-        [self dismissViewControllerAnimated:YES completion:nil];
-        [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    //    [self.navigationController popToRootViewControllerAnimated:YES];
+    //    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+
+        
+    //     [self dismissViewControllerAnimated:YES completion:nil];
+   //     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
         
     //    [self performSegueWithIdentifier:@"showRelativesTV" sender:self];
+        [self performSegueWithIdentifier:@"showRelativesSegue" sender:self];
+        
+        
     }
     
    }

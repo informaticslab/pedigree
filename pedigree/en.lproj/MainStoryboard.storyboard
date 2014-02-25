@@ -160,6 +160,7 @@
                         <outlet property="txtFirstName" destination="uNe-Fg-yaU" id="LcJ-ho-Cpq"/>
                         <outlet property="txtLastName" destination="VgK-Bj-v4Y" id="2xr-YD-hcH"/>
                         <segue destination="Cdt-JK-z7j" kind="push" identifier="showRelativesTV" id="lYJ-aU-3sD"/>
+                        <segue destination="tzd-la-peE" kind="unwind" identifier="showRelativesSegue" unwindAction="dismissWithDoneAddingPersonVC:" id="dn0-Wh-JNd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qf7-L9-uq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1333,7 +1334,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Bla-9F-nMs"/>
-        <segue reference="pRa-Wx-HtV"/>
+        <segue reference="lYJ-aU-3sD"/>
         <segue reference="4Tg-6Y-A6H"/>
         <segue reference="21l-9c-g7Y"/>
     </inferredMetricsTieBreakers>
