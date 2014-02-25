@@ -26,6 +26,7 @@
 @implementation SelectRaceVC
 
 @synthesize _checkboxSelections;
+@synthesize setSelectedRaces;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,6 +52,8 @@
     _raceWhiteArr =  [[NSArray alloc] initWithArray:_raceUtil.raceWhiteArr];
     
     _checkboxSelections = 0;
+    
+    setSelectedRaces = [[NSMutableSet alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -138,7 +141,12 @@
             NSInteger temp = kAmericanIndianOrAlaskanNative;
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+           // if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            if (_checkboxSelections & flag)
+            {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [setSelectedRaces addObject:cell.textLabel.text];
+            }
             break;
         }
         case kAsian:{
@@ -147,7 +155,12 @@
             NSInteger temp = [_raceAmericanIndianOrAlaskanNativeArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            if (_checkboxSelections & flag)
+            {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [setSelectedRaces addObject:cell.textLabel.text];
+            }
             break;
         }
             
@@ -157,7 +170,12 @@
             NSInteger temp = [_raceAmericanIndianOrAlaskanNativeArr count] + [_raceAsianArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            if (_checkboxSelections & flag)
+            {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [setSelectedRaces addObject:cell.textLabel.text];
+            }
             break;
         }
         case kNativeHawaiianOrOtherPacificIslander:{
@@ -166,7 +184,12 @@
              NSInteger temp = [_raceAmericanIndianOrAlaskanNativeArr count] + [_raceAsianArr count] + [_raceBlackAfricanOrAmericanArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            if (_checkboxSelections & flag)
+            {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [setSelectedRaces addObject:cell.textLabel.text];
+            }
             break;
 
         }
@@ -176,7 +199,12 @@
              NSInteger temp = [_raceAmericanIndianOrAlaskanNativeArr count] + [_raceAsianArr count] + [_raceBlackAfricanOrAmericanArr count] + [_raceNativeHawaiianArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            if (_checkboxSelections & flag)
+            {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [setSelectedRaces addObject:cell.textLabel.text];
+            }
             break;
         }
         default:

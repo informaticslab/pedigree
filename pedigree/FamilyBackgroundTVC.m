@@ -184,11 +184,13 @@ NSArray *arrBoolean;
 - (IBAction)dismissWithDoneSelectRaceVC:(UIStoryboardSegue *)segue {
     
     selectRaceVC = segue.sourceViewController;
-  //  lblRace.text = [NSString stringWithFormat:@"%d", selectRaceVC._checkboxSelections ];
+    lblRace.text = [[selectRaceVC.setSelectedRaces allObjects] componentsJoinedByString:@","];
+    selectedRaces = selectRaceVC._checkboxSelections;
     [selectRaceVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)dismissWithCancelSelectRaceVC:(UIStoryboardSegue *)segue {
+   
     selectRaceVC = segue.sourceViewController;
     [selectRaceVC dismissViewControllerAnimated:YES completion:nil];
 }
@@ -196,14 +198,14 @@ NSArray *arrBoolean;
 - (IBAction)dismissWithDoneSelectEthnicityVC:(UIStoryboardSegue *)segue {
     
     selectEthnicityVC = segue.sourceViewController;
-    //  lblRace.text = [NSString stringWithFormat:@"%d", selectRaceVC._checkboxSelections ];
-    selectedRaces = selectRaceVC._checkboxSelections;
+    lblEthnicity.text = [[selectEthnicityVC.setSelectedEthnicities allObjects] componentsJoinedByString:@","];
+    selectedEthnicities = selectEthnicityVC._checkboxSelections;
     [selectEthnicityVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)dismissWithCancelSelectEthnicityVC:(UIStoryboardSegue *)segue {
+    
     selectEthnicityVC = segue.sourceViewController;
-    selectedEthnicities = selectEthnicityVC._checkboxSelections;
     [selectEthnicityVC dismissViewControllerAnimated:YES completion:nil];
 }
 

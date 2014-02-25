@@ -228,8 +228,6 @@ AppManager *appMgr;
                 DebugLog(@"Problem saving the relative: %@", error);
             }
             
-//            [self.navigationController popToRootViewControllerAnimated:YES];
-//            [self performSegueWithIdentifier:@"showRelativesTV" sender:self];
         }
         
         [self.navigationController popToRootViewControllerAnimated:YES];

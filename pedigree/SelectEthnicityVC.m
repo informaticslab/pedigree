@@ -24,6 +24,7 @@
 @implementation SelectEthnicityVC
 
 @synthesize _checkboxSelections;
+@synthesize setSelectedEthnicities;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +48,7 @@
     _ethnicityAshkenaziJewishArr = [[NSArray alloc] initWithArray:_ethnicityUtil.ethnicityAshkenaziJewishCategoryArr];
     _ethnicityNotHispanicOrLatinoArr = [[NSArray alloc] initWithArray:_ethnicityUtil.ethnicityNotHispanicOrLatinoCategoryArr];
     
+    setSelectedEthnicities = [[NSMutableSet alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,7 +126,12 @@
             NSInteger temp = kHispanicOrLatino;
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            if (_checkboxSelections & flag)
+            {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [setSelectedEthnicities addObject:cell.textLabel.text];
+            }
             break;
         }
         case kAshkenaziJewish:{
@@ -133,7 +140,12 @@
             NSInteger temp = [_ethnicityHispanicOrLatinoArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            if (_checkboxSelections & flag)
+            {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [setSelectedEthnicities addObject:cell.textLabel.text];
+            }
             break;
         }
         case kNotHispanicOrLatino:{
@@ -142,7 +154,12 @@
             NSInteger temp = [_ethnicityHispanicOrLatinoArr count] + [_ethnicityAshkenaziJewishArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            if (_checkboxSelections & flag)
+            {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [setSelectedEthnicities addObject:cell.textLabel.text];
+            }
             break;
         }
         default:

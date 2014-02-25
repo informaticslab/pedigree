@@ -11,5 +11,6 @@
 @interface SelectRaceVC :  UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSInteger _checkboxSelections;
+@property (nonatomic, strong) NSMutableSet *setSelectedRaces;
 
 @end

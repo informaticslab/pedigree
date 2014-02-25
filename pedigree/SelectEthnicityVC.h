@@ -11,5 +11,6 @@
 @interface SelectEthnicityVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSInteger _checkboxSelections;
+@property (nonatomic, strong) NSMutableSet *setSelectedEthnicities;
 
 @end
