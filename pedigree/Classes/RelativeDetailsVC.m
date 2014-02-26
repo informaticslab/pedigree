@@ -25,7 +25,7 @@ BOOL editMode;
 	// Do any additional setup after loading the view.
     _txtFirstName.text = _relative.firstName;
     _txtLastName.text = _relative.lastName;
-    //detailsTVC.lblAdopted.text = _relative.
+  
     self.navigationItem.rightBarButtonItem = [self editButtonItem];
     self.personalInfoView.hidden = NO;
     self.healthInforView.hidden = YES;

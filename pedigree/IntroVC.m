@@ -103,7 +103,7 @@ NSInteger selectedRelationId;
     if (relationshipVC._selectedIndex < 0) {
       
         [self.navigationController popToRootViewControllerAnimated:YES];
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missing Data" message:@"Please select a relationship to add a relative" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No One Was Added" message:@"To add someone to your family tree, please select a relationship before tapping Done" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alertView show];
     }
     else{

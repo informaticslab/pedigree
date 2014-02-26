@@ -132,6 +132,7 @@ RelationshipUtil *relUtil;
                 cell.backgroundColor = [UIColor lightGrayColor];
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
                 cell.textLabel.text = @"Myself";
+                
             }
             break;
         }
@@ -139,7 +140,6 @@ RelationshipUtil *relUtil;
         {
             cell.accessoryType = UITableViewCellAccessoryNone;
             // Configure the cell...
-            cell.backgroundColor = [UIColor clearColor];
             cell.textLabel.text = relationships[indexPath.row];
             if (indexPath.row == _selectedIndex) cell.accessoryType = UITableViewCellAccessoryCheckmark;
             
@@ -172,6 +172,7 @@ RelationshipUtil *relUtil;
             break;
     }
 }
+
 
 -(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {

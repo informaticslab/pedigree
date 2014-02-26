@@ -120,7 +120,6 @@
     
     cell.lbldisease.text = [[arrDiseases objectAtIndex:indexPath.row] name];
     cell.lbldiseaseCategory.text = [[arrDiseases objectAtIndex:indexPath.row] categoryName];
-  //  cell.lblAge.text = [@"Age at Diagnosis: " stringByAppendingString:[_disUtil.ageGroupArr objectAtIndex:indexPath.row]];
     cell.lblAge.text = [@"Age at Diagnosis: " stringByAppendingString:[_disUtil.ageGroupArr objectAtIndex:[[[arrDiseases objectAtIndex:indexPath.row] ageAtDiagnosis] integerValue]]];
     
     return cell;

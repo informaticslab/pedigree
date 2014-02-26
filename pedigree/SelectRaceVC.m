@@ -141,7 +141,6 @@
             NSInteger temp = kAmericanIndianOrAlaskanNative;
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-           // if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
             if (_checkboxSelections & flag)
             {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -155,7 +154,6 @@
             NSInteger temp = [_raceAmericanIndianOrAlaskanNativeArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
             if (_checkboxSelections & flag)
             {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -170,7 +168,6 @@
             NSInteger temp = [_raceAmericanIndianOrAlaskanNativeArr count] + [_raceAsianArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
             if (_checkboxSelections & flag)
             {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -184,7 +181,6 @@
              NSInteger temp = [_raceAmericanIndianOrAlaskanNativeArr count] + [_raceAsianArr count] + [_raceBlackAfricanOrAmericanArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
             if (_checkboxSelections & flag)
             {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -199,7 +195,6 @@
              NSInteger temp = [_raceAmericanIndianOrAlaskanNativeArr count] + [_raceAsianArr count] + [_raceBlackAfricanOrAmericanArr count] + [_raceNativeHawaiianArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
             if (_checkboxSelections & flag)
             {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;

@@ -228,7 +228,6 @@ AppManager *appMgr;
 
 }
 
-
 - (IBAction)dismissWithDoneSelectAgeVC:(UIStoryboardSegue *)segue {
     
     _selectAgeVC = segue.sourceViewController;
@@ -241,7 +240,7 @@ AppManager *appMgr;
 - (IBAction)dismissWithDoneDiseaseSubCategoryVC:(UIStoryboardSegue *)segue {
     
     _diseaseSubCatVC = segue.sourceViewController;
-    NSLog(@"Inside SelectDiseaseVC :: dismissWithDoneDiseaseSubCategoryVC :: The total number of diseases selected are: %d", [_diseaseSubCatVC.setSelectedDiseases count]);
+    DebugLog(@"Inside SelectDiseaseVC :: dismissWithDoneDiseaseSubCategoryVC :: The total number of diseases selected are: %d", [_diseaseSubCatVC.setSelectedDiseases count]);
     [self.setSelectedDiseases unionSet:_diseaseSubCatVC.setSelectedDiseases];
 
     [self.navigationController popViewControllerAnimated:YES];

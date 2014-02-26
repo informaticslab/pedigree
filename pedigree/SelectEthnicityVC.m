@@ -126,7 +126,6 @@
             NSInteger temp = kHispanicOrLatino;
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
             if (_checkboxSelections & flag)
             {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -140,7 +139,6 @@
             NSInteger temp = [_ethnicityHispanicOrLatinoArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
             if (_checkboxSelections & flag)
             {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -154,7 +152,6 @@
             NSInteger temp = [_ethnicityHispanicOrLatinoArr count] + [_ethnicityAshkenaziJewishArr count];
             int flag = (1 << (temp + indexPath.row));
             // update row's accessory if it's "turned on"
-            //if (_checkboxSelections & flag) cell.accessoryType = UITableViewCellAccessoryCheckmark;
             if (_checkboxSelections & flag)
             {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
