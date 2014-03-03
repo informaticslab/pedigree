@@ -40,8 +40,8 @@ RelationshipUtil *relUtil;
 AppManager *appMgr;
 @synthesize txtFirstName;
 @synthesize txtLastName;
+@synthesize profileImgBtn;
 @synthesize relative;
-@synthesize txtTest;
 @synthesize selectedRelationId;
 @synthesize myself;
 @synthesize editingMode;
@@ -61,6 +61,19 @@ AppManager *appMgr;
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
     
+    self.profileImgBtn.layer.cornerRadius = self.profileImgBtn.bounds.size.width/2.0;
+    self.profileImgBtn.layer.borderWidth = 1;
+    self.profileImgBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.profileImgBtn.layer.masksToBounds = YES;
+    
+  /*  if(self.profileImgBtn.imageView.image == nil){
+        self.profileImgBtn.titleLabel.text = @"Add Photo";
+    }
+    else{
+        self.profileImgBtn.titleLabel.text = @"";
+    }
+   */
+     
     self.txtFirstName.autocapitalizationType = UITextAutocapitalizationTypeWords;
     self.txtLastName.autocapitalizationType = UITextAutocapitalizationTypeWords;
    
@@ -139,12 +152,6 @@ AppManager *appMgr;
         familyBackgroundTVC = (FamilyBackgroundTVC *)segue.destinationViewController;
        // familyBackgroundTVC.relative = self.me;
     }
-/*    if([segue.identifier isEqualToString:@"showRelativesTV"])
-    {
-        relativesTVC = (RelativesTableVC *)segue.destinationViewController;
-    }
- */
- 
  }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -180,6 +187,13 @@ AppManager *appMgr;
 {
     if (editingMode == NO) {
         // do not save the data - view only mode
+      /*  if ([APP_MGR.managedObjectContext hasChanges]) {
+            
+            NSError *error;
+            if(! [APP_MGR.managedObjectContext save:&error]){
+                DebugLog(@"User data could not be updated");
+            }
+        }*/
     }
     else {
         if (([txtFirstName.text  isEqual: @""]) || ([txtLastName.text  isEqual: @""])){
@@ -230,12 +244,10 @@ AppManager *appMgr;
             {
                 DebugLog(@"Problem saving the relative: %@", error);
             }
-            
         }
-        
-        [self performSegueWithIdentifier:@"showRelativesSegue" sender:self];
     }
     
+    [self performSegueWithIdentifier:@"showRelativesSegue" sender:self];
 }
 
 -(void)validateInput
@@ -271,6 +283,14 @@ AppManager *appMgr;
     [personalInfoTVC displayRelativeData:currRelative];
     [healthInfoVC displayRelativeData:currRelative];
  //   [familyBackgroundTVC displayRelativeData:currRelative];
+}
+
+-(IBAction)imageBtn_Clicked:(id)sender
+{
+  /*  UIActionSheet *asImageOptionsView = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Select an Image", @"No", nil];
+    [asImageOptionsView setBounds:CGRectMake(0, 0, 320, 500)];
+    [asImageOptionsView showInView:self.view];
+   */
 }
 
 @end

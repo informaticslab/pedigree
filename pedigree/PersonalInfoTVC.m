@@ -251,7 +251,6 @@ RelationshipUtil *relUtil;
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    
     switch (actionSheet.tag) {
         case 0:
         {
@@ -376,6 +375,11 @@ RelationshipUtil *relUtil;
     else if (currRelative.isIdenticalTwin.boolValue == NO) {
         lblIdenticalTwin.text = @"No";
     }
+}
+
+-(BOOL) datePickerIsShown
+{
+    return YES;
 }
 
 @end

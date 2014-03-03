@@ -11,20 +11,21 @@
 #import "MainTabBarVC.h"
 #import "HealthInfoVC.h"
 #import "Relative.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface PersonDetailsVC : UIViewController<UITextFieldDelegate>
+@interface PersonDetailsVC : UIViewController<UITextFieldDelegate, UIActionSheetDelegate>
 {
      UITextField *txtFirstName;
      UITextField *txtLastName;
      UITextField *txtTest;
 }
-@property(nonatomic, weak) Relative *relative;
-@property(nonatomic, strong) MainTabBarVC *mainTabBarVC;
+@property (nonatomic, weak) Relative *relative;
+@property (nonatomic, strong) MainTabBarVC *mainTabBarVC;
 @property (nonatomic, strong) IBOutlet UITextField *txtFirstName;
 @property (nonatomic, strong) IBOutlet UITextField *txtLastName;
-@property (nonatomic, strong) UITextField *txtTest;
-@property (nonatomic) NSInteger selectedRelationId;
+@property (nonatomic, weak) IBOutlet UIButton *profileImgBtn;
 
+@property (nonatomic) NSInteger selectedRelationId;
 @property (nonatomic) BOOL myself;
 @property (nonatomic) BOOL editingMode;
 
