@@ -13,7 +13,7 @@
 #import "Relative.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface PersonDetailsVC : UIViewController<UITextFieldDelegate, UIActionSheetDelegate>
+@interface PersonDetailsVC : UIViewController<UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
      UITextField *txtFirstName;
      UITextField *txtLastName;

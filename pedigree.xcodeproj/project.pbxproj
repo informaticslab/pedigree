@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A1281F018A2B6BB001259D3 /* ContractedDisease.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1281EF18A2B6BB001259D3 /* ContractedDisease.m */; };
-		6A1281F318A2B6BB001259D3 /* Relative.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1281F218A2B6BB001259D3 /* Relative.m */; };
-		6A1281F618A2B6BB001259D3 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1281F518A2B6BB001259D3 /* Person.m */; };
-		6A1281F918A2B6BB001259D3 /* Myself.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1281F818A2B6BB001259D3 /* Myself.m */; };
 		6A12820218A31C77001259D3 /* SelectRaceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A12820118A31C77001259D3 /* SelectRaceVC.m */; };
 		6A12820518A32B80001259D3 /* RaceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A12820418A32B80001259D3 /* RaceUtil.m */; };
 		6A12820B18A53F38001259D3 /* SelectEthnicityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A12820A18A53F38001259D3 /* SelectEthnicityVC.m */; };
@@ -23,6 +19,11 @@
 		6A3D4D8F18B53CFA002EC23F /* ExistingConditionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4D8E18B53CFA002EC23F /* ExistingConditionsCell.m */; };
 		6A3D4D9218B68D74002EC23F /* RelationshipUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4D9118B68D74002EC23F /* RelationshipUtil.m */; };
 		6A66450B189C4FD60017573F /* ParentsRelationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A66450A189C4FD60017573F /* ParentsRelationCell.m */; };
+		6A90C37118C5264B00B7CB84 /* CustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A90C37018C5264B00B7CB84 /* CustomCamera.m */; };
+		6A9515E818C64284007A6938 /* Myself.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9515E718C64284007A6938 /* Myself.m */; };
+		6A9515EB18C64285007A6938 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9515EA18C64285007A6938 /* Person.m */; };
+		6A9515EE18C64285007A6938 /* Relative.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9515ED18C64285007A6938 /* Relative.m */; };
+		6A9515F118C64285007A6938 /* ContractedDisease.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9515F018C64285007A6938 /* ContractedDisease.m */; };
 		6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */; };
 		6AB3881318A20A5B0064ADB5 /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */; };
 		6AEDAB4218A955E10063DA13 /* Disease.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDAB4118A955E10063DA13 /* Disease.m */; };
@@ -50,14 +51,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A1281EE18A2B6BB001259D3 /* ContractedDisease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractedDisease.h; sourceTree = "<group>"; };
-		6A1281EF18A2B6BB001259D3 /* ContractedDisease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractedDisease.m; sourceTree = "<group>"; };
-		6A1281F118A2B6BB001259D3 /* Relative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relative.h; sourceTree = "<group>"; };
-		6A1281F218A2B6BB001259D3 /* Relative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relative.m; sourceTree = "<group>"; };
-		6A1281F418A2B6BB001259D3 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		6A1281F518A2B6BB001259D3 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		6A1281F718A2B6BB001259D3 /* Myself.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myself.h; sourceTree = "<group>"; };
-		6A1281F818A2B6BB001259D3 /* Myself.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myself.m; sourceTree = "<group>"; };
 		6A12820018A31C77001259D3 /* SelectRaceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRaceVC.h; sourceTree = "<group>"; };
 		6A12820118A31C77001259D3 /* SelectRaceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRaceVC.m; sourceTree = "<group>"; };
 		6A12820318A32B80001259D3 /* RaceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceUtil.h; sourceTree = "<group>"; };
@@ -82,6 +75,16 @@
 		6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PedigreeDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		6A664509189C4FD60017573F /* ParentsRelationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsRelationCell.h; sourceTree = "<group>"; };
 		6A66450A189C4FD60017573F /* ParentsRelationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentsRelationCell.m; sourceTree = "<group>"; };
+		6A90C36F18C5264B00B7CB84 /* CustomCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCamera.h; sourceTree = "<group>"; };
+		6A90C37018C5264B00B7CB84 /* CustomCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCamera.m; sourceTree = "<group>"; };
+		6A9515E618C64284007A6938 /* Myself.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myself.h; sourceTree = "<group>"; };
+		6A9515E718C64284007A6938 /* Myself.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myself.m; sourceTree = "<group>"; };
+		6A9515E918C64285007A6938 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		6A9515EA18C64285007A6938 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		6A9515EC18C64285007A6938 /* Relative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relative.h; sourceTree = "<group>"; };
+		6A9515ED18C64285007A6938 /* Relative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relative.m; sourceTree = "<group>"; };
+		6A9515EF18C64285007A6938 /* ContractedDisease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractedDisease.h; sourceTree = "<group>"; };
+		6A9515F018C64285007A6938 /* ContractedDisease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractedDisease.m; sourceTree = "<group>"; };
 		6AB387EF189FFA0A0064ADB5 /* FamilyBackgroundTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyBackgroundTVC.h; sourceTree = "<group>"; };
 		6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyBackgroundTVC.m; sourceTree = "<group>"; };
 		6AB3881118A20A5B0064ADB5 /* HealthInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoTVC.h; sourceTree = "<group>"; };
@@ -175,14 +178,14 @@
 			isa = PBXGroup;
 			children = (
 				AB91F7B418906E7D00A271DA /* PedigreeDataModel.xcdatamodeld */,
-				6A1281F718A2B6BB001259D3 /* Myself.h */,
-				6A1281F818A2B6BB001259D3 /* Myself.m */,
-				6A1281F418A2B6BB001259D3 /* Person.h */,
-				6A1281F518A2B6BB001259D3 /* Person.m */,
-				6A1281F118A2B6BB001259D3 /* Relative.h */,
-				6A1281F218A2B6BB001259D3 /* Relative.m */,
-				6A1281EE18A2B6BB001259D3 /* ContractedDisease.h */,
-				6A1281EF18A2B6BB001259D3 /* ContractedDisease.m */,
+				6A9515E618C64284007A6938 /* Myself.h */,
+				6A9515EF18C64285007A6938 /* ContractedDisease.h */,
+				6A9515F018C64285007A6938 /* ContractedDisease.m */,
+				6A9515EC18C64285007A6938 /* Relative.h */,
+				6A9515ED18C64285007A6938 /* Relative.m */,
+				6A9515E918C64285007A6938 /* Person.h */,
+				6A9515EA18C64285007A6938 /* Person.m */,
+				6A9515E718C64284007A6938 /* Myself.m */,
 				6AB3881118A20A5B0064ADB5 /* HealthInfoTVC.h */,
 				6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */,
 				ABD3C66F18917E8100D377F2 /* IntroVC.h */,
@@ -227,6 +230,8 @@
 				6AEDAB4418A9A2D20063DA13 /* SelectAgeVC.m */,
 				6AEDAB4018A955E10063DA13 /* Disease.h */,
 				6AEDAB4118A955E10063DA13 /* Disease.m */,
+				6A90C36F18C5264B00B7CB84 /* CustomCamera.h */,
+				6A90C37018C5264B00B7CB84 /* CustomCamera.m */,
 				A657DDA316F747F200F3CA8E /* Supporting Files */,
 				6A3D4D8D18B53CFA002EC23F /* ExistingConditionsCell.h */,
 				6A3D4D8E18B53CFA002EC23F /* ExistingConditionsCell.m */,
@@ -337,8 +342,11 @@
 				6AEDAB4218A955E10063DA13 /* Disease.m in Sources */,
 				A657DDA916F747F200F3CA8E /* main.m in Sources */,
 				6A12820B18A53F38001259D3 /* SelectEthnicityVC.m in Sources */,
+				6A9515F118C64285007A6938 /* ContractedDisease.m in Sources */,
+				6A90C37118C5264B00B7CB84 /* CustomCamera.m in Sources */,
 				6A2E3B441899AC000048E4DA /* SelectDiseaseVC.m in Sources */,
 				6A12820518A32B80001259D3 /* RaceUtil.m in Sources */,
+				6A9515EE18C64285007A6938 /* Relative.m in Sources */,
 				6A12820218A31C77001259D3 /* SelectRaceVC.m in Sources */,
 				6AB3881318A20A5B0064ADB5 /* HealthInfoTVC.m in Sources */,
 				A657DDAD16F747F200F3CA8E /* AppDelegate.m in Sources */,
@@ -346,24 +354,22 @@
 				6A2E3B471899AD680048E4DA /* DiseasesUtil.m in Sources */,
 				AB91F7B618906E7D00A271DA /* PedigreeDataModel.xcdatamodeld in Sources */,
 				A6778BB31815ADF200962394 /* PersonalInfoTVC.m in Sources */,
-				6A1281F318A2B6BB001259D3 /* Relative.m in Sources */,
 				6A66450B189C4FD60017573F /* ParentsRelationCell.m in Sources */,
-				6A1281F018A2B6BB001259D3 /* ContractedDisease.m in Sources */,
 				6A3D4D8F18B53CFA002EC23F /* ExistingConditionsCell.m in Sources */,
 				A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */,
 				6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */,
 				ABD3C67A1891C4ED00D377F2 /* PersonDetailsVC.m in Sources */,
 				A66FACC217F307EC002D260E /* MainTabBarVC.m in Sources */,
 				6AEDAB4518A9A2D20063DA13 /* SelectAgeVC.m in Sources */,
+				6A9515EB18C64285007A6938 /* Person.m in Sources */,
 				6A12820E18A53FF0001259D3 /* EthnicityUtil.m in Sources */,
 				A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */,
-				6A1281F918A2B6BB001259D3 /* Myself.m in Sources */,
 				6A2E3B4E189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m in Sources */,
 				ABD3C67118917E8100D377F2 /* IntroVC.m in Sources */,
-				6A1281F618A2B6BB001259D3 /* Person.m in Sources */,
 				A6A6616C181FFD5400E94505 /* SelectBirthdateVC.m in Sources */,
 				A67D37B716FB3DBF005C9987 /* FamilyTree.m in Sources */,
 				6A3D4D9218B68D74002EC23F /* RelationshipUtil.m in Sources */,
+				6A9515E818C64284007A6938 /* Myself.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

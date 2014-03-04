@@ -21,6 +21,7 @@
         <attribute name="isLiving" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isTwin" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="race" optional="YES" attributeType="Integer 32" defaultValueString="-1" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="contractedDisease" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContractedDisease" inverseName="person" inverseEntity="ContractedDisease" syncable="YES"/>
@@ -31,9 +32,9 @@
         <relationship name="myself" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Myself" inverseName="relatives" inverseEntity="Myself" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ContractedDisease" positionX="0" positionY="0" width="128" height="105"/>
-        <element name="Myself" positionX="-378" positionY="-162" width="128" height="60"/>
-        <element name="Person" positionX="-378" positionY="33" width="128" height="255"/>
-        <element name="Relative" positionX="-0" positionY="-261" width="128" height="90"/>
+        <element name="ContractedDisease" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Myself" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Person" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Relative" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

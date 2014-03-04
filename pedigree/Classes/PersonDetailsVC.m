@@ -16,6 +16,7 @@
 #import "Disease.h"
 #import "ContractedDisease.h"
 #import "RelationshipUtil.h"
+#import "CustomCamera.h"
 
 @interface PersonDetailsVC ()
 
@@ -34,6 +35,7 @@ HealthInfoVC *healthInfoVC;
 FamilyBackgroundTVC *familyBackgroundTVC;
 RelativesTableVC *relativesTVC;
 RelationshipUtil *relUtil;
+CustomCamera *cameraController;
 
 @implementation PersonDetailsVC
 
@@ -65,15 +67,7 @@ AppManager *appMgr;
     self.profileImgBtn.layer.borderWidth = 1;
     self.profileImgBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.profileImgBtn.layer.masksToBounds = YES;
-    
-  /*  if(self.profileImgBtn.imageView.image == nil){
-        self.profileImgBtn.titleLabel.text = @"Add Photo";
-    }
-    else{
-        self.profileImgBtn.titleLabel.text = @"";
-    }
-   */
-     
+
     self.txtFirstName.autocapitalizationType = UITextAutocapitalizationTypeWords;
     self.txtLastName.autocapitalizationType = UITextAutocapitalizationTypeWords;
    
@@ -208,11 +202,14 @@ AppManager *appMgr;
                 _newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
             }
             
+            NSData *profileImgData = UIImagePNGRepresentation(profileImgBtn.imageView.image);
+            _newRelative.profileImage = profileImgData;
+            
             _newRelative.firstName = txtFirstName.text;
             _newRelative.lastName = txtLastName.text;
+           
             _newRelative.relationDescription = personalInfoTVC.lblRelationship.text;
             _newRelative.dateOfBirth = personalInfoTVC.selectedBirthDate;
-            
             _newRelative.isLiving = [NSNumber numberWithBool:personalInfoTVC.isLiving];
             _newRelative.gender = [NSNumber numberWithInteger:personalInfoTVC.gender];
             _newRelative.isTwin = [NSNumber numberWithBool:personalInfoTVC.isTwin];
@@ -279,6 +276,7 @@ AppManager *appMgr;
     //setting the relative's details from the database
     txtFirstName.text = relative.firstName;
     txtLastName.text = relative.lastName;
+    [profileImgBtn setImage:[UIImage imageWithData:relative.profileImage] forState:UIControlStateNormal];
     
     [personalInfoTVC displayRelativeData:currRelative];
     [healthInfoVC displayRelativeData:currRelative];
@@ -287,10 +285,62 @@ AppManager *appMgr;
 
 -(IBAction)imageBtn_Clicked:(id)sender
 {
-  /*  UIActionSheet *asImageOptionsView = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Select an Image", @"No", nil];
+    UIActionSheet *asImageOptionsView = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Choose Existing", nil];
     [asImageOptionsView setBounds:CGRectMake(0, 0, 320, 500)];
     [asImageOptionsView showInView:self.view];
-   */
+   
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        
+        [self launchCamera];
+    }
+    else if(buttonIndex == 1){
+        // Choose from the existing photo
+    }
+    else
+    {
+        //do nothing
+    }
+}
+
+- (void) launchCamera {
+	
+	// Set up the camera
+	cameraController = [[CustomCamera alloc] init];
+	cameraController.sourceType = UIImagePickerControllerSourceTypeCamera;
+	cameraController.delegate = self;
+	
+	cameraController.showsCameraControls = NO;
+	cameraController.navigationBarHidden = YES;
+	cameraController.toolbarHidden = YES;
+	
+	// overlay on top of camera lens view
+	UIImageView *cameraOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"camera_overlay.png"]];
+	cameraOverlayView.alpha = 0.0f;
+	cameraController.cameraOverlayView = cameraOverlayView;
+	
+	// animate the fade in after the shutter opens
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDelay:2.2f];
+	cameraOverlayView.alpha = 1.0f;
+	[UIView commitAnimations];
+	
+	[self presentViewController:cameraController animated:YES completion:nil];
+}
+
+// User took an image
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)inImage
+				  editingInfo:(NSDictionary *)editingInfo {
+
+	[profileImgBtn setImage:inImage forState:UIControlStateNormal];
+    [profileImgBtn setImage:inImage forState:UIControlStateHighlighted];
+    [profileImgBtn setImage:inImage forState:UIControlStateSelected];
+	
+	// Get rid of the picker interface
+	[picker dismissModalViewControllerAnimated:YES];
 }
 
 @end
