@@ -295,10 +295,13 @@ AppManager *appMgr;
 {
     if (buttonIndex == 0) {
         
+        //Take new photo
         [self launchCamera];
     }
     else if(buttonIndex == 1){
+        
         // Choose from the existing photo
+        [self useCameraRoll];
     }
     else
     {
@@ -329,6 +332,19 @@ AppManager *appMgr;
 	[UIView commitAnimations];
 	
 	[self presentViewController:cameraController animated:YES completion:nil];
+}
+
+-(void)useCameraRoll
+{
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum])
+    {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePicker.allowsEditing = NO;
+        
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
 }
 
 // User took an image
