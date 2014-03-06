@@ -94,6 +94,24 @@ RelationshipUtil *relUtil;
     }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = [indexPath row];
+    float height = 0.0;
+    if (row == 6) {
+        if (isTwin == YES) {
+            height = 60.0;
+        }
+        else if (isTwin == NO){
+           height = 0.0;
+        }
+    }
+    else{
+        height = 60.0;
+    }
+    return height;
+}
+
 /*
 - (IBAction)dismissWithDoneBirthdateVC:(UIStoryboardSegue *)segue {
      NSLog(@"dismissWithDoneBirthdateVC");
@@ -350,10 +368,12 @@ RelationshipUtil *relUtil;
             else if (buttonIndex == 1) {
                 lblTwin.text = [arrBoolean objectAtIndex:buttonIndex];
                 isTwin = NO;
+                [self.tblView reloadData];
             }
             else{
                 lblTwin.text = @"";
                 isTwin = NO;
+                [self.tblView reloadData];
             }
             break;
         }
@@ -381,7 +401,6 @@ RelationshipUtil *relUtil;
                 
             UIDatePicker *pickerView = (UIDatePicker *)[actionSheet viewWithTag:DatePickerTag];
             NSDate *date = [pickerView date];
-            // selectedBirthDate = date;
             self.lblBirthdate.text = [dateFormatter stringFromDate:date];
          
             break;
