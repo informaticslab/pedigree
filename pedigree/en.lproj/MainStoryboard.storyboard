@@ -394,9 +394,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="fgd-7b-rhD" kind="modal" id="by5-tJ-K1C"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell tag="3" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Mfp-HQ-8UD">
                                         <rect key="frame" x="0.0" y="132" width="320" height="44"/>

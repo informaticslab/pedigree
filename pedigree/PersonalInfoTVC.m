@@ -73,6 +73,9 @@ RelationshipUtil *relUtil;
         case 1:
             [self displayGenderPicker];
             break;
+        case 2:
+            [self displayBirthdatePicker];
+            break;
         case 3:
             [self displayLivingPicker];
             break;
@@ -91,6 +94,7 @@ RelationshipUtil *relUtil;
     }
 }
 
+/*
 - (IBAction)dismissWithDoneBirthdateVC:(UIStoryboardSegue *)segue {
      NSLog(@"dismissWithDoneBirthdateVC");
     
@@ -113,6 +117,7 @@ RelationshipUtil *relUtil;
     SelectBirthdateVC *birthdateVC = segue.sourceViewController;
     [birthdateVC dismissViewControllerAnimated:YES completion:nil];
 }
+ */
 
 - (IBAction)dismissWithDoneRelationshipVC:(UIStoryboardSegue *)segue {
     
@@ -249,6 +254,41 @@ RelationshipUtil *relUtil;
     [asIdenticalTwinView showInView:self.view];
 }
 
+
+#define DatePickerTag 500
+-(void)displayBirthdatePicker{
+    
+    UIActionSheet *asDateView = [[UIActionSheet alloc] initWithTitle:@"Birthdate" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Done", nil];
+    asDateView.tag = 5;
+    
+    UIDatePicker *pickerView = [[UIDatePicker alloc] init];
+    pickerView.datePickerMode = UIDatePickerModeDate;
+    pickerView.tag = DatePickerTag;
+    
+    [asDateView addSubview:pickerView];
+    [asDateView showInView:self.view];
+    
+    CGRect asRect = asDateView.frame;
+    CGFloat orgHeight = asRect.size.height;
+    asRect.origin.y -= 100;
+    asRect.size.height = orgHeight + 100;
+    asDateView.frame = asRect;
+    
+    CGRect pickerRect = pickerView.frame;
+    pickerRect.origin.y = 30;
+    pickerView.frame = pickerRect;
+    
+    NSArray *subViews = [asDateView subviews];
+   
+    CGRect doneBtnFrame = CGRectMake(240, 0, 75, 46);
+    [[subViews objectAtIndex:2] setFrame:doneBtnFrame];
+    
+    CGRect cancelBtnFrame = CGRectMake(15, 0, 75, 46);
+    [[subViews objectAtIndex:3] setFrame:cancelBtnFrame];
+    
+}
+
+
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     switch (actionSheet.tag) {
@@ -333,6 +373,19 @@ RelationshipUtil *relUtil;
             }
             break;
         }
+        case 5:
+        {
+            //select button is pressed
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+                
+            UIDatePicker *pickerView = (UIDatePicker *)[actionSheet viewWithTag:DatePickerTag];
+            NSDate *date = [pickerView date];
+            // selectedBirthDate = date;
+            self.lblBirthdate.text = [dateFormatter stringFromDate:date];
+         
+            break;
+        }
         default:
             break;
     }
@@ -375,11 +428,6 @@ RelationshipUtil *relUtil;
     else if (currRelative.isIdenticalTwin.boolValue == NO) {
         lblIdenticalTwin.text = @"No";
     }
-}
-
--(BOOL) datePickerIsShown
-{
-    return YES;
 }
 
 @end
