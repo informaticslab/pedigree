@@ -2,7 +2,7 @@
 //  Person.h
 //  pedigree
 //
-//  Created by Murali Tammineni on 3/4/14.
+//  Created by Murali Tammineni on 3/7/14.
 //  Copyright (c) 2014 CDC Informatics R&D Lab. All rights reserved.
 //
 
@@ -24,9 +24,9 @@
 @property (nonatomic, retain) NSNumber * isLiving;
 @property (nonatomic, retain) NSNumber * isTwin;
 @property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSData * profileImage;
 @property (nonatomic, retain) NSNumber * race;
 @property (nonatomic, retain) NSNumber * weight;
-@property (nonatomic, retain) NSData * profileImage;
 @property (nonatomic, retain) NSSet *contractedDisease;
 @end
 

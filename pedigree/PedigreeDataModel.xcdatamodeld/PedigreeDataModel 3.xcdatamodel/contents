@@ -21,6 +21,7 @@
         <attribute name="isLiving" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isTwin" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="race" optional="YES" attributeType="Integer 32" defaultValueString="-1" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="contractedDisease" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContractedDisease" inverseName="person" inverseEntity="ContractedDisease" syncable="YES"/>
