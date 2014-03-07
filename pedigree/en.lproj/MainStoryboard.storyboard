@@ -701,7 +701,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="yyl-dJ-aMo" kind="modal" id="OQI-kG-sPj"/>
+                                            <segue destination="yyl-dJ-aMo" kind="modal" identifier="showRaceSegue" id="OQI-kG-sPj"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="HaB-Pt-PT0">
@@ -733,7 +733,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="B1S-C9-DAo" kind="modal" id="OZZ-QJ-b49"/>
+                                            <segue destination="B1S-C9-DAo" kind="modal" identifier="showEthnicitySegue" id="OZZ-QJ-b49"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

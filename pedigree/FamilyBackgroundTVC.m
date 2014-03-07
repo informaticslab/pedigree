@@ -146,6 +146,21 @@ NSArray *arrBoolean;
     }
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"showRaceSegue"])
+    {
+        selectRaceVC = (SelectRaceVC *)[segue.destinationViewController topViewController];
+        selectRaceVC._checkboxSelections = [relative.race integerValue];
+    }
+    if([segue.identifier isEqualToString:@"showEthnicitySegue"])
+    {
+        selectEthnicityVC = (SelectEthnicityVC *)[segue.destinationViewController topViewController];
+        selectEthnicityVC._checkboxSelections = [relative.ethnicity integerValue];
+    }
+}
+
+
 -(void)displayParentRelationshipPicker{
     
     UIActionSheet *asParentRelationshipView = [[UIActionSheet alloc] initWithTitle:@"Are your parents related to each other in any way other than marriage?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Yes", @"No", nil];
@@ -211,10 +226,11 @@ NSArray *arrBoolean;
 
 -(void)displayRelativeData:(Relative *)currRelative
 {
-    if (currRelative.areParentsRelatedOtherThanMarraige.boolValue == YES) {
+    relative = currRelative;
+    if (relative.areParentsRelatedOtherThanMarraige.boolValue == YES) {
         lblParentsRelationship.text = @"Yes";
     }
-    else if (currRelative.areParentsRelatedOtherThanMarraige.boolValue == NO) {
+    else if (relative.areParentsRelatedOtherThanMarraige.boolValue == NO) {
         lblParentsRelationship.text = @"No";
     }
 }

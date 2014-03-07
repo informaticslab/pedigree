@@ -10,7 +10,7 @@
 
 @interface FamilyBackgroundTVC : UITableViewController<UIActionSheetDelegate>
 
-@property(nonatomic, weak) Relative *relative;
+@property(nonatomic, strong) Relative *relative;
 @property (weak, nonatomic) IBOutlet UILabel *lblParentsRelationship;
 @property (weak, nonatomic) IBOutlet UILabel *lblRace;
 @property (weak, nonatomic) IBOutlet UILabel *lblEthnicity;

@@ -51,7 +51,8 @@
     _raceNativeHawaiianArr = [[NSArray alloc] initWithArray:_raceUtil.raceNativeHawaiianArr];
     _raceWhiteArr =  [[NSArray alloc] initWithArray:_raceUtil.raceWhiteArr];
     
-    _checkboxSelections = 0;
+  //  _checkboxSelections = 0;
+    NSLog(@"Inside viewDidLoad :: The value of the checkbox selections is :: %d", _checkboxSelections);
     
     setSelectedRaces = [[NSMutableSet alloc] init];
 }

@@ -144,7 +144,7 @@ AppManager *appMgr;
     if([segue.identifier isEqualToString:@"embedFamilyInfoTVC"])
     {
         familyBackgroundTVC = (FamilyBackgroundTVC *)segue.destinationViewController;
-       // familyBackgroundTVC.relative = self.me;
+        familyBackgroundTVC.relative = self.relative;
     }
  }
 
@@ -199,8 +199,7 @@ AppManager *appMgr;
         [relative setValue:[NSNumber numberWithBool:familyBackgroundTVC.areParentsRelatedOtherThanMarriage] forKey:@"areParentsRelatedOtherThanMarraige"];
         [relative setValue:[NSNumber numberWithInteger:familyBackgroundTVC.selectedRaces] forKey:@"race"];
         [relative setValue:[NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities] forKey:@"ethnicity"];
-        [relative setValue:[NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities] forKey:@"height"];
-        [relative setValue:[NSNumber numberWithDouble:5.2] forKey:@"ethnicity"];
+        [relative setValue:[NSNumber numberWithDouble:5.2] forKey:@"height"];
         [relative setValue:[NSNumber numberWithInt:120] forKey:@"weight"];
         
         [relative removeContractedDisease:relative.contractedDisease];
@@ -315,7 +314,7 @@ AppManager *appMgr;
     
     [personalInfoTVC displayRelativeData:currRelative];
     [healthInfoVC displayRelativeData:currRelative];
- //   [familyBackgroundTVC displayRelativeData:currRelative];
+    [familyBackgroundTVC displayRelativeData:currRelative];
 }
 
 -(IBAction)imageBtn_Clicked:(id)sender
