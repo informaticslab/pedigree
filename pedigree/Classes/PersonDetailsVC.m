@@ -180,14 +180,49 @@ AppManager *appMgr;
 - (IBAction)saveRelation:(id)sender
 {
     if (editingMode == NO) {
-        // do not save the data - view only mode
-      /*  if ([APP_MGR.managedObjectContext hasChanges]) {
+        //update the relative's data
+   
+        NSData *profileImgData = UIImagePNGRepresentation(profileImgBtn.imageView.image);
+        //_newRelative.profileImage = profileImgData;
+        [relative setValue:profileImgData forKey:@"profileImage"];
+        
+        [relative setValue:txtFirstName.text forKey:@"firstName"];
+        [relative setValue:txtLastName.text forKey:@"lastName"];
+        
+        [relative setValue:personalInfoTVC.lblRelationship.text forKey:@"relationDescription"];
+        [relative setValue:personalInfoTVC.selectedBirthDate forKey:@"dateOfBirth"];
+        [relative setValue:[NSNumber numberWithBool:personalInfoTVC.isLiving] forKey:@"isLiving"];
+        [relative setValue:[NSNumber numberWithInteger:personalInfoTVC.gender] forKey:@"gender"];
+        [relative setValue:[NSNumber numberWithBool:personalInfoTVC.isTwin] forKey:@"isTwin"];
+        [relative setValue:[NSNumber numberWithInteger:personalInfoTVC.isIdenticalTwin] forKey:@"isIdenticalTwin"];
+        [relative setValue:[NSNumber numberWithBool:personalInfoTVC.isAdopted] forKey:@"isAdopted"];
+        [relative setValue:[NSNumber numberWithBool:familyBackgroundTVC.areParentsRelatedOtherThanMarriage] forKey:@"areParentsRelatedOtherThanMarraige"];
+        [relative setValue:[NSNumber numberWithInteger:familyBackgroundTVC.selectedRaces] forKey:@"race"];
+        [relative setValue:[NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities] forKey:@"ethnicity"];
+        [relative setValue:[NSNumber numberWithInteger:familyBackgroundTVC.selectedEthnicities] forKey:@"height"];
+        [relative setValue:[NSNumber numberWithDouble:5.2] forKey:@"ethnicity"];
+        [relative setValue:[NSNumber numberWithInt:120] forKey:@"weight"];
+        
+        [relative removeContractedDisease:relative.contractedDisease];
+        
+        for (Disease *dis in healthInfoVC.arrDiseases)
+        {
+            ContractedDisease *contractedDis = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease"inManagedObjectContext:APP_MGR.managedObjectContext ];
             
-            NSError *error;
-            if(! [APP_MGR.managedObjectContext save:&error]){
-                DebugLog(@"User data could not be updated");
-            }
-        }*/
+            contractedDis.categoryName = dis.categoryName;
+            contractedDis.name = dis.name;
+            contractedDis.ageAtDiagnosis = dis.ageAtDiagnosis;
+            
+            [relative addContractedDiseaseObject:contractedDis];
+        }
+        
+        NSError *error = nil;
+        [APP_MGR.managedObjectContext save:&error];
+        
+        if (error)
+        {
+            DebugLog(@"Problem updating the relative's details: %@", error);
+        }
     }
     else {
         if (([txtFirstName.text  isEqual: @""]) || ([txtLastName.text  isEqual: @""])){
