@@ -15,6 +15,7 @@
 #import "PersonDetailsVC.h"
 #import "SelectRelationshipVC.h"
 #import "IntroVC.h"
+#import "FamilyMemberCell.h"
 
 @interface RelativesTableVC ()
 
@@ -89,18 +90,23 @@ BOOL viewPersonDetails = NO;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"FamilyMemberCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    FamilyMemberCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     NSInteger index = [indexPath row];
     Relative *relative = (Relative *)[_relatives objectAtIndex:index];
     
+    NSData *data = relative.profileImage;
+    if (data == nil) {
+        [cell.imgRelativePhoto setImage:[UIImage imageNamed:@"111-user.png"]];
+    }
+    else{
+       [cell.imgRelativePhoto setImage:[UIImage imageWithData:relative.profileImage]];
+    }
     
-    cell.textLabel.text = relative.relationDescription;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", relative.firstName, relative.lastName];
-
-    NSLog(@"The total number of diseases the user has are: %d", [currRelative.contractedDisease count]);
-
+    cell.lblRelativeName.text = [NSString stringWithFormat:@"%@ %@", relative.firstName, relative.lastName];
+    cell.lblRelationDescription.text = relative.relationDescription;
+    
     return cell;
 }
 

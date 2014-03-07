@@ -183,7 +183,6 @@ AppManager *appMgr;
         //update the relative's data
    
         NSData *profileImgData = UIImagePNGRepresentation(profileImgBtn.imageView.image);
-        //_newRelative.profileImage = profileImgData;
         [relative setValue:profileImgData forKey:@"profileImage"];
         
         [relative setValue:txtFirstName.text forKey:@"firstName"];
