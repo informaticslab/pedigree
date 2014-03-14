@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Mp8-nk-h7u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Mp8-nk-h7u">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--IntroVC - Your Family Health Tree-->
@@ -321,7 +321,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0P-Wq-4eJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tzd-la-peE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="31" y="-1260"/>
+            <point key="canvasLocation" x="557" y="-1260"/>
         </scene>
         <!--Personal InfoTVC-->
         <scene sceneID="9Ej-gu-K2T">
@@ -1140,22 +1140,42 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1l-Sb-Jnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2114" y="867"/>
+            <point key="canvasLocation" x="-2020" y="1611"/>
         </scene>
-        <!--View Controller - Grid-->
+        <!--Grid View Controller-->
         <scene sceneID="lHH-Lz-hxh">
             <objects>
-                <viewController id="0sH-CG-xnq" sceneMemberID="viewController">
+                <viewController id="0sH-CG-xnq" customClass="GridViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9kM-N3-yNy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Oeu-9S-D9J">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="TopLeft" id="nAJ-QX-qFi" customClass="GridView">
+                                        <rect key="frame" x="0.0" y="0.0" width="900" height="600"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Grid" image="83-calendar.png" id="Vaa-8u-3sV"/>
+                    <navigationItem key="navigationItem" id="8dh-3i-nRN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="3nd-Xk-ygE"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="kO3-EQ-bVI"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="gridView" destination="nAJ-QX-qFi" id="QV9-Yq-3K0"/>
+                        <outlet property="scrollView" destination="Oeu-9S-D9J" id="aio-gj-9fJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nx-ba-kTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2128" y="-1503"/>
+            <point key="canvasLocation" x="-1517" y="-715"/>
         </scene>
         <!--View Controller - Status-->
         <scene sceneID="LNd-Va-P90">
@@ -1170,7 +1190,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zn0-TG-fim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2107" y="103"/>
+            <point key="canvasLocation" x="-2013" y="847"/>
         </scene>
         <!--View Controller - Condition-->
         <scene sceneID="sz2-gc-31P">
@@ -1185,7 +1205,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WD0-0U-uLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2137" y="-651"/>
+            <point key="canvasLocation" x="-2043" y="93"/>
         </scene>
         <!--Main Tab BarVC-->
         <scene sceneID="rkv-ZL-CWv">
@@ -1201,7 +1221,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </tabBar>
                     <connections>
                         <segue destination="Cdt-JK-z7j" kind="relationship" relationship="viewControllers" id="pRa-Wx-HtV"/>
-                        <segue destination="0sH-CG-xnq" kind="relationship" relationship="viewControllers" id="rh3-g6-T7l"/>
+                        <segue destination="Koy-Ue-WlX" kind="relationship" relationship="viewControllers" id="rh3-g6-T7l"/>
                         <segue destination="Lbf-5D-zd4" kind="relationship" relationship="viewControllers" id="waF-DY-NsA"/>
                         <segue destination="d1B-K0-zzg" kind="relationship" relationship="viewControllers" id="ruc-XD-Pwy"/>
                         <segue destination="P6b-V6-GRP" kind="relationship" relationship="viewControllers" id="3Dm-e1-0qF"/>
@@ -1310,7 +1330,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8T-yK-BTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="-1260"/>
+            <point key="canvasLocation" x="-233" y="-1260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ecz-93-ubf">
@@ -1329,6 +1349,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdU-X9-q1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1957" y="-4938"/>
+        </scene>
+        <!--Navigation Controller - Grid-->
+        <scene sceneID="RpQ-Q8-lSZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Koy-Ue-WlX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Grid" image="83-calendar.png" id="Vaa-8u-3sV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CPd-zl-e9M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0sH-CG-xnq" kind="relationship" relationship="rootViewController" id="Ym0-qO-e9Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XT7-fZ-KLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2043" y="-715"/>
         </scene>
     </scenes>
     <resources>

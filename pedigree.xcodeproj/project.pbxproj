@@ -25,6 +25,8 @@
 		6A95160018CA494C007A6938 /* Myself.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9515FF18CA494C007A6938 /* Myself.m */; };
 		6A95160318CA494C007A6938 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A95160218CA494C007A6938 /* Person.m */; };
 		6A95160618CA494D007A6938 /* ContractedDisease.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A95160518CA494D007A6938 /* ContractedDisease.m */; };
+		6A965F6518CF8E4B00756AA5 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A965F6418CF8E4B00756AA5 /* GridView.m */; };
+		6A965F6818CF8F7600756AA5 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A965F6718CF8F7600756AA5 /* GridViewController.m */; };
 		6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */; };
 		6AB3881318A20A5B0064ADB5 /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */; };
 		6AEDAB4218A955E10063DA13 /* Disease.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDAB4118A955E10063DA13 /* Disease.m */; };
@@ -80,7 +82,7 @@
 		6A90C37018C5264B00B7CB84 /* CustomCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCamera.m; sourceTree = "<group>"; };
 		6A9515F718CA3C53007A6938 /* FamilyMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyMemberCell.h; sourceTree = "<group>"; };
 		6A9515F818CA3C54007A6938 /* FamilyMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyMemberCell.m; sourceTree = "<group>"; };
-		6A9515FA18CA48FE007A6938 /* PedigreeDataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PedigreeDataModel 3.xcdatamodel"; sourceTree = "<group>"; };
+		6A9515FA18CA48FE007A6938 /* PedigreeDataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PedigreeDataModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		6A9515FB18CA494C007A6938 /* Relative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relative.h; sourceTree = "<group>"; };
 		6A9515FC18CA494C007A6938 /* Relative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relative.m; sourceTree = "<group>"; };
 		6A9515FE18CA494C007A6938 /* Myself.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myself.h; sourceTree = "<group>"; };
@@ -89,6 +91,10 @@
 		6A95160218CA494C007A6938 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		6A95160418CA494D007A6938 /* ContractedDisease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractedDisease.h; sourceTree = "<group>"; };
 		6A95160518CA494D007A6938 /* ContractedDisease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractedDisease.m; sourceTree = "<group>"; };
+		6A965F6318CF8E4B00756AA5 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		6A965F6418CF8E4B00756AA5 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
+		6A965F6618CF8F7600756AA5 /* GridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
+		6A965F6718CF8F7600756AA5 /* GridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
 		6AB387EF189FFA0A0064ADB5 /* FamilyBackgroundTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyBackgroundTVC.h; sourceTree = "<group>"; };
 		6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyBackgroundTVC.m; sourceTree = "<group>"; };
 		6AB3881118A20A5B0064ADB5 /* HealthInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoTVC.h; sourceTree = "<group>"; };
@@ -240,6 +246,10 @@
 				6A3D4D8E18B53CFA002EC23F /* ExistingConditionsCell.m */,
 				6A9515F718CA3C53007A6938 /* FamilyMemberCell.h */,
 				6A9515F818CA3C54007A6938 /* FamilyMemberCell.m */,
+				6A965F6318CF8E4B00756AA5 /* GridView.h */,
+				6A965F6418CF8E4B00756AA5 /* GridView.m */,
+				6A965F6618CF8F7600756AA5 /* GridViewController.h */,
+				6A965F6718CF8F7600756AA5 /* GridViewController.m */,
 				A657DDA316F747F200F3CA8E /* Supporting Files */,
 			);
 			path = pedigree;
@@ -366,10 +376,12 @@
 				A66FACC517F4A5A3002D260E /* RelativeDetailsVC.m in Sources */,
 				6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */,
 				ABD3C67A1891C4ED00D377F2 /* PersonDetailsVC.m in Sources */,
+				6A965F6518CF8E4B00756AA5 /* GridView.m in Sources */,
 				A66FACC217F307EC002D260E /* MainTabBarVC.m in Sources */,
 				6A9515F918CA3C54007A6938 /* FamilyMemberCell.m in Sources */,
 				6AEDAB4518A9A2D20063DA13 /* SelectAgeVC.m in Sources */,
 				6A12820E18A53FF0001259D3 /* EthnicityUtil.m in Sources */,
+				6A965F6818CF8F7600756AA5 /* GridViewController.m in Sources */,
 				6A95160618CA494D007A6938 /* ContractedDisease.m in Sources */,
 				A67D37B316FB3CCA005C9987 /* AppManager.m in Sources */,
 				6A2E3B4E189A1CF30048E4DA /* DiseaseSubCategoryVCViewController.m in Sources */,
