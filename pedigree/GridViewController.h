@@ -10,4 +10,6 @@
 
 @interface GridViewController : UIViewController
 
+@property (nonatomic, retain) NSArray *relatives;
+
 @end

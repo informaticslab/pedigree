@@ -14,8 +14,6 @@
 @synthesize subDiseaseCategoryArr;
 @synthesize ageGroupArr;
 
-
-
 - (id)init {
     if (self = [super init]) {
         ageGroupArr = [[NSArray alloc] initWithObjects:

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreText/CoreText.h>
 
 @interface GridView : UIView
+
+@property (nonatomic, retain) NSArray *relatives;
 
 @end

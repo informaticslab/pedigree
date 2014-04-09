@@ -9,8 +9,8 @@
 #import "GridViewController.h"
 #import "GridView.h"
 
-#define kGraphHeight 300
-#define kDefaultGraphWidth 900
+#define kGraphHeight 1100
+#define kDefaultGraphWidth 7520
 
 @interface GridViewController ()
 @property (nonatomic, weak) IBOutlet GridView *gridView;
@@ -18,6 +18,8 @@
 @end
 
 @implementation GridViewController
+
+@synthesize relatives;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +36,13 @@
 	// Do any additional setup after loading the view.
     
     _scrollView.contentSize = CGSizeMake(kDefaultGraphWidth, kGraphHeight);
+    
+    // load application manager
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    self.gridView.relatives = [APP_MGR getAllPeople];
 
 }
 

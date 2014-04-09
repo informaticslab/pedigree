@@ -19,6 +19,7 @@
 		6A3D4D8F18B53CFA002EC23F /* ExistingConditionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4D8E18B53CFA002EC23F /* ExistingConditionsCell.m */; };
 		6A3D4D9218B68D74002EC23F /* RelationshipUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4D9118B68D74002EC23F /* RelationshipUtil.m */; };
 		6A66450B189C4FD60017573F /* ParentsRelationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A66450A189C4FD60017573F /* ParentsRelationCell.m */; };
+		6A78B6B318EDC398004ACC23 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A78B6B218EDC398004ACC23 /* CoreText.framework */; };
 		6A90C37118C5264B00B7CB84 /* CustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A90C37018C5264B00B7CB84 /* CustomCamera.m */; };
 		6A9515F918CA3C54007A6938 /* FamilyMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9515F818CA3C54007A6938 /* FamilyMemberCell.m */; };
 		6A9515FD18CA494C007A6938 /* Relative.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9515FC18CA494C007A6938 /* Relative.m */; };
@@ -29,6 +30,7 @@
 		6A965F6818CF8F7600756AA5 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A965F6718CF8F7600756AA5 /* GridViewController.m */; };
 		6AB387F1189FFA0A0064ADB5 /* FamilyBackgroundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */; };
 		6AB3881318A20A5B0064ADB5 /* HealthInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */; };
+		6AB4402118F5287A0050F5EC /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4402018F5287A0050F5EC /* SettingsVC.m */; };
 		6AEDAB4218A955E10063DA13 /* Disease.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDAB4118A955E10063DA13 /* Disease.m */; };
 		6AEDAB4518A9A2D20063DA13 /* SelectAgeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDAB4418A9A2D20063DA13 /* SelectAgeVC.m */; };
 		A656EB6117F0AFFD00B51323 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656EB6017F0AFFD00B51323 /* CoreData.framework */; };
@@ -78,6 +80,7 @@
 		6A664505189BF90E0017573F /* PedigreeDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PedigreeDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		6A664509189C4FD60017573F /* ParentsRelationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsRelationCell.h; sourceTree = "<group>"; };
 		6A66450A189C4FD60017573F /* ParentsRelationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentsRelationCell.m; sourceTree = "<group>"; };
+		6A78B6B218EDC398004ACC23 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		6A90C36F18C5264B00B7CB84 /* CustomCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCamera.h; sourceTree = "<group>"; };
 		6A90C37018C5264B00B7CB84 /* CustomCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCamera.m; sourceTree = "<group>"; };
 		6A9515F718CA3C53007A6938 /* FamilyMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyMemberCell.h; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 		6AB387F0189FFA0A0064ADB5 /* FamilyBackgroundTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyBackgroundTVC.m; sourceTree = "<group>"; };
 		6AB3881118A20A5B0064ADB5 /* HealthInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoTVC.h; sourceTree = "<group>"; };
 		6AB3881218A20A5B0064ADB5 /* HealthInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoTVC.m; sourceTree = "<group>"; };
+		6AB4401F18F5287A0050F5EC /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		6AB4402018F5287A0050F5EC /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 		6AEDAB4018A955E10063DA13 /* Disease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disease.h; sourceTree = "<group>"; };
 		6AEDAB4118A955E10063DA13 /* Disease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Disease.m; sourceTree = "<group>"; };
 		6AEDAB4318A9A2D20063DA13 /* SelectAgeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAgeVC.h; sourceTree = "<group>"; };
@@ -145,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A78B6B318EDC398004ACC23 /* CoreText.framework in Frameworks */,
 				A656EB6117F0AFFD00B51323 /* CoreData.framework in Frameworks */,
 				A657DD9D16F747F200F3CA8E /* UIKit.framework in Frameworks */,
 				A657DD9F16F747F200F3CA8E /* Foundation.framework in Frameworks */,
@@ -176,6 +182,7 @@
 		A657DD9B16F747F200F3CA8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A78B6B218EDC398004ACC23 /* CoreText.framework */,
 				A656EB6017F0AFFD00B51323 /* CoreData.framework */,
 				A657DD9C16F747F200F3CA8E /* UIKit.framework */,
 				A657DD9E16F747F200F3CA8E /* Foundation.framework */,
@@ -251,6 +258,8 @@
 				6A965F6618CF8F7600756AA5 /* GridViewController.h */,
 				6A965F6718CF8F7600756AA5 /* GridViewController.m */,
 				A657DDA316F747F200F3CA8E /* Supporting Files */,
+				6AB4401F18F5287A0050F5EC /* SettingsVC.h */,
+				6AB4402018F5287A0050F5EC /* SettingsVC.m */,
 			);
 			path = pedigree;
 			sourceTree = "<group>";
@@ -369,6 +378,7 @@
 				A67D37AD16FB30F5005C9987 /* RelativesTableVC.m in Sources */,
 				6A2E3B471899AD680048E4DA /* DiseasesUtil.m in Sources */,
 				AB91F7B618906E7D00A271DA /* PedigreeDataModel.xcdatamodeld in Sources */,
+				6AB4402118F5287A0050F5EC /* SettingsVC.m in Sources */,
 				A6778BB31815ADF200962394 /* PersonalInfoTVC.m in Sources */,
 				6A66450B189C4FD60017573F /* ParentsRelationCell.m in Sources */,
 				6A9515FD18CA494C007A6938 /* Relative.m in Sources */,
