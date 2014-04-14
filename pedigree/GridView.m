@@ -57,49 +57,7 @@ NSArray *arrRelativeConditions;
     
      //  int maxGraphHeight = kGraphHeight - kOffsetY;
      UIImage *image = [UIImage imageNamed:@"19-gear"];
-  /*   for (int i = 0; i < relatives.count; i++)
-     {
-         //for all the diseases and subdiseases
-         for (int j = 0; j < howMany; j++) {
-             
-             if(j == 1){
-                 float theValue = data[i];
-                 if (theValue == 1.0)
-                 {
-                     // let us say, the heart disease is at the 1st index.
-                     float x = kOffsetX + (j * kStepX) + kStepX + kStepX/2;
-                     float y = kOffsetY + (i * kStepY) + 50 ;
-                     CGRect rect = CGRectMake(x - kCircleRadius, y - kCircleRadius, 2 * kCircleRadius, 2 * kCircleRadius);
-                     //CGContextAddEllipseInRect(ctx, rect);
-                     [image drawInRect:rect];
-                 }
-                 else if (theValue == 0.0) {
-                     // do nothing
-                 }
-             }
-             else if(j == 3)
-             {
-                 float theValue = lungData[i];
-                 if (theValue == 1.0)
-                 {
-                     // let us say, the lung disease is at the 4th index.
-                     float x = kOffsetX + (j * kStepX) + kStepX + kStepX/2;
-                     float y = kOffsetY + (i * kStepY) + 50 ;
-                     CGRect rect = CGRectMake(x - kCircleRadius, y - kCircleRadius, 2 * kCircleRadius, 2 * kCircleRadius);
-                    // CGContextAddEllipseInRect(ctx, rect);
-                     [image drawInRect:rect];
-                 }
-                 else if (theValue == 0.0) {
-                     // do nothing
-                 }
-             }
-           
-          
-         }
-        
-     }// END FOR LOOP
-   */
-    
+  
     for (int i = 0; i< relatives.count; i++)
     {
         Relative* relative = [relatives objectAtIndex:i];
@@ -121,14 +79,16 @@ NSArray *arrRelativeConditions;
                         _subDiseasesArr = (NSMutableArray *)[dict objectForKey:@"Disease_Sub_Category"];
                     }
                 }
+                
                 if ([_subDiseasesArr count] > 0)
                 {
                     for (int j = 0; j< [_subDiseasesArr count]; j++) {
-                        NSLog(@"The sub-disease at the index is: %@",  [_subDiseasesArr objectAtIndex:j]);
-                        NSLog(@"The sub-condition name is: %@",  condition.name);
                         
-                        if ([_subDiseasesArr containsObject:condition.name])
+                        if ([[_subDiseasesArr objectAtIndex:j] isEqualToString:condition.name])
                         {
+                            NSLog(@"The sub-disease at the index is: %@",  [_subDiseasesArr objectAtIndex:j]);
+                            NSLog(@"The sub-condition name is: %@",  condition.name);
+                            
                             NSLog(@"Drawing the marker");
                             float x = kOffsetX + (xCount * kStepX) + kStepX + kStepX/2;
                             float y = kOffsetY + (i * kStepY) + 50 ;
@@ -138,23 +98,28 @@ NSArray *arrRelativeConditions;
                         
                         xCount = xCount + 1;
                     }
+                    
                 }
-             /*   else
+                else
                 {
-                    float x = kOffsetX + (xCount * kStepX) + kStepX + kStepX/2;
-                    float y = kOffsetY + (i * kStepY) + 50 ;
-                    CGRect rect = CGRectMake(x - kCircleRadius, y - kCircleRadius, 2 * kCircleRadius, 2 * kCircleRadius);
-                    [image drawInRect:rect];
+                    if ([[mainDiseasesArr objectAtIndex:k] isEqualToString:condition.name])
+                    {
+                        float x = kOffsetX + (xCount * kStepX) + kStepX + kStepX/2;
+                        float y = kOffsetY + (i * kStepY) + 50 ;
+                        CGRect rect = CGRectMake(x - kCircleRadius, y - kCircleRadius, 2 * kCircleRadius, 2 * kCircleRadius);
+                        [image drawInRect:rect];
+                    }
                     xCount = xCount+1;
-                }*/
+                }
+                
+
                 
             }
 
-            
         }// END FOR CONTRACTED DISEASES
         
     }// END FOR RELATIVES
-  
+   
     CGContextDrawPath(ctx, kCGPathFillStroke);
 }
 
@@ -285,7 +250,6 @@ NSArray *arrRelativeConditions;
         
         NSAttributedString *stringToDraw = [[NSAttributedString alloc] initWithString:yText attributes:attributesDict];
         [stringToDraw drawInRect:CGRectMake(kOffsetY-8, (i*kStepY+50), 72, 48)];
-        
     }
     
     //Actual Plot with the Circles
