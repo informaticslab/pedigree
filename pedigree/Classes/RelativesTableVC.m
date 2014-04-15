@@ -224,6 +224,15 @@ BOOL viewPersonDetails = NO;
     self.title = @"Family";
     
     [[self tblView] reloadData];
+    
+    // Schedule the notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [NSDate dateWithTimeInterval:2 sinceDate:[NSDate date]];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    // Request to reload table view data
+     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+
 }
 
 @end

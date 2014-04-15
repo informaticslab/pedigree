@@ -40,7 +40,7 @@
                                    entityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
     [fetchRequest setEntity:entity];
     self.gridView.relatives = [[APP_MGR getAllPeople] copy];
-   // [self.gridView setNeedsDisplay];
+    [self.gridView setNeedsDisplay];
 }
 
 - (void)viewDidLoad
@@ -49,14 +49,6 @@
 	// Do any additional setup after loading the view.
     
     _scrollView.contentSize = CGSizeMake(kDefaultGraphWidth, kGraphHeight);
-    
- /*   // load application manager
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    self.gridView.relatives = [APP_MGR getAllPeople];
-  */
 }
 
 - (void)didReceiveMemoryWarning

@@ -13,6 +13,6 @@
 
 @property (nonatomic, retain) NSMutableArray *relatives;
 
-- (void)display;
+//- (void)display;
 
 @end

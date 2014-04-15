@@ -24,7 +24,7 @@
 #define kGraphBottom 20
 #define kGraphTop 0
 
-#define kCircleRadius 10
+#define kCircleRadius 5
 
 #define degreesToRadian(x) (M_PI * (x) / 180.0)
 
@@ -76,7 +76,7 @@ NSArray *arrRelativeConditions;
 
 - (void)drawLineGraphWithContext:(CGContextRef)ctx
 {
-     CGContextSetFillColorWithColor(ctx, [[UIColor colorWithRed:1.0 green:0.5 blue:0 alpha:1.0] CGColor]);
+     CGContextSetFillColorWithColor(ctx, [[UIColor blackColor] CGColor]);
      
      mainDiseasesArr = @[@"No Known Conditions", @"Cancer", @"Clotting Disorder", @"Dementia/Alzheimers", @"Diabetes/Prediabetes/metabolic Syndrome", @"Gastrointestinal Disorder", @"Heart Disease", @"High Cholesterol", @"Hypertension", @"kidney Disease", @"Lung Disease", @"Osteoporosis", @"Psychological Disorder", @"Septecemia", @"Stroke/ Brain Attack", @"Sudden Infant Death Syndrome", @"Unknown Disease", @"Other-Add New"];
     
