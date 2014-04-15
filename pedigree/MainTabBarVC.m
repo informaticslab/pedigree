@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //[self loadTestData];
+    [self loadTestData];
     
 }
 
@@ -88,22 +88,66 @@
     }
   */
     
- /*   Relative *newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
+    Relative *newRelative = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
     newRelative.lastName = @"Doe";
     newRelative.firstName = @"John";
     newRelative.relationDescription = @"Self";
     
     newRelative.ethnicity = [NSNumber numberWithInt:1];
-    newRelative.firstName = @"John";
     newRelative.gender = [NSNumber numberWithInt:1];
     newRelative.height = [NSNumber numberWithDouble:5.2];
     newRelative.isAdopted = [NSNumber numberWithInt:0];
     newRelative.isIdenticalTwin = [NSNumber numberWithInt:0];
     newRelative.isLiving = [NSNumber numberWithInt:1];
     newRelative.isTwin = [NSNumber numberWithInt:0];
-    newRelative.lastName = @"Doe";
     newRelative.race = [NSNumber numberWithInt:5];
     newRelative.weight = [NSNumber numberWithInt:120];
+    
+    ContractedDisease *contractedDis1 = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease"inManagedObjectContext:APP_MGR.managedObjectContext ];
+    
+    contractedDis1.categoryName = @"Cancer";
+    contractedDis1.name = @"Lung Cancer";
+    contractedDis1.ageAtDiagnosis = [NSNumber numberWithInt:3];
+    [newRelative addContractedDiseaseObject:contractedDis1];
+    
+    ContractedDisease *contractedDis2 = [NSEntityDescription insertNewObjectForEntityForName:@"ContractedDisease"inManagedObjectContext:APP_MGR.managedObjectContext ];
+    
+    contractedDis2.categoryName = @"High Cholesterol";
+    contractedDis2.name = @"High Cholesterol";
+    contractedDis2.ageAtDiagnosis = [NSNumber numberWithInt:3];
+    [newRelative addContractedDiseaseObject:contractedDis2];
+    
+    
+    Relative *newRelativeSon = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
+    newRelativeSon.lastName = @"Doe";
+    newRelativeSon.firstName = @"Chris";
+    newRelativeSon.relationDescription = @"Son";
+    
+    newRelativeSon.ethnicity = [NSNumber numberWithInt:1];
+    newRelativeSon.gender = [NSNumber numberWithInt:1];
+    newRelativeSon.height = [NSNumber numberWithDouble:5.5];
+    newRelativeSon.isAdopted = [NSNumber numberWithInt:0];
+    newRelativeSon.isIdenticalTwin = [NSNumber numberWithInt:0];
+    newRelativeSon.isLiving = [NSNumber numberWithInt:1];
+    newRelativeSon.isTwin = [NSNumber numberWithInt:0];
+    newRelativeSon.race = [NSNumber numberWithInt:5];
+    newRelativeSon.weight = [NSNumber numberWithInt:120];
+    
+    Relative *newRelativeDaughter = [NSEntityDescription insertNewObjectForEntityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext ];
+    newRelativeDaughter.lastName = @"Doe";
+    newRelativeDaughter.firstName = @"Jenny";
+    newRelativeDaughter.relationDescription = @"Daughter";
+    
+    newRelativeDaughter.ethnicity = [NSNumber numberWithInt:1];
+    newRelativeDaughter.gender = [NSNumber numberWithInt:0];
+    newRelativeDaughter.height = [NSNumber numberWithDouble:5.0];
+    newRelativeDaughter.isAdopted = [NSNumber numberWithInt:0];
+    newRelativeDaughter.isIdenticalTwin = [NSNumber numberWithInt:0];
+    newRelativeDaughter.isLiving = [NSNumber numberWithInt:1];
+    newRelativeDaughter.isTwin = [NSNumber numberWithInt:0];
+    newRelativeDaughter.race = [NSNumber numberWithInt:5];
+    newRelativeDaughter.weight = [NSNumber numberWithInt:120];
+
     
     NSError *error = nil;
     [APP_MGR.managedObjectContext save:&error];
@@ -112,7 +156,6 @@
     {
         DebugLog(@"Problem loading test data: %@", error);
     }
-*/
 
 }
 

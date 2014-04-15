@@ -53,13 +53,13 @@ AppManager *appMgr;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    int rowCount = 1;
+    int rowCount = 0;
     return rowCount;
 }
 
@@ -74,6 +74,7 @@ AppManager *appMgr;
     return cell;
 }
 
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
            // Purge all the Pedigree related data
@@ -94,5 +95,6 @@ AppManager *appMgr;
             [APP_MGR.managedObjectContext unlock];
             //that's it !
 }
+ */
 
 @end

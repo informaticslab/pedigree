@@ -13,7 +13,7 @@
 #define kDefaultGraphWidth 7520
 
 @interface GridViewController ()
-@property (nonatomic, weak) IBOutlet GridView *gridView;
+@property (nonatomic, strong) IBOutlet GridView *gridView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
@@ -30,6 +30,19 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    
+    DebugLog(@"GridViewController :: ViewWillAppear method.");
+    // load application manager
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    self.gridView.relatives = [[APP_MGR getAllPeople] copy];
+   // [self.gridView setNeedsDisplay];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,13 +50,13 @@
     
     _scrollView.contentSize = CGSizeMake(kDefaultGraphWidth, kGraphHeight);
     
-    // load application manager
+ /*   // load application manager
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Relative" inManagedObjectContext:APP_MGR.managedObjectContext];
     [fetchRequest setEntity:entity];
     self.gridView.relatives = [APP_MGR getAllPeople];
-
+  */
 }
 
 - (void)didReceiveMemoryWarning

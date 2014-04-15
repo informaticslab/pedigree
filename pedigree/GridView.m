@@ -49,6 +49,31 @@ NSArray *arrRelativeConditions;
     return self;
 }
 
+/*/// Redraws the view's contents immediately.
+/// Serves the same purpose as the display method in GLKView.
+/// Not to be confused with CALayer's display method.
+- (void)display
+{
+    CALayer *layer = self.layer;
+    [layer setNeedsDisplay];
+    [layer displayIfNeeded];
+}
+
+/// Called by our CALayer when it wants us to draw (in compliance with the CALayerDelegate protocol).
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)context
+{
+    UIGraphicsPushContext(context);
+    [self internalDrawWithRect:self.bounds];
+    UIGraphicsPopContext();
+}
+
+/// Internal drawing method; naming's up to you.
+- (void)drawRect:(CGRect)rect
+{
+    // @fillin: draw draw draw
+}
+ */
+
 - (void)drawLineGraphWithContext:(CGContextRef)ctx
 {
      CGContextSetFillColorWithColor(ctx, [[UIColor colorWithRed:1.0 green:0.5 blue:0 alpha:1.0] CGColor]);
@@ -93,7 +118,8 @@ NSArray *arrRelativeConditions;
                             float x = kOffsetX + (xCount * kStepX) + kStepX + kStepX/2;
                             float y = kOffsetY + (i * kStepY) + 50 ;
                             CGRect rect = CGRectMake(x - kCircleRadius, y - kCircleRadius, 2 * kCircleRadius, 2 * kCircleRadius);
-                            [image drawInRect:rect];
+                           // [image drawInRect:rect];
+                            CGContextAddEllipseInRect(ctx, rect);
                         }
                         
                         xCount = xCount + 1;
@@ -108,6 +134,7 @@ NSArray *arrRelativeConditions;
                         float y = kOffsetY + (i * kStepY) + 50 ;
                         CGRect rect = CGRectMake(x - kCircleRadius, y - kCircleRadius, 2 * kCircleRadius, 2 * kCircleRadius);
                         [image drawInRect:rect];
+                        CGContextAddEllipseInRect(ctx, rect);
                     }
                     xCount = xCount+1;
                 }

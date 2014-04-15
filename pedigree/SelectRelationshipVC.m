@@ -129,7 +129,7 @@ RelationshipUtil *relUtil;
         {
             if(indexPath.row == 0){
                 // Configure the cell...
-                cell.backgroundColor = [UIColor lightGrayColor];
+               // cell.backgroundColor = [UIColor lightGrayColor];
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
                 cell.textLabel.text = @"Myself";
                 

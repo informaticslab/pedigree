@@ -11,6 +11,8 @@
 
 @interface GridView : UIView
 
-@property (nonatomic, retain) NSArray *relatives;
+@property (nonatomic, retain) NSMutableArray *relatives;
+
+- (void)display;
 
 @end
